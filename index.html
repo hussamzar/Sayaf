@@ -155,13 +155,21 @@
       justify-content: center;
     }
 
-    .card {
+    a.card {
       background: white;
       border-radius: 8px;
       box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
       padding: 15px;
       width: 230px;
       text-align: center;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    a.card:hover {
+      box-shadow: 0 0 10px #25d366;
+      cursor: pointer;
     }
 
     .card img {
@@ -178,16 +186,29 @@
     }
 
     /* معرض الصور */
-    .gallery img {
+    .gallery a {
+      display: block;
       width: 100%;
       max-width: 300px;
-      height: auto;
       border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .gallery a img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery a:hover img {
+      transform: scale(1.05);
     }
 
     /* استجابة الصور للخدمات */
     @media (max-width: 768px) {
-      .services .card, .gallery img {
+      a.card, .gallery a {
         width: 100%;
         max-width: 100%;
       }
@@ -325,45 +346,56 @@
   <section id="services">
     <h2>خدماتنا</h2>
     <div class="services">
-      <div class="card">
+      <a href="tel:0537216061" class="card">
         <img src="https://i.imgur.com/38QmOZ2.jpeg" alt="بطحاء الرياض" />
         <h3>بطحاء الرياض</h3>
         <p>بطحاء عالية النقاء للتلييس والبناء.</p>
-      </div>
-      <div class="card">
+      </a>
+
+      <a href="tel:0537216061" class="card">
         <img src="https://i.imgur.com/kX6rmQw.jpeg" alt="بطحاء تيماء" />
         <h3>بطحاء تيماء</h3>
         <p>بطحاء ناعمة حمراء ممتازة للتشطيب.</p>
-      </div>
-      <div class="card">
+      </a>
+
+      <a href="tel:0537216061" class="card">
         <img src="https://i.imgur.com/vC39bUd.png" alt="دفان بلاط" />
         <h3>دفان بلاط</h3>
         <p>دفان نظيف خالي من الشوائب.</p>
-      </div>
-      <div class="card">
+      </a>
+
+      <a href="tel:0537216061" class="card">
         <img src="https://i.imgur.com/lQrAAft.png" alt="طرطشة بركاني" />
         <h3>طرطشة</h3>
         <p>مادة عازلة ومقاومة للحرارة للأسطح.</p>
-      </div>
-      <div class="card">
+      </a>
+
+      <a href="tel:0537216061" class="card">
         <img src="https://i.imgur.com/BcL95Pa.jpeg" alt="سبيز" />
         <h3>سبيز</h3>
         <p>مادة متينة للردم وتثبيت الأساسات.</p>
-      </div>
-      <div class="card">
+      </a>
+
+      <a href="tel:0537216061" class="card">
         <img src="https://i.imgur.com/i65KxhV.jpeg" alt="خرسانة" />
         <h3>خرسانة بجميع المقاسات</h3>
         <p>توريد خرسانة جاهزة بكل المقاسات.</p>
-      </div>
+      </a>
     </div>
   </section>
 
   <section id="gallery">
     <h2>معرض الصور</h2>
     <div class="gallery">
-      <img src="https://i.imgur.com/F21GMjq.jpeg" alt="شاحنة" />
-      <img src="https://i.imgur.com/fDK9Uoe.jpeg" alt="تفريغ" />
-      <img src="https://i.imgur.com/NOLJuO8.jpeg" alt="بطحاء" />
+      <a href="tel:0537216061">
+        <img src="https://i.imgur.com/F21GMjq.jpeg" alt="شاحنة" />
+      </a>
+      <a href="tel:0537216061">
+        <img src="https://i.imgur.com/fDK9Uoe.jpeg" alt="تفريغ" />
+      </a>
+      <a href="tel:0537216061">
+        <img src="https://i.imgur.com/NOLJuO8.jpeg" alt="بطحاء" />
+      </a>
     </div>
   </section>
 
@@ -417,27 +449,4 @@
   document.querySelectorAll('nav ul li a').forEach(link => {
     link.addEventListener('click', () => {
       document.querySelectorAll('nav ul li ul.dropdown').forEach(menu => {
-        menu.style.display = 'none';
-      });
-    });
-  });
-
-  // السماح للعرض عند تمرير الماوس مع إخفاء عند الخروج (للكمبيوتر)
-  document.querySelectorAll('nav ul li').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      const dropdown = item.querySelector('ul.dropdown');
-      if (dropdown) dropdown.style.display = 'flex';
-    });
-    item.addEventListener('mouseleave', () => {
-      const dropdown = item.querySelector('ul.dropdown');
-      if (dropdown) dropdown.style.display = 'none';
-    });
-  });
-</script>
-
-<footer>
-  &copy; 2025 رمال الصحراء - جميع الحقوق محفوظة.
-</footer>
-
-</body>
-</html>
+        menu.style.display = '
