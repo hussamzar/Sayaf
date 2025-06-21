@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <link rel="icon" href="https://i.imgur.com/a7dzTKl.png" type="image/png">
-
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>توريد بطحاء الرياض وتيماء – مكة</title>
@@ -30,40 +30,35 @@
     header {
       background: url('https://i.imgur.com/Q7LwJ4s.jpeg') center center/cover no-repeat;
       color: white;
-      padding: 60px 20px 40px;
-      text-align: center;
+      padding: 60px 20px 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
       position: relative;
     }
     header h1 {
       margin: 0;
-      font-size: 28px;
-      background-color: rgba(0, 0, 0, 0.55);
-      display: inline-block;
-      padding: 12px 25px;
-      border-radius: 10px;
+      font-size: 26px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 15px;
+      border-radius: 8px;
     }
 
-    /* أزرار واتساب واتصال أسفل الهيدر */
     .header-buttons {
-      margin-top: 20px;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
       display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
+      gap: 10px;
     }
     .header-buttons a {
       background: #25d366;
       color: white;
-      padding: 12px 25px;
-      border-radius: 8px;
+      padding: 10px 15px;
+      border-radius: 5px;
       text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-      box-shadow: 0 4px 8px rgb(0 0 0 / 0.3);
-      transition: background 0.3s;
-    }
-    .header-buttons a:hover {
-      background: #1ebe57;
+      font-size: 14px;
     }
 
     /* القائمة المنسدلة */
@@ -166,11 +161,29 @@
     }
 
     .gallery img {
-      width: 100%;
-      max-width: 300px;
+      width: 200px;
       border-radius: 6px;
-      height: auto;
-      object-fit: cover;
+    }
+
+    /* تعديل لجعل معرض الصور يتجاوب بشكل أفضل */
+    @media (max-width: 600px) {
+      .gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+      .gallery img {
+        width: 90vw;
+        max-width: 400px;
+        height: auto;
+        margin-bottom: 15px;
+      }
+      .services {
+        justify-content: center;
+      }
+      .card {
+        width: 90vw;
+        max-width: 350px;
+      }
     }
 
     .contact-box {
@@ -178,8 +191,11 @@
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
-      margin: auto;
+    }
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
     .contact-item {
       display: flex;
@@ -216,30 +232,6 @@
       text-decoration: none;
     }
 
-    /* تحسين تجاوب المعرض */
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-      .services, .gallery {
-        flex-direction: column;
-        align-items: center;
-      }
-      .card {
-        width: 90%;
-      }
-      .gallery img {
-        max-width: 90%;
-        margin-bottom: 15px;
-      }
-      .header-buttons {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
-
   </style>
 </head>
 <body>
@@ -247,8 +239,8 @@
 <header>
   <h1>توريد بطحاء الرياض وتيماء – مكة</h1>
   <div class="header-buttons">
-    <a href="https://wa.me/966537216061" target="_blank" rel="noopener">💬 واتساب</a>
-    <a href="tel:0537216061" target="_blank" rel="noopener">📞 اتصل بي</a>
+    <a href="https://wa.me/966537216061" target="_blank">💬 واتساب</a>
+    <a href="tel:0537216061">📞 اتصل بي</a>
   </div>
 </header>
 
@@ -258,7 +250,7 @@
     <li><a href="#" class="nav-link">من نحن</a></li>
     <li><a href="#" class="nav-link">معرض الصور</a></li>
     <li>
-      <a href="#" class="nav-link">الفرق بين بطحاء الرياض وتيماء ▼</a>
+      <a href="difference.html" class="nav-link">الفرق بين بطحاء الرياض وتيماء ▼</a>
       <ul class="dropdown">
         <li><a href="difference.html" class="nav-link">ما الفرق بين بطحاء الرياض وتيماء؟</a></li>
       </ul>
@@ -322,30 +314,44 @@
 <section id="contact">
   <h2>اتصل بنا</h2>
   <div class="contact-box">
-    <a href="tel:0537216061" class="contact-item" target="_blank" rel="noopener">
-      <img src="https://img.icons8.com/color/48/000000/phone.png" alt="جوال" />
-      <span>0537216061</span>
-    </a>
-    <a href="https://wa.me/966537216061" class="contact-item" target="_blank" rel="noopener">
-      <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="واتساب" />
-      <span>محادثة مباشرة عبر واتساب</span>
-    </a>
-    <a href="https://facebook.com" class="contact-item" target="_blank" rel="noopener">
-      <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="فيسبوك" />
-      <span>facebook.com</span>
-    </a>
-    <a href="https://twitter.com/sayafsy" class="contact-item" target="_blank" rel="noopener">
-      <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="تويتر" />
-      <span>تابعنا على تويتر</span>
-    </a>
-    <a href="https://haraj.com.sa/11135004515" class="contact-item" target="_blank" rel="noopener">
-      <img src="https://i.imgur.com/njMAgvE.png" alt="حراج" style="width:28px; height:28px;" />
-      <span>صفحتنا على حراج</span>
-    </a>
-    <a href="https://maps.app.goo.gl/BFuVCx947LyDZ6LW6" class="contact-item" target="_blank" rel="noopener">
-      <img src="https://img.icons8.com/color/48/000000/marker.png" alt="الموقع" />
-      <span style="color:#004d3c; text-decoration: underline;">مكة المكرمة</span>
-    </a>
+    <ul class="contact-list">
+      <li>
+        <a href="tel:0537216061" class="contact-item" target="_blank" rel="noopener">
+          <img src="https://img.icons8.com/color/48/000000/phone.png" alt="جوال" />
+          <span>0537216061</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://wa.me/966537216061" class="contact-item" target="_blank" rel="noopener">
+          <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="واتساب" />
+          <span>محادثة مباشرة عبر واتساب</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://facebook.com" class="contact-item" target="_blank" rel="noopener">
+          <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="فيسبوك" />
+          <span>facebook.com</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/sayafsy" class="contact-item" target="_blank" rel="noopener">
+          <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="تويتر" />
+          <span>تابعنا على تويتر</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://haraj.com.sa/11135004515" class="contact-item" target="_blank" rel="noopener">
+          <img src="https://i.imgur.com/njMAgvE.png" alt="حراج" style="width:28px; height:28px;" />
+          <span>صفحتنا على حراج</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://maps.app.goo.gl/BFuVCx947LyDZ6LW6" class="contact-item" target="_blank" rel="noopener">
+          <img src="https://img.icons8.com/color/48/000000/marker.png" alt="الموقع" />
+          <span style="color:#004d3c; text-decoration: underline;">مكة المكرمة</span>
+        </a>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -353,6 +359,7 @@
   // اجعل القائمة المنسدلة تختفي عند الضغط على أي رابط من روابط القائمة
   document.querySelectorAll('nav ul li a').forEach(link => {
     link.addEventListener('click', () => {
+      // اغلق أي قوائم منسدلة ظاهرة
       document.querySelectorAll('nav ul li ul.dropdown').forEach(menu => {
         menu.style.display = 'none';
       });
