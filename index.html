@@ -68,6 +68,35 @@
 
     footer { background: #222; color: white; text-align: center; padding: 15px; font-size: 14px; margin-top: 40px; }
     a { color: #004d3c; text-decoration: none; }
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+  transition: background 0.3s;
+}
+
+.contact-item img {
+  width: 28px;
+  height: 28px;
+}
+
+.contact-item:hover {
+  background: #eef6f2;
+}
   </style>
 </head>
 <body>
@@ -131,17 +160,56 @@
     <img src="https://i.imgur.com/NOLJuO8.jpeg" alt="بطحاء" />
   </div>
 </section>
-
 <section id="contact">
   <h2>اتصل بنا</h2>
   <div class="contact-box">
-    <ul>
-      <li>📞 جوال: <a href="tel:0537216061"> 0537216061  </</li>
-      <li>💬 واتساب: <a href="https://wa.me/966537216061" target="_blank">محادثة مباشرة</a></li>
-      <li>🌐 فيسبوك: <a href="https://facebook.com" target="_blank">facebook.com</a></li>
-      <li>📢 حراج: <a href="https://haraj.com.sa" target="_blank">صفحتنا على حراج</a></li>
-      <li>📍 الموقع: <a href="https://maps.app.goo.gl/SDtbPzrwcwosFGdJ8" target="_blank" style="color:#004d3c; text-decoration: underline;">مكة المكرمة</a></li>
+    <ul class="contact-list">
+      <li>
+        <a href="tel:0537216061" class="contact-item" target="_blank">
+          <img src="https://img.icons8.com/color/48/000000/phone.png" alt="جوال" />
+          <span>0537216061</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://wa.me/966537216061" class="contact-item" target="_blank">
+          <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="واتساب" />
+          <span>محادثة مباشرة عبر واتساب</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://facebook.com" class="contact-item" target="_blank">
+          <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="فيسبوك" />
+          <span>facebook.com</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/sayafsy" class="contact-item" target="_blank">
+          <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="تويتر" />
+          <span>تابعنا على تويتر</span>
+        </a>
+      </li>
+      <li>
+        <li>
+  <a href="https://haraj.com.sa/11135004515" class="contact-item" target="_blank">
+    <img src="https://i.imgur.com/njMAgvE.png" alt="حراج" style="width:28px; height:28px;" />
+    <span>صفحتنا على حراج</span>
+  </a>
+</li>
+      </li>
+      <li>
+        <a href="https://maps.app.goo.gl/BFuVCx947LyDZ6LW6" class="contact-item" target="_blank">
+          <img src="https://img.icons8.com/color/48/000000/marker.png" alt="الموقع" />
+          <span style="color:#004d3c; text-decoration: underline;">مكة المكرمة</span>
+        </a>
+      </li>
     </ul>
+  </div>
+</section>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
   </div>
 </section>
 
