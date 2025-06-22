@@ -307,6 +307,18 @@
 
   </style>
 </head>
+<!-- نهاية محتوى الصفحة -->
+
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    const banner = document.getElementById("bannerBox");
+    banner.style.opacity = "1";
+    banner.style.transform = "translateY(0)";
+  });
+</script>
+
+</body>
+</html>
 <body>
 
 <header>
@@ -381,8 +393,64 @@
         <img src="https://i.imgur.com/i65KxhV.jpeg" alt="خرسانة" />
         <h3>خرسانة بجميع المقاسات</h3>
         <p>توريد خرسانة جاهزة بكل المقاسات.</p>
-      </a>
-    </div>
+      </a> 
+<div id="bannerBox" style="
+  position: relative;
+  max-width: 900px;
+  margin: 40px auto;
+">
+  <img src="https://i.ibb.co/qYLvBjxD/banner-makkah.jpg" alt="بنر بطحاء الرياض وتيماء" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+
+  <!-- زر واتساب (أقصى اليمين) -->
+  <div style="
+    position: absolute;
+    bottom: 24px;
+    right: 8px;
+    z-index: 2;
+  ">
+    <a href="https://wa.me/966537216061" target="_blank" style="
+      background-color: #059669;
+      color: white;
+      padding: 9px 28px;
+      border-radius: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    ">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="واتساب" style="width: 20px; height: 20px;">
+      واتساب
+    </a>
+  </div>
+
+  <!-- زر الاتصال (أقصى اليسار) -->
+  <div style="
+    position: absolute;
+    bottom: 25px;
+    left: 10px;
+    z-index: 2;
+  ">
+    <a href="tel:0537216061" style="
+      background-color: #5C4033;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 7px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    ">
+      <img src="https://img.icons8.com/color/20/000000/phone.png" alt="اتصال">
+      اتصال
+    </a>
+  </div>
+</div>
   </section>
 
   <section id="gallery">
