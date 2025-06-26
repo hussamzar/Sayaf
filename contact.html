@@ -4,79 +4,180 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>اتصل بنا – بطحاء مكة</title>
+
+  <!-- الخطوط والأيقونات -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
     body {
-      font-family: 'Tajawal', sans-serif;
-      background: #f1f1f1;
-      color: #333;
       margin: 0;
-      padding: 20px;
+      font-family: 'Tajawal', sans-serif;
+      background-color: #fdfaf8;
+      color: #333;
+      padding: 0;
       direction: rtl;
     }
-    h1 {
-      color: #004d3c;
+
+    /* ✅ القائمة العلوية */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 10px;
+      background: linear-gradient(to left, #007965, #0f9b8e);
+      flex-wrap: wrap;
+      border-bottom: 2px solid #00765a;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
-    ul {
+
+    .nav-bar a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: bold;
+      background-color: #ffffff22;
+      border: 1px solid #ffffff33;
+      border-radius: 10px;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.3s ease-in-out;
+      backdrop-filter: blur(4px);
+    }
+
+    .nav-bar a:hover {
+      background-color: #ffffff44;
+      transform: translateY(-2px);
+    }
+
+    .nav-bar img.logo {
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 600px) {
+      .nav-bar {
+        gap: 10px;
+        padding: 10px 5px;
+      }
+
+      .nav-bar a {
+        font-size: 13px;
+        padding: 7px 10px;
+      }
+    }
+
+    /* ✅ قسم الاتصال */
+    .contact-box {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .contact-list {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
-    li {
-      background: #fff;
-      margin-bottom: 10px;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    .contact-list li {
+      margin-bottom: 14px;
+      padding: 14px;
+      background: #f1f1f1;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .contact-list li:hover {
+      background-color: #e2e2e2;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       font-size: 16px;
-    }
-    a {
-      text-decoration: none;
       color: #004d3c;
+      text-decoration: none;
+    }
+
+    .contact-item img {
+      width: 28px;
+      height: 28px;
+    }
+
+    .contact-item span {
+      font-weight: 500;
+    }
+
+    .contact-item span:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-    <div class="contact-box">
-      <ul class="contact-list">
-        <li>
-          <a href="tel:0537216061" class="contact-item" target="_blank" rel="noopener">
-            <img src="https://img.icons8.com/color/48/000000/phone.png" alt="جوال" />
-            <span>0537216061</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://wa.me/966537216061" class="contact-item" target="_blank" rel="noopener">
-            <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="واتساب" />
-            <span>محادثة مباشرة عبر واتساب</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://facebook.com" class="contact-item" target="_blank" rel="noopener">
-            <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="فيسبوك" />
-            <span>facebook.com</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://twitter.com/sayafsy" class="contact-item" target="_blank" rel="noopener">
-            <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="تويتر" />
-            <span>تابعنا على تويتر</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://haraj.com.sa/11135004515" class="contact-item" target="_blank" rel="noopener">
-            <img src="https://i.imgur.com/njMAgvE.png" alt="حراج" style="width:28px; height:28px;" />
-            <span>صفحتنا على حراج</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://maps.app.goo.gl/BFuVCx947LyDZ6LW6" class="contact-item" target="_blank" rel="noopener">
-            <img src="https://img.icons8.com/color/48/000000/marker.png" alt="الموقع" />
-            <span style="color:#004d3c; text-decoration: underline;">مكة المكرمة</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </ul>
+  <!-- ✅ القائمة -->
+  <nav class="nav-bar">
+    <a href="index.html"><img src="https://i.imgur.com/a7dzTKl.png" class="logo" alt="شعار"> الرئيسية</a>
+    <a href="about.html"><i class="fas fa-users"></i> من نحن</a>
+    <a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a>
+    <a href="products.html"><i class="fas fa-boxes"></i> منتجاتنا</a>
+    <a href="difference.html"><i class="fas fa-balance-scale"></i> الفرق بين بطحاء الرياض وتيماء</a>
+    <a href="contact.html"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
+    <a href="services.html"><i class="fas fa-tools"></i> خدماتنا</a>
+  </nav>
+
+  <!-- ✅ محتوى صفحة الاتصال -->
+  <div class="contact-box">
+    <ul class="contact-list">
+      <li>
+        <a href="tel:0537216061" class="contact-item" target="_blank" rel="noopener">
+          <img src="https://img.icons8.com/color/48/000000/phone.png" alt="جوال" />
+          <span>0537216061</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://wa.me/966537216061" class="contact-item" target="_blank" rel="noopener">
+          <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="واتساب" />
+          <span>محادثة مباشرة عبر واتساب</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://facebook.com" class="contact-item" target="_blank" rel="noopener">
+          <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="فيسبوك" />
+          <span>facebook.com</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/sayafsy" class="contact-item" target="_blank" rel="noopener">
+          <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="تويتر" />
+          <span>تابعنا على تويتر</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://haraj.com.sa/11135004515" class="contact-item" target="_blank" rel="noopener">
+          <img src="https://i.imgur.com/njMAgvE.png" alt="حراج" />
+          <span>صفحتنا على حراج</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://maps.app.goo.gl/BFuVCx947LyDZ6LW6" class="contact-item" target="_blank" rel="noopener">
+          <img src="https://img.icons8.com/color/48/000000/marker.png" alt="الموقع" />
+          <span style="text-decoration: underline;">مكة المكرمة</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
 </body>
 </html>
