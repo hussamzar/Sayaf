@@ -1,28 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://bat7a-makkah.com/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>1.00</priority>
   </url>
-  <url>
-    <loc>https://bat7a-makkah.com/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://bat7a-makkah.com/services</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
+
   <url>
-    <loc>https://bat7a-makkah.com/gallery</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://bat7a-makkah.com/projects</loc>
+    <priority>0.80</priority>
   </url>
+
+  <url>
+    <loc>https://bat7a-makkah.com/testimonials</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://bat7a-makkah.com/faq</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://bat7a-makkah.com/payment</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://bat7a-makkah.com/certificates</loc>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://bat7a-makkah.com/blog</loc>
+    <priority>0.60</priority>
+  </url>
+
   <url>
     <loc>https://bat7a-makkah.com/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.70</priority>
   </url>
+
 </urlset>
