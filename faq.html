@@ -2,20 +2,477 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>الأسئلة الشائعة</title>
+  <title>الأسئلة الشائعة - بطحاء مكة</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body { font-family: 'Almarai', sans-serif; background: #f9f9f9; padding: 20px; color: #333; }
-    .box { background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); max-width: 900px; margin: auto; }
-    h1 { color: #004d3c; margin-bottom: 20px; text-align: center; }
-    p { margin-bottom: 15px; }
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: #fdfaf8; /* لون رملي فاتح للخلفية */
+      padding: 0;
+      margin: 0;
+      color: #333;
+      direction: rtl;
+      overflow-x: hidden; /* لمنع التمرير الأفقي */
+      padding-top: 60px; /* مسافة أعلى للـ hamburger-container الثابت */
+    }
+
+    /* ✅ القائمة العلوية (Hamburger) - بنفس تنسيق الصفحات السابقة */
+    .hamburger-container {
+        background: #e0c9a6; /* لون رملي فاتح */
+        padding: 10px 15px;
+        display: flex;
+        justify-content: space-between; /* هذا يجعل الهامبرغر في البداية والروابط في النهاية */
+        align-items: center; /* لمحاذاة رأسية */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10000;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hamburger-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-left: 10px; /* مسافة بين زر الهامبرغر وبداية الحاوي (لليمين في RTL) */
+    }
+
+    .hamburger-button img {
+        width: 30px;
+        height: 30px;
+        transition: transform 0.2s ease;
+    }
+    .hamburger-button:hover img {
+        transform: rotate(90deg);
+    }
+
+    .hamburger-links {
+        display: none; /* مخفية بشكل افتراضي */
+        position: absolute;
+        top: 60px; /* تقع أسفل الشريط العلوي */
+        right: 10px; /* تظهر على اليمين الآن */
+        left: auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        padding: 15px;
+        text-align: right;
+        min-width: 200px;
+        z-index: 9999;
+        border: 1px solid #ddd;
+    }
+
+    .hamburger-links a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 15px;
+        padding: 10px 12px;
+        color: #004d3c !important;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background 0.3s, transform 0.2s;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .hamburger-links a:hover {
+        background: #f0f0f0;
+        transform: translateX(-5px);
+    }
+
+    .hamburger-links a img {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* الروابط الأفقية - ظاهرة دائمًا على جميع الشاشات مع الأيقونات */
+    .horizontal-nav-links {
+        display: flex; /* لتبقى ظاهرة دائمًا */
+        gap: 20px;
+        justify-content: flex-end; /* محاذاة روابطها الداخلية لليسار (نهاية الاتجاه RTL) */
+        margin: 0;
+        flex-grow: 1; /* لتأخذ المساحة المتاحة وتدفع زر الهامبرغر لليمين */
+    }
+    .horizontal-nav-links a {
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        color: #333 !important;
+        transition: color 0.3s, transform 0.2s, background-color 0.3s;
+        white-space: nowrap; /* لمنع النصوص من الالتفاف */
+        display: inline-flex; /* لترتيب الأيقونة والنص */
+        align-items: center;
+        gap: 5px; /* مسافة بين الأيقونة والنص */
+        padding: 5px 8px; /* مسافة داخلية للرابط */
+        border-radius: 5px;
+    }
+    .horizontal-nav-links a:hover {
+        color: #004d3c !important;
+        transform: translateY(-1px);
+        background-color: rgba(255, 255, 255, 0.3); /* خلفية خفيفة عند التحويم */
+    }
+    .horizontal-nav-links a img {
+        width: 18px; /* حجم الأيقونة */
+        height: 18px;
+        vertical-align: middle; /* للتأكد من المحاذاة */
+    }
+
+    /* ✅ محتوى الصفحة (الأسئلة الشائعة) */
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      text-align: right; /* محاذاة النص لليمين */
+    }
+
+    .page-header {
+      background-color: #eafaf5; /* خلفية فاتحة لرأس الصفحة */
+      text-align: center;
+      padding: 30px 15px;
+      margin-bottom: 30px;
+      border-radius: 12px; /* حواف مستديرة */
+    }
+
+    .page-header h1 {
+      color: #00765a;
+      font-size: 34px;
+      margin: 0 0 10px 0;
+      font-weight: 700;
+    }
+    .page-header p {
+      color: #555;
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* أنماط الـ Accordion (الأسئلة الشائعة) */
+    .accordion-item {
+      margin-bottom: 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden; /* لإخفاء أي محتوى زائد */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .accordion-header {
+      background-color: #f8f8f8;
+      padding: 18px 25px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      font-size: 18px;
+      color: #004d3c;
+      transition: background-color 0.3s ease;
+      border-bottom: 1px solid #eee; /* فاصل بين الهيدر والمحتوى */
+    }
+
+    .accordion-header:hover {
+      background-color: #eafaf5;
+    }
+
+    .accordion-header.active {
+      background-color: #eafaf5; /* لون عند الفتح */
+      color: #00765a;
+    }
+
+    .accordion-header i {
+      transition: transform 0.3s ease;
+      font-size: 20px;
+      color: #00765a;
+    }
+
+    .accordion-header.active i {
+      transform: rotate(180deg); /* تدوير السهم عند الفتح */
+    }
+
+    .accordion-content {
+      padding: 0 25px;
+      background-color: #ffffff;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* انتقال سلس */
+    }
+
+    .accordion-content.show {
+      max-height: 200px; /* قيمة كافية لأي محتوى. يمكن تعديلها أو استخدام JS لحساب الارتفاع الفعلي */
+      padding: 15px 25px 25px;
+    }
+
+    .accordion-content p {
+      margin-bottom: 0; /* إزالة الهامش السفلي للفقرات داخل المحتوى */
+      font-size: 16px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    /* ✅ أزرار التواصل */
+    .buttons {
+      text-align: center;
+      margin: 50px 0 10px;
+    }
+
+    .btn-whatsapp,
+    .btn-call {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 8px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1DA851;
+      transform: translateY(-2px);
+    }
+
+    .btn-call {
+      background-color: #007bff;
+    }
+
+    .btn-call:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    /* ✅ الفوتر */
+    .footer {
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      margin: 40px 0 20px;
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+        body {
+            padding-top: 100px;
+            box-sizing: border-box;
+        }
+        .hamburger-container {
+            padding: 8px 12px;
+            flex-wrap: wrap;
+        }
+        .hamburger-button {
+            margin-left: 10px;
+        }
+        .horizontal-nav-links {
+            gap: 8px;
+            flex-wrap: wrap; /* السماح للروابط بالالتفاف على شاشات الجوال */
+            justify-content: flex-start; /* محاذاتها لليمين */
+            margin-top: 5px; /* مسافة بسيطة إذا التفت للسطر التالي */
+        }
+        .horizontal-nav-links a {
+            font-size: 13px;
+            padding: 6px 10px;
+        }
+        .hamburger-links {
+            top: 90px;
+        }
+
+        .container {
+            margin: 20px 15px;
+            padding: 20px;
+        }
+        .page-header h1 {
+            font-size: 28px;
+        }
+        .page-header p {
+            font-size: 16px;
+        }
+        .accordion-header {
+            font-size: 16px;
+            padding: 15px 20px;
+        }
+        .accordion-content {
+            padding: 0 20px;
+        }
+        .accordion-content.show {
+            padding: 10px 20px 20px;
+        }
+        .accordion-content p {
+            font-size: 14px;
+        }
+        .btn-whatsapp, .btn-call {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+    }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>الأسئلة الشائعة</h1>
-    <p><strong>هل يوجد توصيل ليلي؟</strong> نعم، نوفر التوصيل الليلي حسب الطلب.</p>
-    <p><strong>هل تشمل الأسعار التوصيل؟</strong> نعم، التوصيل داخل مكة مجاني.</p>
+
+  <div class="hamburger-container">
+      <button class="hamburger-button" onclick="toggleMenu()">
+          <img alt="قائمة" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
+      </button>
+
+      <div class="horizontal-nav-links">
+          <a href="index.html#contact"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
+          <a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a>
+          <a href="services.html"><i class="fas fa-tools"></i> خدماتنا</a>
+      </div>
+
+      <div class="hamburger-links" id="hamburger-links">
+          <a href="index.html"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
+          <a href="about.html"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a>
+          <a href="index.html#services"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
+          <a href="products.html"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
+          <a href="gallery.html"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
+          <a href="index.html#projects"><img alt="المشاريع" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
+          <a href="testimonials.html"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
+          <a href="index.html#faq"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
+          <a href="certificates.html"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
+          <a href="blog.html"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
+          <a href="index.html#contact"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
+      </div>
   </div>
+
+  <section class="page-header">
+    <h1>الأسئلة الشائعة</h1>
+    <p>هنا تجد إجابات على أكثر الأسئلة شيوعاً حول خدماتنا ومنتجاتنا. نأمل أن يساعدك هذا القسم في الحصول على المعلومات التي تحتاجها بسرعة وسهولة.</p>
+  </section>
+
+  <div class="container">
+    <div class="accordion-item">
+      <div class="accordion-header">
+        هل تقدمون خدمات تركيب المنتجات التي يتم شراؤها؟
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="accordion-content">
+        <p>نعم، نقدم خدمات التركيب لجميع المنتجات التي تتطلب ذلك، وذلك لضمان الجودة والأداء الأمثل. يرجى مراجعة تفاصيل المنتج أو الاتصال بنا للحصول على مزيد من المعلومات حول رسوم التركيب إن وجدت.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">
+        ما هي مناطق التوصيل المتاحة لديكم؟
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="accordion-content">
+        <p>نقوم بالتوصيل داخل مدينة مكة المكرمة بشكل مجاني لجميع الطلبات. بالنسبة للمدن الأخرى، تتوفر خدمة الشحن برسوم إضافية يتم تحديدها بناءً على حجم الطلب والمسافة.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">
+        كيف يمكنني طلب خدمة أو منتج من بطحاء مكة؟
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="accordion-content">
+        <p>يمكنك طلب خدماتنا ومنتجاتنا بسهولة عن طريق الاتصال بنا مباشرة عبر الهاتف، أو إرسال رسالة واتساب، أو زيارة متجرنا. يسعد فريقنا بتقديم المساعدة والإجابة على استفساراتك.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">
+        هل لديكم ضمان على منتجاتكم وخدماتكم؟
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="accordion-content">
+        <p>بالتأكيد! نحن نلتزم بتقديم منتجات عالية الجودة وخدمات احترافية. جميع منتجاتنا وخدماتنا تأتي بضمان لراحة بالك. تفاصيل الضمان تختلف حسب نوع المنتج أو الخدمة، ويمكنك الاستفسار عنها عند الطلب.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">
+          ما هي طرق الدفع المتوفرة لديكم؟
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+          <p>نوفر عدة خيارات دفع لتناسب احتياجاتك، بما في ذلك الدفع النقدي عند الاستلام، التحويل البنكي، الدفع عبر بطاقة مدى، والدفع من خلال STC Pay. يمكنك الاطلاع على صفحة "طرق الدفع" لمزيد من التفاصيل.</p>
+        </div>
+      </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">
+          هل يمكنني إلغاء أو تعديل طلبي بعد تأكيده؟
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+          <p>نعم، يمكنك إلغاء أو تعديل طلبك. يرجى الاتصال بفريق خدمة العملاء لدينا في أقرب وقت ممكن بعد تأكيد الطلب لمساعدتك في إجراء التغييرات المطلوبة.</p>
+        </div>
+      </div>
+
+  </div>
+
+  <div class="buttons">
+      <a class="btn-whatsapp" href="https://wa.me/966537216061" target="_blank">راسلنا عبر واتساب</a>
+      <a class="btn-call" href="tel:0537216061">اتصل الآن</a>
+  </div>
+
+  <div class="footer">
+    © 2025 جميع الحقوق محفوظة – بطحاء مكة
+  </div>
+
+  <script>
+      function toggleMenu() {
+          var links = document.getElementById('hamburger-links');
+          links.style.display = (links.style.display === 'block') ? 'none' : 'block';
+      }
+
+      document.addEventListener('click', function(event) {
+          var menu = document.getElementById('hamburger-links');
+          var button = document.querySelector('.hamburger-button');
+          if (menu && button) {
+              if (menu.style.display === 'block') {
+                  if (!menu.contains(event.target) && !button.contains(event.target)) {
+                      menu.style.display = 'none';
+                  }
+              }
+          }
+      });
+
+      // JavaScript for Accordion functionality
+      document.querySelectorAll('.accordion-header').forEach(header => {
+          header.addEventListener('click', () => {
+              const content = header.nextElementSibling;
+              const icon = header.querySelector('i');
+
+              // Close all other open accordion items
+              document.querySelectorAll('.accordion-content.show').forEach(openContent => {
+                  if (openContent !== content) {
+                      openContent.classList.remove('show');
+                      openContent.previousElementSibling.classList.remove('active');
+                      openContent.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+                  }
+              });
+
+              // Toggle the clicked item
+              content.classList.toggle('show');
+              header.classList.toggle('active');
+              if (content.classList.contains('show')) {
+                  icon.style.transform = 'rotate(180deg)';
+              } else {
+                  icon.style.transform = 'rotate(0deg)';
+              }
+          });
+      });
+  </script>
+
 </body>
 </html>

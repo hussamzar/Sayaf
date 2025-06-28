@@ -5,170 +5,617 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>معرض الصور – بطحاء مكة</title>
 
-  <!-- خطوط وأيقونات -->
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     body {
       font-family: 'Tajawal', sans-serif;
-      background: #f9f9f9;
-      color: #333;
-      margin: 0;
+      background: #fdfaf8; /* لون رملي فاتح للخلفية */
       padding: 0;
+      margin: 0;
+      color: #333;
       direction: rtl;
+      overflow-x: hidden; /* لمنع التمرير الأفقي */
+      padding-top: 60px; /* مسافة أعلى للـ hamburger-container الثابت */
     }
 
-    /* ✅ شريط التنقل */
-    .nav-bar {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 14px;
-      padding: 12px 10px;
-      background: linear-gradient(to left, #007965, #0f9b8e);
-      flex-wrap: wrap;
-      border-bottom: 2px solid #00765a;
-      position: sticky;
-      top: 0;
-      z-index: 999;
+    /* --- */
+    /* ✅ القائمة العلوية (Hamburger) - منسوخة من صفحات سابقة */
+    .hamburger-container {
+        background: #e0c9a6; /* لون رملي فاتح */
+        padding: 10px 15px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center; /* لمحاذاة رأسية */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10000;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    .nav-bar a {
-      text-decoration: none;
-      color: #ffffff;
-      font-size: 15px;
-      font-weight: bold;
-      background-color: #ffffff22;
-      border: 1px solid #ffffff33;
-      border-radius: 10px;
-      padding: 8px 16px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.3s ease-in-out;
-      backdrop-filter: blur(4px);
+    .hamburger-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-left: 15px;
     }
 
-    .nav-bar a:hover {
-      background-color: #ffffff44;
-      transform: translateY(-2px);
+    .hamburger-button img {
+        width: 30px;
+        height: 30px;
+        transition: transform 0.2s ease;
+    }
+    .hamburger-button:hover img {
+        transform: rotate(90deg);
     }
 
-    .nav-bar img.logo {
-      width: 22px;
-      height: 22px;
-      border-radius: 4px;
+    .hamburger-links {
+        display: none; /* مخفية بشكل افتراضي */
+        position: absolute;
+        top: 60px; /* تقع أسفل الشريط العلوي */
+        right: 10px; /* تظهر على اليمين الآن */
+        left: auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        padding: 15px;
+        text-align: right;
+        min-width: 200px;
+        z-index: 9999;
+        border: 1px solid #ddd;
     }
 
-    @media (max-width: 600px) {
-      .nav-bar {
+    .hamburger-links a {
+        display: flex;
+        align-items: center;
         gap: 10px;
-        padding: 10px 5px;
-      }
-
-      .nav-bar a {
-        font-size: 13px;
-        padding: 7px 10px;
-      }
+        font-weight: 700;
+        font-size: 15px;
+        padding: 10px 12px;
+        color: #004d3c !important;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background 0.3s, transform 0.2s;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
 
-    /* ✅ عنوان */
-    h1 {
+    .hamburger-links a:hover {
+        background: #f0f0f0;
+        transform: translateX(-5px);
+    }
+
+    .hamburger-links a img {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* الروابط الأفقية - منسوخة من صفحات سابقة */
+    .horizontal-nav-links {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-right: 15px;
+        white-space: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 5px;
+    }
+    .horizontal-nav-links::-webkit-scrollbar {
+        display: none;
+    }
+    .horizontal-nav-links {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .horizontal-nav-links a {
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        color: #333 !important;
+        transition: color 0.3s, transform 0.2s, background-color 0.3s;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 8px;
+        border-radius: 5px;
+    }
+    .horizontal-nav-links a:hover {
+        color: #004d3c !important;
+        transform: translateY(-1px);
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    .horizontal-nav-links a i {
+        width: 18px;
+        height: 18px;
+        font-size: 18px;
+        vertical-align: middle;
+    }
+
+    /* --- */
+    /* ✅ أنماط صفحة معرض الصور الجديدة */
+    .container {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 30px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        text-align: right;
+    }
+
+    .page-header {
+      background-color: #eafaf5; /* خلفية فاتحة لرأس الصفحة */
       text-align: center;
-      font-size: 28px;
-      color: #004d3c;
+      padding: 30px 15px;
+      margin-bottom: 30px;
+      border-radius: 12px; /* حواف مستديرة */
+    }
+
+    .page-header h1 {
+      color: #00765a;
+      font-size: 34px;
+      margin: 0 0 10px 0;
+      font-weight: 700;
+    }
+    .page-header p {
+      color: #555;
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* معرض الصور - شبكة مع بطاقات */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* عمودين أو ثلاثة حسب المساحة */
+      gap: 25px;
       margin-top: 30px;
     }
 
-    /* ✅ معرض الصور */
-    .gallery {
+    .gallery-item {
+      background: #fdfdfd;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      overflow: hidden;
+      text-align: right;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #eef;
+      cursor: pointer; /* للإشارة إلى أنها قابلة للنقر */
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 220px; /* ارتفاع ثابت للصور */
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-info {
+      padding: 15px;
+    }
+
+    .gallery-info h3 {
+      color: #004d3c;
+      font-size: 18px;
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .gallery-info p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    /* تصميم النافذة المنبثقة (Lightbox) */
+    .lightbox {
+      display: none; /* مخفية بشكل افتراضي */
+      position: fixed;
+      z-index: 10001; /* أعلى من أي عنصر آخر */
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8); /* خلفية شبه شفافة */
       display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
+      align-items: center;
       justify-content: center;
-      margin: 30px 20px;
     }
 
-    .gallery img {
-      width: 300px;
+    .lightbox-content {
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      max-width: 90%;
+      max-height: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lightbox-content img {
       max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      max-height: 70vh; /* لتجنب الصور الكبيرة جدًا */
+      height: auto;
+      display: block;
+      margin: 0 auto 15px auto;
+      border-radius: 8px;
     }
 
-    .gallery img:hover {
-      transform: scale(1.03);
+    .lightbox-caption {
+      color: #333;
+      font-size: 17px;
+      text-align: center;
+      margin-top: 10px;
+      max-width: 90%;
+      padding-bottom: 10px;
     }
 
-    /* ✅ أزرار الاتصال */
+    .close-button {
+      color: #aaa;
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .close-button:hover,
+    .close-button:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* أسهم التنقل في Lightbox */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 28px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 5px;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev {
+      left: 0;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+
+    /* ✅ أزرار التواصل (منسوخة من الصفحات السابقة) */
     .buttons {
       text-align: center;
-      margin-top: 40px;
+      margin: 50px 0 10px;
     }
 
-    .buttons a {
+    .btn-whatsapp,
+    .btn-call {
       display: inline-block;
       padding: 12px 25px;
-      margin: 10px;
+      margin: 8px;
       border-radius: 8px;
       font-weight: bold;
       color: white;
       text-decoration: none;
-      font-size: 15px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .btn-whatsapp {
       background-color: #25D366;
     }
 
+    .btn-whatsapp:hover {
+      background-color: #1DA851;
+      transform: translateY(-2px);
+    }
+
     .btn-call {
       background-color: #007bff;
     }
 
-    /* ✅ الفوتر */
+    .btn-call:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    /* ✅ الفوتر (منسوخة من الصفحات السابقة) */
     .footer {
       text-align: center;
       font-size: 14px;
       color: #777;
       margin: 40px 0 20px;
     }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+        body {
+            padding-top: 60px;
+            box-sizing: border-box;
+        }
+        .hamburger-container {
+            padding: 10px 15px;
+        }
+        .horizontal-nav-links {
+            gap: 10px;
+            margin-right: 10px;
+            font-size: 13px;
+        }
+        .horizontal-nav-links a {
+            font-size: 13px;
+            padding: 5px 6px;
+        }
+        .hamburger-button {
+            margin-left: 15px;
+        }
+        .hamburger-links {
+            top: 60px;
+        }
+
+        .container {
+            margin: 20px 15px;
+            padding: 20px;
+        }
+        .page-header h1 {
+            font-size: 28px;
+        }
+        .page-header p {
+            font-size: 16px;
+        }
+        .gallery-grid {
+            grid-template-columns: 1fr; /* عمود واحد على الجوال */
+            gap: 20px;
+        }
+        .gallery-item img {
+            height: 180px; /* ارتفاع أقل للصور على الجوال */
+        }
+        .gallery-info h3 {
+            font-size: 17px;
+        }
+        .gallery-info p {
+            font-size: 13px;
+        }
+        .lightbox-content {
+            padding: 15px;
+        }
+        .lightbox-content img {
+            max-height: 60vh;
+        }
+        .close-button {
+            font-size: 30px;
+            top: 10px;
+            right: 20px;
+        }
+        .prev, .next {
+            font-size: 20px;
+            padding: 10px;
+            margin-top: -30px;
+        }
+        .btn-whatsapp, .btn-call {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+    }
   </style>
 </head>
 <body>
 
-  <!-- ✅ القائمة -->
-  <nav class="nav-bar">
-    <a href="index.html"><img src="https://i.imgur.com/a7dzTKl.png" class="logo" alt="شعار"> الرئيسية</a>
-    <a href="about.html"><i class="fas fa-users"></i> من نحن</a>
-    <a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a>
-    <a href="products.html"><i class="fas fa-boxes"></i> منتجاتنا</a>
-    <a href="difference.html"><i class="fas fa-balance-scale"></i> الفرق بين بطحاء الرياض وتيماء</a>
-    <a href="contact.html"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
-    <a href="services.html"><i class="fas fa-tools"></i> خدماتنا</a>
-  </nav>
+  <div class="hamburger-container">
+      <button class="hamburger-button" onclick="toggleMenu()">
+          <img alt="قائمة" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
+      </button>
 
-  <!-- ✅ عنوان -->
-  <h1>معرض الصور</h1>
+      <div class="horizontal-nav-links">
+          <a href="products.html"><i class="fas fa-shopping-cart"></i> منتجاتنا</a>
+          <a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a>
+          <a href="index.html#contact"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
+      </div>
 
-  <!-- ✅ الصور -->
-  <div class="gallery">
-    <img src="https://i.imgur.com/F21GMjq.jpeg" alt="شاحنة" />
-    <img src="https://i.imgur.com/fDK9Uoe.jpeg" alt="تفريغ" />
-    <img src="https://i.imgur.com/NOLJuO8.jpeg" alt="بطحاء" />
+      <div class="hamburger-links" id="hamburger-links">
+          <a href="index.html"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
+          <a href="about.html"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a>
+          <a href="services.html"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
+          <a href="products.html"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
+          <a href="gallery.html"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
+          <a href="index.html#projects"><img alt="المشاريع" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
+          <a href="testimonials.html"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
+          <a href="index.html#faq"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
+          <a href="certificates.html"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
+          <a href="blog.html"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
+          <a href="index.html#contact"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
+      </div>
   </div>
 
-  <!-- ✅ أزرار الاتصال -->
+  <section class="page-header">
+    <h1>معرض صور أعمالنا</h1>
+    <p>استكشف مجموعتنا من الصور التي توثق أعمالنا في توريد البطحاء، الدفان، والسبيز، بالإضافة إلى معداتنا الحديثة في المواقع المختلفة.</p>
+  </section>
+
+  <div class="container">
+    <div class="gallery-grid" id="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox(0)">
+        <img src="images/12.jpg" alt="شاحنة بطحاء في موقع العمل">
+        <div class="gallery-info">
+          <h3>توريد البطحاء للمشاريع</h3>
+          <p>لقطة لشاحناتنا أثناء تفريغ كميات كبيرة من البطحاء عالية الجودة في موقع إنشاء جديد.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(1)">
+        <img src="images/13.png" alt="معدات ثقيلة">
+        <div class="gallery-info">
+          <h3>استخدام المعدات الحديثة</h3>
+          <p>صورة تظهر جزءًا من أسطولنا من المعدات الثقيلة المستخدمة لضمان كفاءة العمل.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(2)">
+        <img src="images/18.jpg" alt="تفريغ دفان">
+        <div class="gallery-info">
+          <h3>عمليات الدفان الاحترافية</h3>
+          <p>فريقنا يعمل بكفاءة على تسوية الدفان في موقع مشروع كبير.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(3)">
+        <img src="images/19.jpg" alt="كومة سبيز">
+        <div class="gallery-info">
+          <h3>مواد السبيز الخام</h3>
+          <p>جودة السبيز المتوفرة لدينا، جاهزة للتسليم لأي مشروع.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(4)">
+        <img src="images/20.jpg" alt="شاحنة تحمل مواد">
+        <div class="gallery-info">
+          <h3>شاحنات النقل</h3>
+          <p>صورة توضح إحدى شاحناتنا وهي تحمل المواد الخام لتوصيلها إلى العملاء.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(5)">
+        <img src="images/9.png" alt="موقع عمل واسع">
+        <div class="gallery-info">
+          <h3>مشروع على نطاق واسع</h3>
+          <p>نظرة عامة على أحد مشاريعنا الكبيرة حيث قمنا بتوريد مواد متعددة.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="lightbox" class="lightbox" style="display: none;">
+    <span class="close-button" onclick="closeLightbox()">&times;</span>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="صورة مكبرة">
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+      <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+      <a class="next" onclick="changeImage(1)">&#10095;</a>
+    </div>
+  </div>
+
   <div class="buttons">
-    <a class="btn-whatsapp" href="https://wa.me/966537216061" target="_blank">راسلنا واتساب</a>
-    <a class="btn-call" href="tel:0537216061">اتصل الآن</a>
+      <a class="btn-whatsapp" href="https://wa.me/966537216061" target="_blank">راسلنا عبر واتساب</a>
+      <a class="btn-call" href="tel:0537216061">اتصل الآن</a>
   </div>
 
-  <!-- ✅ الفوتر -->
   <div class="footer">
-    &copy; 2025 جميع الحقوق محفوظة - بطحاء مكة
+    © 2025 جميع الحقوق محفوظة – بطحاء مكة
   </div>
+
+  <script>
+      // JavaScript للقائمة الجانبية (Hamburger Menu)
+      function toggleMenu() {
+          var links = document.getElementById('hamburger-links');
+          links.style.display = (links.style.display === 'block') ? 'none' : 'block';
+      }
+
+      document.addEventListener('click', function(event) {
+          var menu = document.getElementById('hamburger-links');
+          var button = document.querySelector('.hamburger-button');
+          if (menu && button) {
+              if (menu.style.display === 'block') {
+                  if (!menu.contains(event.target) && !button.contains(event.target)) {
+                      menu.style.display = 'none';
+                  }
+              }
+          }
+      });
+
+      // ✅ JavaScript لمعرض الصور (Lightbox)
+      let currentImageIndex = 0;
+      let galleryItems = []; // لتخزين معلومات الصور
+
+      document.addEventListener('DOMContentLoaded', function() {
+          // جمع معلومات الصور من الـ HTML عند تحميل الصفحة
+          const items = document.querySelectorAll('.gallery-item');
+          items.forEach((item, index) => {
+              galleryItems.push({
+                  src: item.querySelector('img').src,
+                  alt: item.querySelector('img').alt,
+                  caption: item.querySelector('.gallery-info p').textContent // الوصف من الفقرة
+              });
+              item.setAttribute('onclick', `openLightbox(${index})`); // تعيين وظيفة openLightbox لكل عنصر
+          });
+      });
+
+      function openLightbox(index) {
+          currentImageIndex = index;
+          const lightbox = document.getElementById('lightbox');
+          const lightboxImg = document.getElementById('lightbox-img');
+          const lightboxCaption = document.getElementById('lightbox-caption');
+
+          lightboxImg.src = galleryItems[currentImageIndex].src;
+          lightboxImg.alt = galleryItems[currentImageIndex].alt;
+          lightboxCaption.textContent = galleryItems[currentImageIndex].caption;
+          lightbox.style.display = 'flex'; // عرض الـ lightbox
+      }
+
+      function closeLightbox() {
+          document.getElementById('lightbox').style.display = 'none';
+      }
+
+      function changeImage(direction) {
+          currentImageIndex += direction;
+          if (currentImageIndex < 0) {
+              currentImageIndex = galleryItems.length - 1;
+          } else if (currentImageIndex >= galleryItems.length) {
+              currentImageIndex = 0;
+          }
+          openLightbox(currentImageIndex); // عرض الصورة الجديدة
+      }
+
+      // إغلاق Lightbox عند الضغط على مفتاح ESC
+      document.addEventListener('keydown', function(e) {
+          if (e.key === "Escape") {
+              closeLightbox();
+          }
+      });
+  </script>
 
 </body>
 </html>

@@ -3,181 +3,699 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>اتصل بنا – بطحاء مكة</title>
+  <title>تواصلوا معنا – بطحاء مكة | لخدمتكم على مدار الساعة</title>
+  <meta name="description" content="تواصلوا مع فريق بطحاء مكة للحصول على استشارات مجانية، طلب عروض أسعار، أو أي استفسارات حول توريد أجود أنواع البطحاء، الرمل، الدفان ومواد البناء في مكة المكرمة. نحن في خدمتكم دائمًا." />
+  <meta name="keywords" content="اتصال بطحاء مكة، رقم هاتف مواد بناء مكة، واتساب بطحاء، استفسار أسعار بطحاء، موقع شركة مواد بناء، دعم عملاء، مكة" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="بطحاء مكة" />
+  <meta property="og:title" content="تواصلوا معنا – بطحاء مكة | شريككم الموثوق في عالم البناء" />
+  <meta property="og:description" content="نحن هنا للاستماع إليكم وتقديم الحلول. تواصلوا مع خبراء بطحاء مكة لجميع احتياجاتكم من مواد البناء بجودة لا تضاهى." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bat7a-makkah.com/contact.html" />
+  <meta property="og:image" content="https://i.imgur.com/vH1WjYf.jpeg" /> <meta property="og:locale" content="ar_AR" />
 
-  <!-- الخطوط والأيقونات -->
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
     body {
-      margin: 0;
       font-family: 'Tajawal', sans-serif;
-      background-color: #fdfaf8;
-      color: #333;
+      background: #fdfaf8; /* لون رملي فاتح للخلفية */
       padding: 0;
+      margin: 0;
+      color: #333;
       direction: rtl;
+      overflow-x: hidden; /* لمنع التمرير الأفقي */
+      padding-top: 60px; /* مسافة أعلى للـ hamburger-container الثابت */
     }
 
-    /* ✅ القائمة العلوية */
-    .nav-bar {
+    /* --- */
+    /* ✅ القائمة العلوية (Hamburger) - منسوخة من صفحات سابقة */
+    .hamburger-container {
+        background: #e0c9a6; /* لون رملي فاتح */
+        padding: 10px 15px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center; /* لمحاذاة رأسية */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10000;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hamburger-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-left: 15px;
+    }
+
+    .hamburger-button img {
+        width: 30px;
+        height: 30px;
+        transition: transform 0.2s ease;
+    }
+    .hamburger-button:hover img {
+        transform: rotate(90deg);
+    }
+
+    .hamburger-links {
+        display: none; /* مخفية بشكل افتراضي */
+        position: absolute;
+        top: 60px; /* تقع أسفل الشريط العلوي */
+        right: 10px; /* تظهر على اليمين الآن */
+        left: auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        padding: 15px;
+        text-align: right;
+        min-width: 200px;
+        z-index: 9999;
+        border: 1px solid #ddd;
+    }
+
+    .hamburger-links a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 15px;
+        padding: 10px 12px;
+        color: #004d3c !important;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background 0.3s, transform 0.2s;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .hamburger-links a:hover {
+        background: #f0f0f0;
+        transform: translateX(-5px);
+    }
+
+    .hamburger-links a img {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* الروابط الأفقية - منسوخة من صفحات سابقة */
+    .horizontal-nav-links {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-right: 15px;
+        white-space: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 5px;
+    }
+    .horizontal-nav-links::-webkit-scrollbar {
+        display: none;
+    }
+    .horizontal-nav-links {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .horizontal-nav-links a {
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        color: #333 !important;
+        transition: color 0.3s, transform 0.2s, background-color 0.3s;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 8px;
+        border-radius: 5px;
+    }
+    .horizontal-nav-links a:hover {
+        color: #004d3c !important;
+        transform: translateY(-1px);
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    .horizontal-nav-links a i {
+        width: 18px;
+        height: 18px;
+        font-size: 18px;
+        vertical-align: middle;
+    }
+
+    /* --- */
+    /* ✅ أنماط صفحة اتصل بنا الجديدة (معدلة لتناسب التصميم) */
+    .container {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 30px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        text-align: right;
+    }
+
+    .page-header {
+      background-color: #eafaf5; /* خلفية فاتحة لرأس الصفحة */
+      text-align: center;
+      padding: 30px 15px;
+      margin-bottom: 30px;
+      border-radius: 12px; /* حواف مستديرة */
+    }
+
+    .page-header h1 {
+      color: #00765a;
+      font-size: 34px;
+      margin: 0 0 10px 0;
+      font-weight: 700;
+    }
+    .page-header p {
+      color: #555;
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* قسم معلومات الاتصال */
+    .contact-info-section {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-top: 20px;
+    }
+
+    .contact-info-section h2 {
+      color: #004d3c;
+      font-size: 28px;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+
+    .contact-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+
+    .contact-card {
+      background-color: #f8fcfb; /* لون خلفية فاتح للبطاقات */
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      gap: 14px;
-      padding: 12px 10px;
-      background: linear-gradient(to left, #007965, #0f9b8e);
-      flex-wrap: wrap;
-      border-bottom: 2px solid #00765a;
-      position: sticky;
-      top: 0;
-      z-index: 999;
+      text-align: center;
+      border: 1px solid #eee;
     }
 
-    .nav-bar a {
+    .contact-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+
+    .contact-card a {
       text-decoration: none;
-      color: #ffffff;
-      font-size: 15px;
-      font-weight: bold;
-      background-color: #ffffff22;
-      border: 1px solid #ffffff33;
-      border-radius: 10px;
-      padding: 8px 16px;
+      color: #004d3c;
+      font-size: 18px;
+      font-weight: 700;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 6px;
-      transition: all 0.3s ease-in-out;
-      backdrop-filter: blur(4px);
+      gap: 12px;
+      width: 100%;
     }
 
-    .nav-bar a:hover {
-      background-color: #ffffff44;
+    .contact-card i,
+    .contact-card img {
+      font-size: 55px;
+      color: #d2b48c; /* لون رملي للأيقونات */
+      margin-bottom: 10px;
+      width: 55px;
+      height: 55px;
+      display: block; /* لضمان ظهور الصورة بشكل صحيح */
+    }
+    .contact-card img.social-icon { /* نمط خاص لأيقونات السوشيال ميديا إذا كانت صور */
+      border-radius: 8px; /* لتقريب شكل أيقونات السوشيال ميديا المستوردة */
+    }
+    .contact-card span {
+      display: block;
+      margin-top: 5px;
+      font-size: 16px; /* تصغير حجم الخط قليلاً للنصوص الفرعية */
+      color: #555;
+      font-weight: normal;
+    }
+
+    /* قسم لماذا تتواصل معنا */
+    .why-contact-us {
+      background-color: #eafaf5; /* نفس لون رأس الصفحة للخلفية */
+      padding: 40px 20px;
+      margin-top: 50px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .why-contact-us h2 {
+      color: #00765a;
+      font-size: 28px;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+    .why-contact-us .benefits-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .benefits-list .benefit-item {
+      background-color: #ffffff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      font-size: 16px;
+      color: #444;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.2s;
+    }
+    .benefits-list .benefit-item i {
+      color: #d2b48c;
+      font-size: 20px;
+    }
+    .benefits-list .benefit-item:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* قسم الخريطة */
+    .map-section {
+        background-color: #f8fcfb;
+        padding: 40px 20px;
+        margin-top: 50px;
+        border-radius: 12px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        text-align: center;
+    }
+    .map-section h2 {
+        color: #00765a;
+        font-size: 28px;
+        margin-bottom: 25px;
+        font-weight: 700;
+    }
+    .map-section p {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 25px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .map-section iframe {
+        width: 100%;
+        max-width: 800px;
+        height: 400px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        border: none;
+    }
+
+    /* نموذج الاتصال (جديد) */
+    .contact-form-section {
+      background-color: #fdfaf8; /* لون خلفية خفيف جداً */
+      padding: 40px 20px;
+      margin-top: 50px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      text-align: right;
+    }
+    .contact-form-section h2 {
+      color: #00765a;
+      font-size: 28px;
+      margin-bottom: 25px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: grid;
+      gap: 20px;
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 700;
+      color: #444;
+      font-size: 15px;
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form input[type="tel"],
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 16px;
+      box-sizing: border-box; /* لضمان أن العرض يشمل البادينغ */
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #0f9b8e;
+      box-shadow: 0 0 0 3px rgba(15, 155, 142, 0.2);
+      outline: none;
+    }
+    .contact-form textarea {
+      resize: vertical; /* السماح بتغيير حجم مربع النص عمودياً */
+      min-height: 120px;
+    }
+    .contact-form button {
+      background-color: #00765a;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      width: fit-content; /* لضمان أن الزر لا يملأ العرض كاملاً */
+      margin: 0 auto; /* توسيط الزر */
+      display: block; /* لتمكين margin: auto */
+    }
+    .contact-form button:hover {
+      background-color: #005a41;
       transform: translateY(-2px);
     }
 
-    .nav-bar img.logo {
-      width: 22px;
-      height: 22px;
-      border-radius: 4px;
+
+    /* ✅ أزرار التواصل (منسوخة من الصفحات السابقة) */
+    .buttons {
+      text-align: center;
+      margin: 50px 0 10px;
     }
 
-    @media (max-width: 600px) {
-      .nav-bar {
-        gap: 10px;
-        padding: 10px 5px;
-      }
-
-      .nav-bar a {
-        font-size: 13px;
-        padding: 7px 10px;
-      }
-    }
-
-    /* ✅ قسم الاتصال */
-    .contact-box {
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-
-    .contact-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .contact-list li {
-      margin-bottom: 14px;
-      padding: 14px;
-      background: #f1f1f1;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-
-    .contact-list li:hover {
-      background-color: #e2e2e2;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 16px;
-      color: #004d3c;
+    .btn-whatsapp,
+    .btn-call {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 8px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: white;
       text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    .contact-item img {
-      width: 28px;
-      height: 28px;
+    .btn-whatsapp {
+      background-color: #25D366;
     }
 
-    .contact-item span {
-      font-weight: 500;
+    .btn-whatsapp:hover {
+      background-color: #1DA851;
+      transform: translateY(-2px);
     }
 
-    .contact-item span:hover {
-      text-decoration: underline;
+    .btn-call {
+      background-color: #007bff;
+    }
+
+    .btn-call:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    /* ✅ الفوتر (منسوخة من الصفحات السابقة) */
+    .footer {
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      margin: 40px 0 20px;
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+        body {
+            padding-top: 60px;
+            box-sizing: border-box;
+        }
+        .hamburger-container {
+            padding: 10px 15px;
+        }
+        .horizontal-nav-links {
+            gap: 10px;
+            margin-right: 10px;
+            font-size: 13px;
+        }
+        .horizontal-nav-links a {
+            font-size: 13px;
+            padding: 5px 6px;
+        }
+        .hamburger-button {
+            margin-left: 15px;
+        }
+        .hamburger-links {
+            top: 60px;
+        }
+
+        .container {
+            margin: 20px 15px;
+            padding: 20px;
+        }
+        .page-header h1 {
+            font-size: 28px;
+        }
+        .page-header p {
+            font-size: 16px;
+        }
+        .contact-info-grid {
+            grid-template-columns: 1fr; /* عمود واحد على الجوال */
+            gap: 20px;
+        }
+        .contact-card i,
+        .contact-card img {
+            font-size: 45px;
+            width: 45px;
+            height: 45px;
+        }
+        .contact-card a {
+            font-size: 16px;
+        }
+        .contact-card span {
+            font-size: 14px;
+        }
+        .why-contact-us h2,
+        .map-section h2,
+        .contact-form-section h2 {
+            font-size: 24px;
+        }
+        .benefits-list .benefit-item {
+          font-size: 14px;
+          padding: 12px 15px;
+        }
+        .benefits-list .benefit-item i {
+          font-size: 18px;
+        }
+        .map-section iframe {
+            height: 280px;
+        }
+        .contact-form label {
+            font-size: 14px;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            font-size: 15px;
+        }
+        .contact-form button {
+            padding: 12px 25px;
+            font-size: 16px;
+        }
+        .btn-whatsapp, .btn-call {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
     }
   </style>
 </head>
 <body>
 
-  <!-- ✅ القائمة -->
-  <nav class="nav-bar">
-    <a href="index.html"><img src="https://i.imgur.com/a7dzTKl.png" class="logo" alt="شعار"> الرئيسية</a>
-    <a href="about.html"><i class="fas fa-users"></i> من نحن</a>
-    <a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a>
-    <a href="products.html"><i class="fas fa-boxes"></i> منتجاتنا</a>
-    <a href="difference.html"><i class="fas fa-balance-scale"></i> الفرق بين بطحاء الرياض وتيماء</a>
-    <a href="contact.html"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
-    <a href="services.html"><i class="fas fa-tools"></i> خدماتنا</a>
-  </nav>
+  <div class="hamburger-container">
+      <button class="hamburger-button" onclick="toggleMenu()">
+          <img alt="قائمة" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
+      </button>
 
-  <!-- ✅ محتوى صفحة الاتصال -->
-  <div class="contact-box">
-    <ul class="contact-list">
-      <li>
-        <a href="tel:0537216061" class="contact-item" target="_blank" rel="noopener">
-          <img src="https://img.icons8.com/color/48/000000/phone.png" alt="جوال" />
-          <span>0537216061</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://wa.me/966537216061" class="contact-item" target="_blank" rel="noopener">
-          <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="واتساب" />
-          <span>محادثة مباشرة عبر واتساب</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://facebook.com" class="contact-item" target="_blank" rel="noopener">
-          <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="فيسبوك" />
-          <span>facebook.com</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://twitter.com/sayafsy" class="contact-item" target="_blank" rel="noopener">
-          <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="تويتر" />
-          <span>تابعنا على تويتر</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://haraj.com.sa/11135004515" class="contact-item" target="_blank" rel="noopener">
-          <img src="https://i.imgur.com/njMAgvE.png" alt="حراج" />
-          <span>صفحتنا على حراج</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://maps.app.goo.gl/BFuVCx947LyDZ6LW6" class="contact-item" target="_blank" rel="noopener">
-          <img src="https://img.icons8.com/color/48/000000/marker.png" alt="الموقع" />
-          <span style="text-decoration: underline;">مكة المكرمة</span>
-        </a>
-      </li>
-    </ul>
+      <div class="horizontal-nav-links">
+          <a href="products.html"><i class="fas fa-shopping-cart"></i> منتجاتنا</a>
+          <a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a>
+          <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a> </div>
+
+      <div class="hamburger-links" id="hamburger-links">
+          <a href="index.html"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
+          <a href="about.html"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a>
+          <a href="services.html"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
+          <a href="products.html"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
+          <a href="gallery.html"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
+          <a href="index.html#projects"><img alt="المشاريع" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
+          <a href="testimonials.html"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
+          <a href="index.html#faq"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
+          <a href="certificates.html"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
+          <a href="blog.html"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
+          <a href="contact.html"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
+      </div>
   </div>
+
+  <section class="page-header">
+    <h1>تواصلوا معنا – بطحاء مكة</h1>
+    <p>فريقنا المختص جاهز دائمًا لتقديم الدعم والإجابة على استفساراتكم حول جميع احتياجاتكم من مواد البناء. لا تترددوا في الاتصال بنا أو مراسلتنا!</p>
+  </section>
+
+  <div class="container">
+    <section class="contact-info-section">
+      <h2>قنوات الاتصال المباشر</h2>
+      <p style="font-size: 16px; color: #666; margin-bottom: 30px;">
+        اختر الوسيلة التي تناسبك للتواصل مع فريق الدعم والمبيعات لدينا.
+      </p>
+      <div class="contact-info-grid">
+        <div class="contact-card">
+          <a href="tel:0537216061" target="_blank" rel="noopener">
+            <i class="fas fa-phone-alt"></i>
+            <h3>اتصال هاتفي</h3>
+            <span>0537216061</span>
+            <p style="font-size: 14px; color: #777; margin-top: 5px;">للاستفسارات العاجلة والمباشرة.</p>
+          </a>
+        </div>
+        <div class="contact-card">
+          <a href="https://wa.me/966537216061" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+            <h3>واتساب مباشر</h3>
+            <span>راسلنا الآن</span>
+            <p style="font-size: 14px; color: #777; margin-top: 5px;">للدعم السريع وطلبات عروض الأسعار.</p>
+          </a>
+        </div>
+        <div class="contact-card">
+          <a href="https://haraj.com.sa/11135004515" target="_blank" rel="noopener">
+            <img src="https://i.imgur.com/njMAgvE.png" alt="حراج" class="social-icon" />
+            <h3>صفحتنا على حراج</h3>
+            <span>زيارة المتجر</span>
+            <p style="font-size: 14px; color: #777; margin-top: 5px;">تصفح إعلاناتنا وعروضنا الحصرية.</p>
+          </a>
+        </div>
+        <div class="contact-card">
+          <a href="https://twitter.com/sayafsy" target="_blank" rel="noopener">
+            <i class="fab fa-twitter"></i>
+            <h3>تابعنا على تويتر</h3>
+            <span>@sayafsy</span>
+            <p style="font-size: 14px; color: #777; margin-top: 5px;">لآخر الأخبار والتحديثات.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    ---
+
+    <section class="why-contact-us">
+      <h2>لماذا تتواصل مع بطحاء مكة؟</h2>
+      <p style="font-size: 17px; color: #555; max-width: 700px; margin: 0 auto 30px;">
+        نحن نؤمن بأن التواصل الفعال هو مفتاح النجاح لأي مشروع. عند التواصل معنا، ستحصل على:
+      </p>
+      <div class="benefits-list">
+        <div class="benefit-item"><i class="fas fa-check-circle"></i> استشارات مجانية حول أنواع مواد البناء.</div>
+        <div class="benefit-item"><i class="fas fa-check-circle"></i> عروض أسعار تنافسية ومخصصة لمشروعك.</div>
+        <div class="benefit-item"><i class="fas fa-check-circle"></i> دعم فني متخصص وفهم لاحتياجاتك.</div>
+        <div class="benefit-item"><i class="fas fa-check-circle"></i> استجابة سريعة لجميع استفساراتك وطلباتك.</div>
+        <div class="benefit-item"><i class="fas fa-check-circle"></i> خدمة عملاء ممتازة قبل وبعد البيع.</div>
+      </div>
+    </section>
+
+    ---
+
+    <section class="contact-form-section">
+      <h2>أرسل لنا رسالة مباشرة</h2>
+      <p style="text-align: center; font-size: 16px; color: #666; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        املأ النموذج أدناه وسيقوم فريقنا بالرد عليك في أقرب وقت ممكن.
+      </p>
+      <form action="https://formspree.io/f/mjkrjopd" method="POST" class="contact-form">
+        <div class="form-group">
+          <label for="name">الاسم الكامل:</label>
+          <input type="text" id="name" name="name" required placeholder="أدخل اسمك هنا">
+        </div>
+        <div class="form-group">
+          <label for="email">البريد الإلكتروني:</label>
+          <input type="email" id="email" name="email" required placeholder="example@domain.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">رقم الجوال:</label>
+          <input type="tel" id="phone" name="phone" placeholder="05XXXXXXXX" pattern="[0-9]{10}" title="يرجى إدخال رقم جوال سعودي صحيح (10 أرقام)">
+        </div>
+        <div class="form-group">
+          <label for="subject">الموضوع:</label>
+          <input type="text" id="subject" name="subject" placeholder="استفسار عن طلب، عرض سعر، إلخ.">
+        </div>
+        <div class="form-group">
+          <label for="message">رسالتك:</label>
+          <textarea id="message" name="message" rows="6" required placeholder="اكتب رسالتك هنا..."></textarea>
+        </div>
+        <button type="submit">إرسال الرسالة</button>
+      </form>
+      <p style="text-align: center; font-size: 13px; color: #999; margin-top: 20px;">
+        *يرجى ملاحظة أن هذا النموذج يحتاج إلى برمجة خلفية (مثل PHP أو Node.js) ليعمل بشكل كامل على إرسال الرسائل.
+      </p>
+    </section>
+  </div>
+
+  <section class="map-section">
+    <h2>موقعنا في قلب مكة المكرمة</h2>
+    <p>يمكنكم زيارتنا في مقرنا الرئيسي أو استخدام الخريطة أدناه للحصول على الاتجاهات الدقيقة.</p>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3714.4098939226315!2d39.816656!3d21.422502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDI1JzIwLjkiTiAzOcKwNDknMDEuOSJF!5e0!3m2!1sen!2ssa!4v1678901234567!5m2!1sen!2ssa"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+
+  <div class="buttons">
+      <a class="btn-whatsapp" href="https://wa.me/966537216061" target="_blank">راسلنا عبر واتساب</a>
+      <a class="btn-call" href="tel:0537216061">اتصل الآن</a>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 جميع الحقوق محفوظة – بطحاء مكة
+  </div>
+
+  <script>
+      // JavaScript للقائمة الجانبية (Hamburger Menu)
+      function toggleMenu() {
+          var links = document.getElementById('hamburger-links');
+          links.style.display = (links.style.display === 'block') ? 'none' : 'block';
+      }
+
+      document.addEventListener('click', function(event) {
+          var menu = document.getElementById('hamburger-links');
+          var button = document.querySelector('.hamburger-button');
+          if (menu && button) {
+              if (menu.style.display === 'block') {
+                  if (!menu.contains(event.target) && !button.contains(event.target)) {
+                      menu.style.display = 'none';
+                  }
+              }
+          }
+      });
+  </script>
 
 </body>
 </html>

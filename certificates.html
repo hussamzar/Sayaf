@@ -2,18 +2,529 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>الشهادات</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الشهادات والاعتمادات - بطحاء مكة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body { font-family: 'Almarai', sans-serif; background: #f9f9f9; padding: 20px; color: #333; }
-    .box { background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); max-width: 900px; margin: auto; }
-    h1 { color: #004d3c; margin-bottom: 20px; text-align: center; }
+    body {
+      font-family: 'Tajawal', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfaf8; /* لون الخلفية الرملي الفاتح */
+      color: #333;
+      direction: rtl;
+      padding-top: 60px; /* مسافة أعلى للـ hamburger-container الثابت */
+      overflow-x: hidden; /* لمنع أي تمرير أفقي */
+    }
+
+    /* ✅ القائمة العلوية (Hamburger) - بنفس تنسيق الصفحات السابقة */
+    .hamburger-container {
+        background: #e0c9a6; /* لون رملي فاتح */
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* محاذاة كل المحتوى لليمين (بداية الاتجاه RTL) */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10000;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+        width: 100%; /* تأكد أن العرض 100% */
+        box-sizing: border-box; /* لضمان أن البادينغ لا يزيد العرض */
+    }
+
+    .hamburger-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-left: 10px; /* مسافة بين زر الهامبرغر والقوائم الأفقية */
+        order: 0; /* لجعل زر الهامبرغر أول عنصر (على اليمين) في الاتجاه RTL */
+    }
+
+    .hamburger-button img {
+        width: 30px;
+        height: 30px;
+        transition: transform 0.2s ease;
+    }
+    .hamburger-button:hover img {
+        transform: rotate(90deg);
+    }
+
+    .hamburger-links {
+        display: none; /* مخفية بشكل افتراضي */
+        position: absolute;
+        top: 60px; /* تقع أسفل الشريط العلوي */
+        right: 10px; /* تظهر على اليمين الآن */
+        left: auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        padding: 15px;
+        text-align: right;
+        min-width: 200px;
+        z-index: 9999;
+        border: 1px solid #ddd;
+    }
+
+    .hamburger-links a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 15px;
+        padding: 10px 12px;
+        color: #004d3c !important;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background 0.3s, transform 0.2s;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .hamburger-links a:hover {
+        background: #f0f0f0;
+        transform: translateX(-5px);
+    }
+
+    .hamburger-links a img {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* الروابط الأفقية - ظاهرة دائمًا على جميع الشاشات مع الأيقونات */
+    .horizontal-nav-links {
+        display: flex; /* لتبقى ظاهرة دائمًا */
+        gap: 20px;
+        justify-content: flex-start; /* محاذاة روابطها الداخلية لليمين */
+        margin: 0;
+        order: 1; /* لجعل الروابط بعد زر الهامبرغر */
+        flex-grow: 1; /* لتأخذ المساحة المتاحة وتدفع زر الهامبرغر لليمين */
+    }
+    .horizontal-nav-links a {
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        color: #333 !important;
+        transition: color 0.3s, transform 0.2s, background-color 0.3s;
+        white-space: nowrap; /* لمنع النصوص من الالتفاف */
+        display: inline-flex; /* لترتيب الأيقونة والنص */
+        align-items: center;
+        gap: 5px; /* مسافة بين الأيقونة والنص */
+        padding: 5px 8px; /* مسافة داخلية للرابط */
+        border-radius: 5px;
+    }
+    .horizontal-nav-links a:hover {
+        color: #004d3c !important;
+        transform: translateY(-1px);
+        background-color: rgba(255, 255, 255, 0.3); /* خلفية خفيفة عند التحويم */
+    }
+    .horizontal-nav-links a img {
+        width: 18px; /* حجم الأيقونة */
+        height: 18px;
+        vertical-align: middle; /* للتأكد من المحاذاة */
+    }
+
+    /* ✅ عنوان الصفحة (رأس الشهادات) */
+    .page-header {
+      background-color: #eafaf5; /* خلفية فاتحة لرأس الصفحة */
+      text-align: center;
+      padding: 30px 15px;
+      margin-bottom: 30px;
+    }
+
+    .page-header h1 {
+      color: #00765a;
+      font-size: 32px;
+      margin: 0;
+    }
+    .page-header p {
+      color: #555;
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ✅ محتوى الشهادات */
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      text-align: center; /* لتوسيط المحتوى */
+      display: flex; /* لترتيب العناصر بمرونة */
+      flex-wrap: wrap; /* للسماح بالالتفاف على الشاشات الأصغر */
+      justify-content: center; /* توسيط العناصر */
+      gap: 25px; /* مسافة بين العناصر */
+    }
+
+    .certificate-item {
+        margin-bottom: 20px; /* تقليل المسافة البينية بين العناصر */
+        padding: 25px; /* زيادة التباعد الداخلي */
+        border: 1px solid #eee;
+        border-radius: 12px; /* حواف أكثر استدارة */
+        background-color: #fcfcfc;
+        width: calc(50% - 25px); /* عرض تقديري، يمكن تعديله */
+        vertical-align: top;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* ظل أعمق قليلاً */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex; /* لجعل المحتوى داخله مرنًا */
+        flex-direction: column; /* ترتيب المحتوى عمودياً */
+        align-items: center; /* توسيط المحتوى داخله */
+        text-align: center;
+        box-sizing: border-box; /* لضمان أن البادينغ لا يزيد العرض */
+    }
+
+    .certificate-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .certificate-item .cert-icon {
+        font-size: 60px; /* حجم أيقونة كبير */
+        color: #00765a; /* لون الأيقونة */
+        margin-bottom: 20px;
+    }
+
+    .certificate-item h2 {
+        color: #004d3c;
+        font-size: 26px;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+    .certificate-item p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #555;
+        flex-grow: 1; /* لتأخذ المساحة المتاحة وتدفع الزر للأسفل */
+        margin-bottom: 20px;
+    }
+
+    .certificate-item .view-pdf-btn {
+        display: inline-flex; /* لترتيب الأيقونة والنص */
+        align-items: center;
+        gap: 8px; /* مسافة بين الأيقونة والنص */
+        background-color: #00765a;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .certificate-item .view-pdf-btn:hover {
+        background-color: #004d3c;
+        transform: translateY(-2px);
+    }
+
+    /* ✅ أزرار التواصل */
+    .buttons {
+      text-align: center;
+      margin: 50px 0 10px;
+    }
+
+    .btn-whatsapp,
+    .btn-call {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 8px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+    }
+
+    .btn-call {
+      background-color: #007bff;
+    }
+
+    /* ✅ الفوتر */
+    .footer {
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      margin: 40px 0 20px;
+    }
+
+    /* خصائص النافذة المنبثقة (Modal) */
+    .modal {
+      display: none; /* مخفية بشكل افتراضي */
+      position: fixed; /* تبقى في مكانها حتى عند التمرير */
+      z-index: 10001; /* فوق كل شيء آخر */
+      padding-top: 60px; /* مسافة من الأعلى */
+      left: 0;
+      top: 0;
+      width: 100%; /* عرض كامل */
+      height: 100%; /* ارتفاع كامل */
+      overflow: auto; /* تمكين التمرير إذا كانت الصورة أكبر من الشاشة */
+      background-color: rgba(0,0,0,0.9); /* خلفية سوداء شفافة */
+      box-sizing: border-box; /* لضمان أن البادينغ لا يزيد العرض */
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 90%; /* عرض الصورة 90% من عرض النافذة المنبثقة */
+      max-width: 700px; /* أقصى عرض للصورة */
+      height: auto; /* للحفاظ على نسبة العرض إلى الارتفاع */
+      object-fit: contain; /* لضمان احتواء الصورة بالكامل داخل المساحة المتاحة */
+    }
+
+    /* زر الإغلاق */
+    .close-button {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+      z-index: 10002;
+    }
+
+    .close-button:hover,
+    .close-button:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        body {
+            padding-top: 100px;
+            box-sizing: border-box; /* لضمان أن البادينغ لا يزيد العرض */
+        }
+        /* استجابة القائمة العلوية للهواتف */
+        .hamburger-container {
+            padding: 8px 12px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 5px;
+        }
+        .hamburger-button {
+            order: 0;
+            margin-left: 10px;
+            margin-right: 0;
+        }
+        .horizontal-nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 8px;
+            padding: 0;
+            width: auto;
+            order: 1;
+            margin: 0;
+            flex-grow: 1;
+        }
+        .horizontal-nav-links a {
+            font-size: 13px;
+            padding: 6px 10px;
+        }
+        .horizontal-nav-links a img {
+            width: 16px;
+            height: 16px;
+        }
+        .hamburger-links {
+            top: 90px;
+            right: 10px;
+            left: auto;
+        }
+
+        .page-header h1 {
+            font-size: 26px;
+        }
+        .page-header p {
+            font-size: 16px;
+        }
+        .container {
+            padding: 15px;
+            margin: 20px auto;
+            flex-direction: column; /* عمود واحد على الجوال */
+            gap: 20px;
+            width: 100%; /* تأكد أن العرض 100% */
+            box-sizing: border-box; /* لضمان أن البادينغ لا يزيد العرض */
+        }
+        .certificate-item {
+            width: 95%; /* عرض كامل على الجوال */
+            min-width: unset;
+            margin-left: auto; /* توسيط العنصر */
+            margin-right: auto; /* توسيط العنصر */
+        }
+        .certificate-item .cert-icon {
+            font-size: 50px;
+        }
+        .certificate-item h2 {
+            font-size: 22px;
+        }
+        .certificate-item p {
+            font-size: 15px;
+        }
+        .certificate-item .view-pdf-btn {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+        .btn-whatsapp, .btn-call {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+        /* استجابة النافذة المنبثقة للهواتف */
+        .modal {
+            padding-top: 30px; /* تقليل المسافة العلوية للهواتف */
+        }
+        .modal-content {
+            width: 95%; /* زيادة عرض الصورة قليلاً على الهواتف */
+        }
+        .close-button {
+            font-size: 30px;
+            top: 10px;
+            right: 20px;
+        }
+    }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>الشهادات</h1>
-    <p>نملك السجل التجاري وشهادة تصنيف البلديات، ونعمل ضمن المعايير الرسمية لنيل ثقة العملاء.</p>
+
+  <div class="hamburger-container">
+      <button class="hamburger-button" onclick="toggleMenu()">
+          <img alt="قائمة" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
+      </button>
+
+      <div class="horizontal-nav-links">
+          <a href="index.html#contact"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
+          <a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a>
+          <a href="services.html"><i class="fas fa-tools"></i> خدماتنا</a>
+      </div>
+
+      <div class="hamburger-links" id="hamburger-links">
+          <a href="index.html"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
+          <a href="about.html"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a>
+          <a href="index.html#services"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
+          <a href="products.html"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
+          <a href="gallery.html"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
+          <a href="index.html#projects"><img alt="المشاريع" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
+          <a href="testimonials.html"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
+          <a href="index.html#faq"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
+          <a href="index.html#payment"><img alt="طرق الدفع" src="https://img.icons8.com/fluency/20/money.png"/> طرق الدفع</a>
+          <a href="certificates.html"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
+          <a href="blog.html"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
+          <a href="index.html#contact"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
+      </div>
   </div>
+
+  <section class="page-header">
+    <h1>شهاداتنا واعتمداتنا</h1>
+    <p>نعمل بشفافية ومصداقية لضمان أعلى مستويات الجودة والثقة لعملائنا.</p>
+  </section>
+
+  <div class="container">
+    <div class="certificate-item">
+        <i class="fas fa-file-invoice cert-icon"></i>
+        <h2>السجل التجاري</h2>
+        <p>يؤكد السجل التجاري الرسمي شرعية أعمالنا والتزامنا بجميع الأنظمة واللوائح التجارية في المملكة العربية السعودية.</p>
+        <a href="#" class="view-pdf-btn" onclick="openModal('images/1.png'); return false;">
+            <i class="fas fa-file-pdf"></i> عرض السجل التجاري
+        </a>
+    </div>
+
+    <div class="certificate-item">
+        <i class="fas fa-receipt cert-icon"></i>
+        <h2>الشهادة الضريبية</h2>
+        <p>نلتزم بكافة المتطلبات الضريبية ونقدم شهادة ضريبية حديثة، مما يعكس شفافيتنا المالية واهتمامنا بالمسؤولية القانونية.</p>
+        <a href="#" class="view-pdf-btn" onclick="openModal('images/3.png'); return false;">
+            <i class="fas fa-file-pdf"></i> عرض الشهادة الضريبية
+        </a>
+    </div>
+
+    <div class="certificate-item">
+        <i class="fas fa-award cert-icon"></i>
+        <h2>شهادة تصنيف البلديات</h2>
+        <p>نفخر بحصولنا على شهادة تصنيف من البلديات، مما يؤكد التزامنا بالمعايير الفنية والمهنية في كافة مشاريعنا وأعمالنا.</p>
+        <a href="#" class="view-pdf-btn" onclick="return false;">
+            <i class="fas fa-file-pdf"></i> غير متاح للعرض
+        </a>
+    </div>
+
+    <div class="certificate-item">
+        <i class="fas fa-certificate cert-icon"></i>
+        <h2>شهادات الجودة الأخرى</h2>
+        <p>نسعى دائمًا لتطبيق أعلى معايير الجودة، ونعمل باستمرار على تطوير عملياتنا لضمان رضا العملاء وتحقيق التميز.</p>
+        <a href="#" class="view-pdf-btn" onclick="return false;">
+            <i class="fas fa-file-pdf"></i> غير متاح للعرض
+        </a>
+    </div>
+  </div>
+
+  <div class="buttons">
+      <a class="btn-whatsapp" href="https://wa.me/966537216061" target="_blank">راسلنا عبر واتساب</a>
+      <a class="btn-call" href="tel:0537216061">اتصل الآن</a>
+  </div>
+
+  <div class="footer">
+    © 2025 جميع الحقوق محفوظة – بطحاء مكة
+  </div>
+
+  <div id="imageModal" class="modal">
+    <span class="close-button" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script>
+      function toggleMenu() {
+          var links = document.getElementById('hamburger-links');
+          links.style.display = (links.style.display === 'block') ? 'none' : 'block';
+      }
+
+      document.addEventListener('click', function(event) {
+          var menu = document.getElementById('hamburger-links');
+          var button = document.querySelector('.hamburger-button');
+          if (menu && button) {
+              if (menu.style.display === 'block') {
+                  if (!menu.contains(event.target) && !button.contains(event.target)) {
+                      menu.style.display = 'none';
+                  }
+              }
+          }
+      });
+
+      // وظائف جديدة للنافذة المنبثقة
+      function openModal(imageSrc) {
+          var modal = document.getElementById("imageModal");
+          var modalImage = document.getElementById("modalImage");
+          modal.style.display = "block";
+          modalImage.src = imageSrc;
+      }
+
+      function closeModal() {
+          var modal = document.getElementById("imageModal");
+          modal.style.display = "none";
+      }
+
+      // إغلاق النافذة المنبثقة عند النقر خارج الصورة
+      window.onclick = function(event) {
+        var modal = document.getElementById("imageModal");
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+  </script>
+
 </body>
 </html>

@@ -1,211 +1,536 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>خدماتنا | بطحاء مكة</title>
-  <meta name="description" content="خدماتنا في بطحاء مكة لتوريد بطحاء الرياض، بطحاء تيماء، والرمل والمواد الإنشائية بجودة عالية وسرعة توصيل في مكة المكرمة.">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>خدماتنا – بطحاء مكة</title>
+  <meta name="description" content="اكتشف خدمات بطحاء مكة المتكاملة لتوريد مواد البناء: بطحاء الرياض وتيماء، دفان، رمل، وغيرها بجودة عالية وسرعة توصيل في مكة المكرمة." />
+  <meta name="keywords" content="خدمات بطحاء مكة، توريد بطحاء، دفان مكة، رمل، مواد بناء، توصيل مواد بناء، مكة" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="بطحاء مكة" />
+  <meta property="og:title" content="خدمات بطحاء مكة – توريد مواد البناء في مكة" />
+  <meta property="og:description" content="بطحاء مكة تقدم خدمات توريد متكاملة لمواد البناء الأساسية بجودة موثوقة وسرعة توصيل. تعرف على جميع خدماتنا الآن." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bat7a-makkah.com/services.html" />
+  <meta property="og:image" content="https://i.imgur.com/zmELsgo.jpeg" /> <meta property="og:locale" content="ar_AR" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
       font-family: 'Tajawal', sans-serif;
-      background-color: #fdfaf8;
-      margin: 0;
+      background: #fdfaf8; /* لون رملي فاتح للخلفية */
       padding: 0;
-      color: #222;
+      margin: 0;
+      color: #333;
       direction: rtl;
+      overflow-x: hidden; /* لمنع التمرير الأفقي */
+      padding-top: 60px; /* مسافة أعلى للـ hamburger-container الثابت */
     }
 
-    /* ✅ شريط التنقل */
-    .nav-bar {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 14px;
-      padding: 12px 10px;
-      background: linear-gradient(to left, #007965, #0f9b8e);
-      flex-wrap: wrap;
-      border-bottom: 2px solid #00765a;
-      position: sticky;
-      top: 0;
-      z-index: 999;
+    /* --- */
+    /* ✅ القائمة العلوية (Hamburger) - منسوخة من صفحات سابقة */
+    .hamburger-container {
+        background: #e0c9a6; /* لون رملي فاتح */
+        padding: 10px 15px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center; /* لمحاذاة رأسية */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10000;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    .nav-bar a {
-      text-decoration: none;
-      color: #ffffff;
-      font-size: 15px;
-      font-weight: bold;
-      background-color: #ffffff22;
-      border: 1px solid #ffffff33;
-      border-radius: 10px;
-      padding: 8px 16px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.3s ease-in-out;
-      backdrop-filter: blur(4px);
+    .hamburger-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-left: 15px;
     }
 
-    .nav-bar a:hover {
-      background-color: #ffffff44;
-      transform: translateY(-2px);
+    .hamburger-button img {
+        width: 30px;
+        height: 30px;
+        transition: transform 0.2s ease;
+    }
+    .hamburger-button:hover img {
+        transform: rotate(90deg);
     }
 
-    .nav-bar img.logo {
-      width: 22px;
-      height: 22px;
-      border-radius: 4px;
+    .hamburger-links {
+        display: none; /* مخفية بشكل افتراضي */
+        position: absolute;
+        top: 60px; /* تقع أسفل الشريط العلوي */
+        right: 10px; /* تظهر على اليمين الآن */
+        left: auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        padding: 15px;
+        text-align: right;
+        min-width: 200px;
+        z-index: 9999;
+        border: 1px solid #ddd;
     }
 
-    @media (max-width: 600px) {
-      .nav-bar {
+    .hamburger-links a {
+        display: flex;
+        align-items: center;
         gap: 10px;
-        padding: 10px 5px;
-      }
-
-      .nav-bar a {
-        font-size: 13px;
-        padding: 7px 10px;
-      }
+        font-weight: 700;
+        font-size: 15px;
+        padding: 10px 12px;
+        color: #004d3c !important;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background 0.3s, transform 0.2s;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
 
-    /* ✅ البانر */
-    .banner {
-      background: linear-gradient(to right, #0f9b8e, #007965);
-      color: white;
+    .hamburger-links a:hover {
+        background: #f0f0f0;
+        transform: translateX(-5px);
+    }
+
+    .hamburger-links a img {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* الروابط الأفقية - منسوخة من صفحات سابقة */
+    .horizontal-nav-links {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-right: 15px;
+        white-space: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 5px;
+    }
+    .horizontal-nav-links::-webkit-scrollbar {
+        display: none;
+    }
+    .horizontal-nav-links {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .horizontal-nav-links a {
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        color: #333 !important;
+        transition: color 0.3s, transform 0.2s, background-color 0.3s;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 8px;
+        border-radius: 5px;
+    }
+    .horizontal-nav-links a:hover {
+        color: #004d3c !important;
+        transform: translateY(-1px);
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    .horizontal-nav-links a i {
+        width: 18px;
+        height: 18px;
+        font-size: 18px;
+        vertical-align: middle;
+    }
+
+    /* --- */
+    /* ✅ أنماط صفحة الخدمات الجديدة (معدلة لتناسب التصميم) */
+    .container {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 30px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        text-align: right;
+    }
+
+    .page-header {
+      background-color: #eafaf5; /* خلفية فاتحة لرأس الصفحة */
       text-align: center;
-      padding: 60px 20px;
-      border-radius: 0 0 20px 20px;
+      padding: 30px 15px;
+      margin-bottom: 30px;
+      border-radius: 12px; /* حواف مستديرة */
     }
 
-    .banner h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
+    .page-header h1 {
+      color: #00765a;
+      font-size: 34px;
+      margin: 0 0 10px 0;
+      font-weight: 700;
+    }
+    .page-header p {
+      color: #555;
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
     }
 
-    .banner p {
+    /* قسم الخدمات */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+      justify-content: center;
+    }
+
+    .service-card {
+      background: #fdfdfd;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      overflow: hidden;
+      text-align: right;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #eef;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end; /* لمحاذاة النص والأيقونة لليمين */
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+
+    .service-card i {
+      font-size: 45px;
+      color: #00765a;
+      margin-bottom: 15px;
+      text-align: right; /* ضمان المحاذاة لليمين */
+      width: 100%; /* لتأكيد أن الأيقونة تأخذ العرض الكامل للمحاذاة */
+    }
+
+    .service-card h3 {
+      color: #004d3c;
       font-size: 20px;
-      margin-bottom: 25px;
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-weight: 700;
+      text-align: right;
+      width: 100%;
     }
 
-    .banner a {
+    .service-card p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 0;
+      text-align: right;
+    }
+
+    /* قسم لماذا تختارنا */
+    .why-choose-us {
+      background-color: #f8fcfb; /* لون فاتح متناسق */
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 30px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+    .why-choose-us h2 {
+      color: #00765a;
+      font-size: 28px;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+    .why-choose-us .reasons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .reason-item {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      text-align: right;
+      transition: transform 0.2s ease;
+    }
+    .reason-item:hover {
+        transform: translateY(-3px);
+    }
+    .reason-item i {
+      font-size: 35px;
+      color: #d2b48c; /* لون رملي للأيقونات */
+      margin-bottom: 15px;
+    }
+    .reason-item h3 {
+      color: #004d3c;
+      font-size: 18px;
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .reason-item p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 0;
+      text-align: right;
+    }
+
+
+    /* ✅ أزرار التواصل (منسوخة من الصفحات السابقة) */
+    .buttons {
+      text-align: center;
+      margin: 50px 0 10px;
+    }
+
+    .btn-whatsapp,
+    .btn-call {
       display: inline-block;
       padding: 12px 25px;
-      margin: 5px;
+      margin: 8px;
       border-radius: 8px;
+      font-weight: bold;
       color: white;
       text-decoration: none;
-      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .btn-whatsapp {
       background-color: #25D366;
     }
 
+    .btn-whatsapp:hover {
+      background-color: #1DA851;
+      transform: translateY(-2px);
+    }
+
     .btn-call {
       background-color: #007bff;
     }
 
-    /* ✅ محتوى الصفحة */
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 20px;
-      background: #fff;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
-      border-radius: 12px;
+    .btn-call:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
     }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #006c45;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      background-color: #f1f1f1;
-      margin: 12px 0;
-      padding: 15px;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-
-    li:hover {
-      background-color: #e1e1e1;
-    }
-
-    .buttons {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .buttons a {
-      display: inline-block;
-      padding: 12px 25px;
-      margin: 10px;
-      border-radius: 8px;
-      font-weight: bold;
-      color: white;
-      text-decoration: none;
-    }
-
+    /* ✅ الفوتر (منسوخة من الصفحات السابقة) */
     .footer {
       text-align: center;
       font-size: 14px;
       color: #777;
       margin: 40px 0 20px;
     }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+        body {
+            padding-top: 60px;
+            box-sizing: border-box;
+        }
+        .hamburger-container {
+            padding: 10px 15px;
+        }
+        .horizontal-nav-links {
+            gap: 10px;
+            margin-right: 10px;
+            font-size: 13px;
+        }
+        .horizontal-nav-links a {
+            font-size: 13px;
+            padding: 5px 6px;
+        }
+        .hamburger-button {
+            margin-left: 15px;
+        }
+        .hamburger-links {
+            top: 60px;
+        }
+
+        .container {
+            margin: 20px 15px;
+            padding: 20px;
+        }
+        .page-header h1 {
+            font-size: 28px;
+        }
+        .page-header p {
+            font-size: 16px;
+        }
+        .services-grid {
+            grid-template-columns: 1fr; /* عمود واحد على الجوال */
+            gap: 20px;
+        }
+        .service-card i {
+            font-size: 35px;
+        }
+        .service-card h3 {
+            font-size: 18px;
+        }
+        .service-card p {
+            font-size: 14px;
+        }
+        .why-choose-us h2 {
+            font-size: 24px;
+        }
+        .reason-item i {
+            font-size: 30px;
+        }
+        .reason-item h3 {
+            font-size: 17px;
+        }
+        .reason-item p {
+            font-size: 13px;
+        }
+        .btn-whatsapp, .btn-call {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+    }
   </style>
 </head>
 <body>
 
-  <!-- ✅ القائمة -->
-  <nav class="nav-bar">
-    <a href="index.html"><img src="https://i.imgur.com/a7dzTKl.png" class="logo" alt="شعار"> الرئيسية</a>
-    <a href="about.html"><i class="fas fa-users"></i> من نحن</a>
-    <a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a>
-    <a href="products.html"><i class="fas fa-boxes"></i> منتجاتنا</a>
-    <a href="difference.html"><i class="fas fa-balance-scale"></i> الفرق بين بطحاء الرياض وتيماء</a>
-    <a href="contact.html"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
-    <a href="services.html"><i class="fas fa-tools"></i> خدماتنا</a>
-  </nav>
+  <div class="hamburger-container">
+      <button class="hamburger-button" onclick="toggleMenu()">
+          <img alt="قائمة" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
+      </button>
 
-  <!-- ✅ البانر -->
-  <div class="banner">
-    <h1>خدماتنا في بطحاء مكة</h1>
-    <p>نوفر بطحاء الرياض وتيماء والرمل ومواد البناء في مكة بأفضل الأسعار وأسرع توصيل</p>
-    <a class="btn-whatsapp" href="https://wa.me/966537216061" target="_blank">راسلنا واتساب</a>
-    <a class="btn-call" href="tel:966537216061">اتصل الآن</a>
+      <div class="horizontal-nav-links">
+          <a href="products.html"><i class="fas fa-shopping-cart"></i> منتجاتنا</a>
+          <a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a>
+          <a href="index.html#contact"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
+      </div>
+
+      <div class="hamburger-links" id="hamburger-links">
+          <a href="index.html"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
+          <a href="about.html"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a>
+          <a href="services.html"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
+          <a href="products.html"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
+          <a href="gallery.html"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
+          <a href="index.html#projects"><img alt="المشاريع" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
+          <a href="testimonials.html"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
+          <a href="index.html#faq"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
+          <a href="certificates.html"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
+          <a href="blog.html"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
+          <a href="index.html#contact"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
+      </div>
   </div>
 
-  <!-- ✅ المحتوى -->
-  <div class="container">
-    <h2>نقدم لكم</h2>
-    <ul>
-      <li>توريد بطحاء الرياض بجميع المقاسات للمشاريع والمقاولين.</li>
-      <li>توريد بطحاء تيماء ذات جودة عالية بأفضل الأسعار.</li>
-      <li>توريد الرمل الأحمر والرمل الأبيض حسب المواصفات المطلوبة.</li>
-      <li>خدمة توصيل المواد الإنشائية إلى جميع أحياء مكة المكرمة.</li>
-      <li>توفير مواد البناء الأخرى مثل البلوك، الخرسانة الجاهزة، والمزيد.</li>
-    </ul>
+  <section class="page-header">
+    <h1>خدماتنا المتكاملة في توريد مواد البناء</h1>
+    <p>في بطحاء مكة، نقدم مجموعة شاملة من خدمات توريد مواد البناء الأساسية، مصممة لتلبية احتياجات مشاريعك المختلفة بكفاءة وجودة عالية.</p>
+  </section>
 
-    <div class="buttons">
-      <a class="btn-whatsapp" href="https://wa.me/966537216061" target="_blank">راسلنا الآن</a>
-      <a class="btn-call" href="tel:966537216061">اتصل بنا مباشرة</a>
+  <div class="container">
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-truck-loading"></i>
+        <h3>توريد البطحاء بكافة أنواعها</h3>
+        <p>نقدم أجود أنواع البطحاء (بطحاء الرياض، بطحاء تيماء) التي تلبي أعلى معايير الجودة لمختلف استخدامات البناء، من التلييس وحتى التشطيبات الدقيقة.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-dump-truck"></i>
+        <h3>توريد الدفان والسبيز</h3>
+        <p>نوفر مواد الدفان النظيفة والخالية من الشوائب، بالإضافة إلى السبيز عالي الجودة لأساسات قوية وعمليات ردم متينة، مع ضمان التوريد السريع.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-hard-hat"></i>
+        <h3>توريد الخرسانة الجاهزة والطرطشة</h3>
+        <p>نؤمن توريد الخرسانة الجاهزة بجميع المقاسات وبجودة قياسية لمشاريع البناء الكبرى، بالإضافة إلى مواد الطرطشة العازلة لحماية أسطح منشآتك.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-box-open"></i>
+        <h3>توريد الرمل الأبيض والأحمر</h3>
+        <p>سواء كنت تحتاج إلى الرمل الأبيض لأعمال التشطيبات الدقيقة أو الرمل الأحمر لأغراض البناء والردم، فإننا نضمن لك أجود الأنواع وبكميات كافية.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-map-marked-alt"></i>
+        <h3>تغطية شاملة لمكة المكرمة</h3>
+        <p>تتمتع خدماتنا بتغطية واسعة تشمل جميع أحياء مكة المكرمة والمناطق المحيطة بها، لضمان وصول مواد البناء إليك أينما كنت في الوقت المحدد.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-clock"></i>
+        <h3>سرعة ودقة في التوصيل</h3>
+        <p>نلتزم بتقديم خدمة توصيل سريعة وموثوقة، بأسطول حديث من الشاحنات وسائقين محترفين، لضمان وصول المواد إلى موقعك في الوقت المحدد وبدون تأخير.</p>
+      </div>
     </div>
   </div>
 
-  <!-- ✅ الفوتر -->
-  <div class="footer">
-    &copy; 2025 جميع الحقوق محفوظة - بطحاء مكة
+  <section class="why-choose-us">
+    <h2>لماذا تختار خدمات بطحاء مكة؟</h2>
+    <div class="reasons-grid">
+      <div class="reason-item">
+        <i class="fas fa-award"></i>
+        <h3>جودة لا مثيل لها</h3>
+        <p>نحن نؤمن بأن الجودة هي أساس كل مشروع ناجح. لذلك، نحرص على توفير مواد بناء مطابقة لأعلى المواصفات والمعايير.</p>
+      </div>
+      <div class="reason-item">
+        <i class="fas fa-handshake"></i>
+        <h3>موثوقية في الأداء</h3>
+        <p>التزامنا بالمواعيد وتقديم خدمة عملاء ممتازة يجعلنا الشريك الموثوق به لمشاريعك، الكبيرة والصغيرة على حد سواء.</p>
+      </div>
+      <div class="reason-item">
+        <i class="fas fa-tags"></i>
+        <h3>أسعار تنافسية</h3>
+        <p>نقدم أفضل قيمة مقابل المال، مع أسعار شفافة ومنافسة تضمن لك الاستفادة القصوى دون المساومة على الجودة.</p>
+      </div>
+      <div class="reason-item">
+        <i class="fas fa-headset"></i>
+        <h3>دعم فني واستشارات</h3>
+        <p>فريقنا مستعد لتقديم الاستشارات الفنية ومساعدتك في اختيار المواد الأنسب لمشروعك، لضمان أفضل النتائج.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="buttons">
+      <a class="btn-whatsapp" href="https://wa.me/966537216061" target="_blank">راسلنا عبر واتساب</a>
+      <a class="btn-call" href="tel:0537216061">اتصل الآن</a>
   </div>
+
+  <div class="footer">
+    © 2025 جميع الحقوق محفوظة – بطحاء مكة
+  </div>
+
+  <script>
+      // JavaScript للقائمة الجانبية (Hamburger Menu)
+      function toggleMenu() {
+          var links = document.getElementById('hamburger-links');
+          links.style.display = (links.style.display === 'block') ? 'none' : 'block';
+      }
+
+      document.addEventListener('click', function(event) {
+          var menu = document.getElementById('hamburger-links');
+          var button = document.querySelector('.hamburger-button');
+          if (menu && button) {
+              if (menu.style.display === 'block') {
+                  if (!menu.contains(event.target) && !button.contains(event.target)) {
+                      menu.style.display = 'none';
+                  }
+              }
+          }
+      });
+  </script>
 
 </body>
 </html>

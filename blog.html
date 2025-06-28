@@ -1,19 +1,410 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <title>المدونة</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مدونة بطحاء مكة - نصائح ومعلومات</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body { font-family: 'Almarai', sans-serif; background: #f9f9f9; padding: 20px; color: #333; }
-    .box { background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); max-width: 900px; margin: auto; }
-    h1 { color: #004d3c; margin-bottom: 20px; text-align: center; }
+    body {
+      font-family: 'Tajawal', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfaf8;
+      color: #333;
+      direction: rtl;
+      padding-top: 60px; /* مسافة أعلى للـ hamburger-container الثابت */
+    }
+
+    /* ✅ القائمة العلوية (Hamburger) - بنفس تنسيق الصفحات السابقة */
+    .hamburger-container {
+        background: #e0c9a6; /* لون رملي فاتح */
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* محاذاة كل المحتوى لليمين (بداية الاتجاه RTL) */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10000;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+    }
+
+    .hamburger-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-left: 10px; /* مسافة بين زر الهامبرغر والقوائم الأفقية */
+        order: 0; /* لجعل زر الهامبرغر أول عنصر (على اليمين) في الاتجاه RTL */
+    }
+
+    .hamburger-button img {
+        width: 30px;
+        height: 30px;
+        transition: transform 0.2s ease;
+    }
+    .hamburger-button:hover img {
+        transform: rotate(90deg);
+    }
+
+    .hamburger-links {
+        display: none; /* مخفية بشكل افتراضي */
+        position: absolute;
+        top: 60px; /* تقع أسفل الشريط العلوي */
+        right: 10px; /* تظهر على اليمين الآن */
+        left: auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        padding: 15px;
+        text-align: right;
+        min-width: 200px;
+        z-index: 9999;
+        border: 1px solid #ddd;
+    }
+
+    .hamburger-links a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 15px;
+        padding: 10px 12px;
+        color: #004d3c !important;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background 0.3s, transform 0.2s;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .hamburger-links a:hover {
+        background: #f0f0f0;
+        transform: translateX(-5px);
+    }
+
+    .hamburger-links a img {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* الروابط الأفقية - ظاهرة دائمًا على جميع الشاشات مع الأيقونات */
+    .horizontal-nav-links {
+        display: flex; /* لتبقى ظاهرة دائمًا */
+        gap: 20px;
+        justify-content: flex-start; /* محاذاة روابطها الداخلية لليمين */
+        margin: 0;
+        order: 1; /* لجعل الروابط بعد زر الهامبرغر */
+        flex-grow: 1; /* لتأخذ المساحة المتاحة وتدفع زر الهامبرغر لليمين */
+    }
+    .horizontal-nav-links a {
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        color: #333 !important;
+        transition: color 0.3s, transform 0.2s, background-color 0.3s;
+        white-space: nowrap; /* لمنع النصوص من الالتفاف */
+        display: inline-flex; /* لترتيب الأيقونة والنص */
+        align-items: center;
+        gap: 5px; /* مسافة بين الأيقونة والنص */
+        padding: 5px 8px; /* مسافة داخلية للرابط */
+        border-radius: 5px;
+    }
+    .horizontal-nav-links a:hover {
+        color: #004d3c !important;
+        transform: translateY(-1px);
+        background-color: rgba(255, 255, 255, 0.3); /* خلفية خفيفة عند التحويم */
+    }
+    .horizontal-nav-links a img {
+        width: 18px; /* حجم الأيقونة */
+        height: 18px;
+        vertical-align: middle; /* للتأكد من المحاذاة */
+    }
+
+
+    /* ✅ عنوان الصفحة (رأس المدونة) */
+    .page-header {
+      background-color: #eafaf5; /* خلفية فاتحة لرأس الصفحة */
+      text-align: center;
+      padding: 30px 15px;
+      margin-bottom: 30px;
+    }
+
+    .page-header h1 {
+      color: #00765a;
+      font-size: 32px;
+      margin: 0;
+      margin-bottom: 10px;
+    }
+    .page-header p {
+      color: #555;
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ✅ محتوى المدونة */
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .blog-post {
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .blog-post:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .blog-post h2 {
+      color: #004d3c;
+      font-size: 26px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .blog-post h2 img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .blog-post .post-meta {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    .blog-post p {
+      line-height: 1.8;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .blog-post a.read-more {
+      display: inline-block;
+      color: #00765a;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .blog-post a.read-more:hover {
+      color: #004d3c;
+      text-decoration: underline;
+    }
+
+    /* ✅ أزرار التواصل */
+    .buttons {
+      text-align: center;
+      margin: 30px 0 10px;
+    }
+
+    .btn-whatsapp,
+    .btn-call {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 8px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+    }
+
+    .btn-call {
+      background-color: #007bff;
+    }
+
+    /* ✅ الفوتر */
+    .footer {
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      margin: 40px 0 20px;
+    }
+
+    @media (max-width: 768px) {
+        body {
+            padding-top: 100px; /* مسافة أعلى أكبر لاستيعاب الشريط العلوي المحتمل أن يلتف */
+        }
+        /* استجابة القائمة العلوية للهواتف */
+        .hamburger-container {
+            padding: 8px 12px;
+            flex-direction: row; 
+            flex-wrap: wrap; 
+            justify-content: flex-start; 
+            align-items: center; 
+            gap: 5px; 
+        }
+        .hamburger-button {
+            order: 0; 
+            margin-left: 10px; 
+            margin-right: 0;
+        }
+        .horizontal-nav-links {
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: flex-start; 
+            gap: 8px; 
+            padding: 0;
+            width: auto; 
+            order: 1; 
+            margin: 0; 
+            flex-grow: 1;
+        }
+        .horizontal-nav-links a {
+            font-size: 13px; 
+            padding: 6px 10px; 
+        }
+        .horizontal-nav-links a img {
+            width: 16px;
+            height: 16px;
+        }
+        .hamburger-links {
+            top: 90px; 
+            right: 10px; 
+            left: auto;
+        }
+
+        .page-header h1 {
+            font-size: 24px;
+        }
+        .page-header p {
+            font-size: 15px;
+        }
+        .container {
+            padding: 15px;
+            margin: 20px auto;
+        }
+        .blog-post h2 {
+            font-size: 22px;
+        }
+        .blog-post h2 img {
+            width: 28px;
+            height: 28px;
+        }
+        .blog-post p {
+            font-size: 15px;
+        }
+        .btn-whatsapp, .btn-call {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+    }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>المدونة</h1>
-    <p>في هذا القسم نشاركك أهم النصائح والمعلومات عن مواد البناء، وأنواع البطحاء، وكيفية اختيار النوع المناسب.</p>
+
+  <div class="hamburger-container">
+      <button class="hamburger-button" onclick="toggleMenu()">
+          <img alt="قائمة" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
+      </button>
+      
+      <div class="horizontal-nav-links">
+          <a href="index.html#contact"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
+          <a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a>
+          <a href="services.html"><i class="fas fa-tools"></i> خدماتنا</a>
+      </div>
+
+      <div class="hamburger-links" id="hamburger-links">
+          <a href="index.html"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
+          <a href="about.html"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a> 
+          <a href="index.html#services"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
+          <a href="products.html"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
+          <a href="gallery.html"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
+          <a href="index.html#projects"><img alt="المشاريع" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
+          <a href="index.html#testimonials"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
+          <a href="index.html#faq"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
+          <a href="index.html#payment"><img alt="طرق الدفع" src="https://img.icons8.com/fluency/20/money.png"/> طرق الدفع</a>
+          <a href="index.html#certificates"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
+          <a href="blog.html"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
+          <a href="index.html#contact"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
+      </div>
   </div>
+
+  <section class="page-header">
+    <h1>مدونة بطحاء مكة</h1>
+    <p>محتوى شيق ومفيد حول عالم مواد البناء والبطحاء.</p>
+  </section>
+
+  <div class="container">
+
+    <div class="blog-post">
+      <h2><img src="https://img.icons8.com/fluency/32/soil.png" alt="soil icon"> اختيار البطحاء المناسبة لمشروعك: دليلك الشامل</h2>
+      <div class="post-meta">نشر في: 27 يونيو 2025 | بواسطة: فريق بطحاء مكة</div>
+      <p>
+        تُعد البطحاء من أهم المواد الأساسية في أي مشروع بناء، واختيار النوع المناسب لها يلعب دوراً حاسماً في جودة ومتانة التنفيذ. فهل تعلم أن هناك أنواعاً مختلفة من البطحاء، ولكل منها استخداماته المحددة؟ في هذا المقال، سنستعرض الفروقات بين أشهر أنواع البطحاء المتوفرة في السوق، مثل بطحاء الرياض وبطحاء تيماء، ونسلط الضوء على خصائص كل منها وكيفية اختيار الأنسب لمشروعك، سواء كان لأعمال اللياسة، الدفان، أو التشطيبات الجمالية.
+      </p>
+      <a href="#" class="read-more">اقرأ المزيد &raquo;</a>
+    </div>
+
+    <div class="blog-post">
+      <h2><img src="https://img.icons8.com/fluency/32/plasterboard.png" alt="plasterboard icon"> أسرار اللياسة الاحترافية: نصائح من الخبراء</h2>
+      <div class="post-meta">نشر في: 20 يونيو 2025 | بواسطة: المهندس خالد</div>
+      <p>
+        تعتبر اللياسة الجيدة هي الأساس لإنهاء أي جدران أو أسقف بشكل احترافي ومتين. ولكن، ما هي الأسرار وراء اللياسة التي تدوم طويلاً وتظهر بمظهر flawless؟ في هذا الدليل الشامل، يشاركك خبراؤنا أفضل النصائح والممارسات لضمان جودة أعمال اللياسة. سنتحدث عن أهمية اختيار البطحاء المناسبة، النسب الصحيحة لخلط المواد، وكيفية تجنب المشاكل الشائعة مثل التشققات والتقشير. اتبع هذه الإرشادات لتحقق أفضل النتائج في مشاريعك.
+      </p>
+      <a href="#" class="read-more">اقرأ المزيد &raquo;</a>
+    </div>
+
+    <div class="blog-post">
+      <h2><img src="https://img.icons8.com/fluency/32/truck.png" alt="truck icon"> أهمية سرعة توصيل مواد البناء لمشروعك</h2>
+      <div class="post-meta">نشر في: 15 يونيو 2025 | بواسطة: قسم اللوجستيات</div>
+      <p>
+        في عالم البناء، الوقت هو مال. تأخير وصول مواد البناء يمكن أن يؤدي إلى توقف العمل، زيادة التكاليف، وتأخير تسليم المشروع. في هذا المقال، نناقش الأثر الكبير لسرعة وكفاءة توصيل مواد البناء على سير عمل مشروعك، وكيف يمكن لاختيار مورد موثوق أن يحمي جدولك الزمني وميزانيتك. سنستعرض أيضاً العوامل التي تضمن توصيلاً سلساً وفي الوقت المحدد، من التخطيط المسبق إلى التنسيق الفعال مع الموردين.
+      </p>
+      <a href="#" class="read-more">اقرأ المزيد &raquo;</a>
+    </div>
+
+  </div>
+
+  <div class="buttons">
+      <a class="btn-whatsapp" href="https://wa.me/966537216061" target="_blank">راسلنا عبر واتساب</a>
+      <a class="btn-call" href="tel:0537216061">اتصل الآن</a>
+  </div>
+
+  <div class="footer">
+    © 2025 جميع الحقوق محفوظة – بطحاء مكة
+  </div>
+
+  <script>
+      function toggleMenu() {
+          var links = document.getElementById('hamburger-links');
+          links.style.display = (links.style.display === 'block') ? 'none' : 'block';
+      }
+
+      document.addEventListener('click', function(event) {
+          var menu = document.getElementById('hamburger-links');
+          var button = document.querySelector('.hamburger-button');
+          if (menu && button) {
+              if (menu.style.display === 'block') {
+                  if (!menu.contains(event.target) && !button.contains(event.target)) {
+                      menu.style.display = 'none';
+                  }
+              }
+          }
+      });
+  </script>
+
 </body>
 </html>
