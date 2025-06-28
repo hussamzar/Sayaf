@@ -119,7 +119,7 @@
         }
 
         .hamburger-links {
-            display: none;
+            display: none; /* مخفية بشكل افتراضي */
             position: absolute;
             top: 60px;
             right: 10px;
@@ -131,10 +131,13 @@
             min-width: 200px;
             z-index: 9999;
             border: 1px solid #ddd;
+            /* التعديل الجديد هنا لإعادة القائمة للشكل الطولي */
+            flex-direction: column; /* جعل الروابط تترتب عموديًا */
+            gap: 5px; /* مسافة بسيطة بين الروابط */
         }
 
         .hamburger-links a {
-            display: flex;
+            display: flex; /* حافظ على الفليكس لكل رابط لتحاذي الأيقونة والنص */
             align-items: center;
             gap: 10px;
             font-weight: 700;
@@ -145,6 +148,8 @@
             border-radius: 8px;
             transition: background 0.3s, transform 0.2s;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            width: 100%; /* اجعل الرابط يأخذ عرض 100% داخل القائمة */
+            box-sizing: border-box; /* لضمان أن البادينج لا يوسع الرابط خارج الحاوية */
         }
 
         .hamburger-links a:hover {
@@ -786,7 +791,7 @@
 </head>
 <body>
     <div style="display: none;">
-        توريد مواد البناء، بطحاء الرياض، بطحاء تيماء، رمل مكة، مواد بناء مكة، مورد مواد بناء، أسمنت، بلك، خرسانة، حديد، مورد بطحاء، بطحاء في مكة، توصيل مواد البناء، مواد بناء رخيصة، طابوق، كنكري، جودة عالية، تسليم سريع، أسعار منافسة، شركة مواد بناء، مستودع مواد بناء، مواد بناء بالجملة، رمل ناعم، رمل خشن، اسمنت أبيض، اسمنت أسود، بلوك أحمر، بلك عازل
+        توريد مواد البناء، بطحاء الرياض، بطحاء تيماء، رمل مكة، مواد بناء مكة، مورد مواد بناء، أسمنت، بلك، خرسانة، حديد، مورد بطحاء، بطحاء في مكة، توصيل مواد البناء، مواد بناء رخيصة، طابوق، كنكري، جودة عالية، تسليم سريع، أسعار منافسة، شركة مواد بناء، مستودع مواد بناء، مواد بناء بالجملة، رمل ناعم، رمل خشن، اسمنت أبيض، اسمنت أسود، بلوك أحمر، بلك عازل، دفان، سبيز، طرطشة عازلة، دفان بلاط، طرطشة بركاني، شاحنات مكة، رمل بناء مكة، توريد دفان، مواد البناء مكة
     </div>
 
     
@@ -797,21 +802,21 @@
         <div class="hamburger-links" id="hamburger-links">
             <a href="index.html"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
             <a href="about.html"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a> 
-<a href="#services"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
-            <a href="#products"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
-            <a href="#gallery"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
-            <a href="#projects"><img alt="المشاريع" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
-            <a href="#testimonials"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
-            <a href="#faq"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
-            <a href="#payment"><img alt="طرق الدفع" src="https://img.icons8.com/fluency/20/money.png"/> طرق الدفع</a>
-            <a href="#certificates"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
-            <a href="#blog"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
-            <a href="#contact"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
+            <a href="services.html"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
+            <a href="products.html"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
+            <a href="gallery.html"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
+            <a href="projects.html"><img alt="المشاريع" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
+            <a href="testimonials.html"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
+            <a href="faq.html"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
+            <a href="payment.html"><img alt="طرق الدفع" src="https://img.icons8.com/fluency/20/money.png"/> طرق الدفع</a>
+            <a href="certificates.html"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
+            <a href="blog.html"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
+            <a href="contact.html"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
         </div>
         <div class="horizontal-nav-links">
-            <a href="#services">خدماتنا</a>
-            <a href="#gallery">معرض الصور</a>
-            <a href="#contact">اتصل بنا</a>
+            <a href="services.html">خدماتنا</a>
+            <a href="gallery.html">معرض الصور</a>
+            <a href="contact.html">اتصل بنا</a>
         </div>
         <div class="top-contact-buttons">
             <a href="https://wa.me/966537216061" target="_blank">💬 واتساب</a>
@@ -978,8 +983,8 @@
         // سكريبت وظيفة قائمة الهامبرغر
         function toggleMenu() {
             var links = document.getElementById('hamburger-links');
-            // التبديل بين 'block' و 'none'
-            links.style.display = (links.style.display === 'block') ? 'none' : 'block';
+            // التبديل بين 'flex' و 'none'
+            links.style.display = (links.style.display === 'flex') ? 'none' : 'flex';
         }
 
         // إغلاق القائمة عند الضغط خارجها
@@ -988,11 +993,21 @@
             var button = document.querySelector('.hamburger-button');
             // التأكد من وجود القائمة والزر قبل التعامل معهما
             if (menu && button) {
-                if (menu.style.display === 'block') {
+                if (menu.style.display === 'flex') {
                     // إذا لم يكن النقر داخل القائمة ولم يكن على زر القائمة
                     if (!menu.contains(event.target) && !button.contains(event.target)) {
                         menu.style.display = 'none';
                     }
+                }
+            }
+        });
+
+        // إضافة هذا الجزء لضمان إخفاء القائمة عند تغيير حجم الشاشة (عند التحول من جوال إلى ديسكتوب مثلاً)
+        window.addEventListener('resize', function() {
+            var links = document.getElementById('hamburger-links');
+            if (window.innerWidth > 768) { // إذا كانت الشاشة أكبر من 768px (متوسط حجم الجوال)
+                if (links) {
+                    links.style.display = 'none'; // أخفي قائمة الهامبرغر
                 }
             }
         });
