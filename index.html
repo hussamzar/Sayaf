@@ -149,7 +149,7 @@
             border-radius: 8px;
             transition: background 0.3s, transform 0.2s;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            width: 100%; /* اجعل الرابط يأخذ عرض 100% داخل القائمة */
+            width: 100%; /* اجعل الرابط يأخذ عرض 100% داخل الحاوية */
             box-sizing: border-box; /* لضمان أن البادينج لا يوسع الرابط خارج الحاوية */
         }
 
@@ -791,33 +791,28 @@
     </style>
 </head>
 <body>
-    <div style="display: none;">
-        توريد مواد البناء، بطحاء الرياض، بطحاء تيماء، رمل مكة، مواد بناء مكة، مورد مواد بناء، أسمنت، بلك، خرسانة، حديد، مورد بطحاء، بطحاء في مكة، توصيل مواد البناء، مواد بناء رخيصة، طابوق، كنكري، جودة عالية، تسليم سريع، أسعار منافسة، شركة مواد بناء، مستودع مواد بناء، مواد بناء بالجملة، رمل ناعم، رمل خشن، اسمنت أبيض، اسمنت أسود، بلوك أحمر، بلك عازل، دفان، سبيز، طرطشة عازلة، دفان بلاط، طرطشة بركاني، شاحنات مكة، رمل بناء مكة، توريد دفان، مواد البناء مكة
-    </div>
-
-    
-<div class="hamburger-container">
+    <div class="hamburger-container">
         <button class="hamburger-button" onclick="toggleMenu()">
             <img alt="قائمة" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
         </button>
         <div class="hamburger-links" id="hamburger-links">
-            <a href="index.html"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
-            <a href="about.html"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a> 
-            <a href="services.html"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
-            <a href="products.html"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
-            <a href="gallery.html"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
-            <a href="projects.html"><img alt="المشاريع" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
-            <a href="testimonials.html"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
-            <a href="faq.html"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
-            <a href="payment.html"><img alt="طرق الدفع" src="https://img.icons8.com/fluency/20/money.png"/> طرق الدفع</a>
-            <a href="certificates.html"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
-            <a href="blog.html"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
-            <a href="contact.html"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
+            <a href="/"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
+            <a href="about"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a> 
+            <a href="/#services"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
+            <a href="/#products"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
+            <a href="/#gallery"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
+            <a href="/#projects"><img alt="المشاريع" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
+            <a href="/#testimonials"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
+            <a href="/#faq"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
+            <a href="/#payment"><img alt="طرق الدفع" src="https://img.icons8.com/fluency/20/money.png"/> طرق الدفع</a>
+            <a href="/#certificates"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
+            <a href="/#blog"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
+            <a href="/#contact"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
         </div>
         <div class="horizontal-nav-links">
-            <a href="services.html">خدماتنا</a>
-            <a href="gallery.html">معرض الصور</a>
-            <a href="contact.html">اتصل بنا</a>
+            <a href="/#services">خدماتنا</a>
+            <a href="/#gallery">معرض الصور</a>
+            <a href="/#contact">اتصل بنا</a>
         </div>
         <div class="top-contact-buttons">
             <a href="https://wa.me/966537216061" target="_blank">💬 واتساب</a>
@@ -848,7 +843,7 @@
             <p>
                 منذ تأسيسها في عام **2015**، رسخت مؤسسة رمال الصحراء مكانتها كمورد رائد وموثوق لمواد البناء الأساسية في قلب مكة المكرمة. نلتزم بتقديم منتجات ذات جودة عالية لضمان متانة مشاريعكم، مع التركيز على سرعة التوصيل والأسعار التنافسية. اكتشفوا رؤيتنا، رسالتنا، وقيمنا التي تدفعنا نحو التميز.
             </p>
-            <a href="about.html" class="read-more-button">
+            <a href="about" class="read-more-button">
                 <img src="https://img.icons8.com/ios-filled/20/FFFFFF/long-arrow-left.png" alt="اقرأ المزيد"/> اقرأ قصتنا كاملة
             </a>
         </section>
@@ -956,7 +951,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="contact-item" href="https://maps.app.goo.gl/BFuVCx947LyDZ6LW6" rel="noopener" target="_blank">
+                        <a class="contact-item" href="https://www.google.com/maps/search/مكة+المكرمة" rel="noopener" target="_blank">
                             <img alt="الموقع" src="https://img.icons8.com/color/48/000000/marker.png"/>
                             <span style="color:#004d3c; text-decoration: underline;">مكة المكرمة</span>
                         </a>
