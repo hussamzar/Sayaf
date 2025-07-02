@@ -3,23 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>المشاريع السابقة - بطحاء مكة</title>
+  <link rel="canonical" href="https://bat7a-makkah.com/projects.html">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="canonical" href="https://bat7a-makkah.com/projects">
-
-  <meta name="description" content="استعرض مشاريع بطحاء مكة الناجحة في توريد البطحاء، الدفان، والسبيز لمختلف المشاريع السكنية، التجارية، ومشاريع البنية التحتية في مكة."/>
-  
-  <meta name="keywords" content="مشاريع بطحاء مكة, أعمال سابقة, توريد مواد بناء, بطحاء, دفان, سبيز, مشاريع مكة, إنشاءات"/>
-  
-  <meta name="robots" content="index, follow"/>
-
-  <meta property="og:title" content="المشاريع السابقة - بطحاء مكة"/>
-  <meta property="og:description" content="استعرض مشاريع بطحاء مكة الناجحة في توريد البطحاء، الدفان، والسبيز لمختلف المشاريع السكنية، التجارية، ومشاريع البنية التحتية في مكة."/>
-  <meta property="og:url" content="https://bat7a-makkah.com/projects"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:image" content="https://i.imgur.com/zmELsgo.jpeg"/> <meta property="og:locale" content="ar_AR"/>
-
-  <link rel="icon" type="image/png" href="https://i.imgur.com/a7dzTKl.png"/> <meta name="author" content="بطحاء مكة"/>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
@@ -75,7 +60,6 @@
 
     .hamburger-links {
         display: none; /* مخفية بشكل افتراضي */
-        flex-direction: column; /* أضفت هذا لضمان ترتيب الروابط عمودياً */
         position: absolute;
         top: 60px; /* تقع أسفل الشريط العلوي */
         right: 10px; /* تظهر على اليمين الآن */
@@ -474,15 +458,6 @@
                   if (!menu.contains(event.target) && !button.contains(event.target)) {
                       menu.style.display = 'none';
                   }
-              }
-          }
-      });
-      // إضافة هذا الجزء لضمان إخفاء القائمة عند تغيير حجم الشاشة (عند التحول من جوال إلى ديسكتوب مثلاً)
-      window.addEventListener('resize', function() {
-          var links = document.getElementById('hamburger-links');
-          if (window.innerWidth > 768) { // إذا كانت الشاشة أكبر من 768px (متوسط حجم الجوال)
-              if (links) {
-                  links.style.display = 'none'; // أخفي قائمة الهامبرغر
               }
           }
       });
