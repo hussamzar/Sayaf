@@ -614,169 +614,63 @@
         }
 
         @media (max-width: 768px) {
-            body {
-                padding-top: 100px; /* مسافة أعلى أكبر لاستيعاب الشريط العلوي المحتمل أن يلتف */
-            }
             header {
-                min-height: 150px;
-                padding-top: 15px;
-                padding-bottom: 15px;
+                padding-top: 100px; /* زيادة البادينغ لأسفل لترك مساحة للقائمة العلوية */
+                padding-bottom: 40px;
             }
-            /* ✅ تم حذف h1 من الهيدر، لذا هذا التنسيق لم يعد له تأثير مباشر هنا */
             header h1 {
-                font-size: 24px;
-                margin-bottom: 15px;
+                font-size: 22px;
+            }
+            .header-main-buttons {
+                flex-direction: column; /* الأزرار فوق بعضها */
+                align-items: center;
             }
             .header-main-buttons a {
-                padding: 10px 20px;
-                font-size: 14px;
-                gap: 6px;
-            }
-            .header-main-buttons a img {
-                width: 18px;
-                height: 18px;
+                width: 80%; /* لجعل الأزرار أوسع */
+                justify-content: center;
             }
 
-            /* استجابة القائمة العلوية للهواتف - تظهر الأفقية وتتكيف */
             .hamburger-container {
-                padding: 8px 12px;
-                flex-direction: row; /* الحفاظ على الترتيب الأفقي */
-                flex-wrap: wrap; /* السماح للعناصر بالالتفاف إلى سطر جديد */
-                justify-content: flex-start; /* محاذاة كل المحتوى لليمين */
-                align-items: center; /* توسيط رأسي */
-                gap: 5px; /* مسافة بين العناصر */
-            }
-            .hamburger-button {
-                order: unset; /* إزالة الترتيب المحدد */
-                margin-left: 10px; /* مسافة بين زر الهامبرغر والقوائم الأفقية على الجوال */
+                justify-content: space-between; /* توزيع العناصر بالتساوي */
+                padding: 10px 15px;
+                gap: 10px; /* تقليل الفجوة */
             }
             .horizontal-nav-links {
-                display: flex; /* لتبقى ظاهرة دائمًا */
-                flex-wrap: wrap; /* تسمح للروابط بالالتفاف */
-                justify-content: flex-start; /* محاذاة روابطها الداخلية لليمين */
-                gap: 8px; /* تقليل المسافة بين الروابط */
-                padding: 0;
-                width: auto; /* السماح بعرض تلقائي أو 100% حسب الحاجة */
-                order: unset; /* إزالة الترتيب المحدد */
-                margin: 0; /* إزالة أي هوامش تسبب مشاكل */
+                display: none; /* إخفاء الروابط الأفقية على الجوال */
             }
-            .horizontal-nav-links a {
-                font-size: 13px; /* حجم خط أصغر */
-                padding: 6px 10px; /* مسافة داخلية أصغر */
+            /* .hamburger-container > a {
+                font-size: 13px;
+                gap: 4px;
             }
-            .horizontal-nav-links a img {
-                width: 16px;
-                height: 16px;
-            }
+            .hamburger-container > a img {
+                width: 14px !important;
+                height: 14px !important;
+            } */
             .hamburger-links {
                 top: 90px; /* ضبط موقع القائمة المنسدلة لتكون أسفل الشريط العلوي الجديد */
             }
 
             main {
-                padding: 20px 15px;
-            }
-
-            h2 {
-                font-size: 28px;
-                margin-bottom: 25px;
-                padding-right: 35px;
-            }
-            h2::before {
-                width: 30px;
-                height: 30px;
-                margin-left: 10px;
-            }
-            h3 {
-                font-size: 22px;
-                margin-top: 30px;
-                margin-bottom: 15px;
-                padding-right: 35px;
-            }
-            h3::before {
-                width: 25px;
-                height: 25px;
-            }
-            p, ul li {
-                font-size: 15px;
-                line-height: 1.8;
-            }
-            ul li {
-                padding-right: 30px;
-            }
-            ul li::before {
-                width: 22px;
-                height: 22px;
-            }
-
-            .about-section-common {
-                padding: 25px;
-            }
-            .about-section-common p {
-                font-size: 15px;
-            }
-            .about-section-common h3 {
-                font-size: 20px;
-            }
-            .about-section-common ul li {
-                font-size: 15px;
-            }
-            ul li::before {
-                width: 20px;
-                height: 20px;
-            }
-
-            .read-more-button {
-                padding: 10px 20px;
-                font-size: 14px;
-                gap: 6px;
-            }
-            .read-more-button img {
-                width: 18px;
-                height: 18px;
-            }
-
-            .services-grid, .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            a.card {
                 padding: 15px;
-            }
-            .card h3 {
-                font-size: 18px;
-            }
-            .card p {
-                font-size: 14px;
-            }
-            .gallery-grid a img {
-                height: 180px;
-            }
-            .gallery-caption {
-                font-size: 13px;
-                padding: 10px 12px;
-                min-height: 40px;
-                margin: 0 10px;
-            }
-
-            .contact-box {
-                padding: 20px;
-            }
-            .contact-item {
-                padding: 12px;
-                font-size: 14px;
-                gap: 10px;
-            }
-            .contact-item img {
-                width: 25px;
-                height: 25px;
-            }
-
-            #bannerBox {
-                margin: 30px auto;
             }
             .seo-text-banner {
                 font-size: 14px;
-                padding: 15px;
+                padding: 12px;
+            }
+            #bannerBox .whatsapp-button,
+            #bannerBox .call-button {
+                bottom: 15px; /* ضبط الموضع للجوال */
+            }
+            #bannerBox .whatsapp-button a,
+            #bannerBox .call-button a {
+                padding: 7px 18px;
+                font-size: 12px;
+                gap: 6px;
+            }
+            #bannerBox .whatsapp-button img,
+            #bannerBox .call-button img {
+                width: 18px;
+                height: 18px;
             }
         }
     </style>
@@ -790,30 +684,33 @@
         <button class="hamburger-button" onclick="toggleMenu()">
             <img alt="قائمة" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
         </button>
-        
-        <div class="horizontal-nav-links">
-            <a href="index.html#services"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
-            <a href="index.html#gallery"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
-            <a href="index.html#contact"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
-        </div>
-
         <div class="hamburger-links" id="hamburger-links">
-            <a href="index.html"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
-            <a href="about.html"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a> 
-            <a href="index.html#services"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
-            <a href="index.html#products"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
-            <a href="index.html#gallery"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
-            <a href="index.html#projects"><img alt="المشاريع" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
-            <a href="index.html#testimonials"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
-            <a href="index.html#faq"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
-            <a href="index.html#payment"><img alt="طرق الدفع" src="https://img.icons8.com/fluency/20/money.png"/> طرق الدفع</a>
-            <a href="index.html#certificates"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
-            <a href="index.html#blog"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
-            <a href="index.html#contact"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
+            <a href="/"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
+            <a href="about.html"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a>
+            <a href="services.html"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
+            <a href="products.html"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
+            <a href="gallery.html"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
+            <a href="projects.html"><img alt="المشاريع" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
+            <a href="testimonials.html"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
+            <a href="faq.html"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
+            <a href="payment.html"><img alt="طرق الدفع" src="https://img.icons8.com/fluency/20/money.png"/> طرق الدفع</a>
+            <a href="certificates.html"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
+            <a href="blog.html"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
+            <a href="contact.html"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
         </div>
-    </div>
+        <a href="products.html">
+            <img src="https://i.imgur.com/1WdkXZS.png" alt="منتجاتنا"/> منتجاتنا
+        </a>
+        <a href="gallery.html">
+            <img alt="معرض الصور" src="https://img.icons8.com/?size=100&id=Ui6fSI2DlDjm&format=png&color=000000"/> معرض الصور
+        </a>
+        <a href="contact.html">
+            <img alt="اتصل بنا" src="https://img.icons8.com/?size=100&id=_6iHKaWTr5Lg&format=png&color=000000"/> اتصل بنا
+        </a>
+        </div>
 
     <header>
+        <h1>من نحن – مؤسسة رمال الصحراء</h1>
         <div class="header-main-buttons">
             <a href="https://wa.me/966537216061" target="_blank">💬 واتساب</a>
             <a href="tel:0537216061">📞 اتصل بي</a>
@@ -822,26 +719,27 @@
 
     <main>
         <section id="about-page" class="about-section-common">
-            <h2>من نحن</h2>
+            <h2>قصتنا: من نحن في رمال الصحراء</h2>
             <p>
-                منذ تأسيسها في عام 2015، رسخت مؤسسة رمال الصحراء مكانتها كمورد رائد وموثوق لمواد البناء الأساسية في قلب مكة المكرمة. نلتزم بتقديم منتجات ذات جودة عالية لضمان متانة مشاريعكم، مع التركيز على سرعة التوصيل والأسعار التنافسية. اكتشفوا رؤيتنا، رسالتنا، وقيمنا التي تدفعنا نحو التميز.
+                تأسست **مؤسسة رمال الصحراء** عام [أدخل سنة التأسيس هنا، مثال: 2010] في قلب **مكة المكرمة**، إيماناً منا بأهمية توفير مواد بناء عالية الجودة تدعم المشاريع الإنشائية في المنطقة. على مدار سنوات، بنينا سمعتنا على أساس من **الثقة، الجودة، وسرعة الاستجابة** لمتطلبات عملائنا الكرام. نحن ندرك أن كل مشروع، كبيراً كان أو صغيراً، هو استثمار في المستقبل، ولذا نلتزم بتقديم الأفضل.
             </p>
-            <h3>رؤيتنا</h3>
+            <h3>رؤيتنا ورسالتنا</h3>
             <p>
-                أن نكون الخيار الأول لتوريد مواد البناء في المملكة، من خلال الالتزام بأعلى معايير الجودة والابتكار في الخدمات اللوجستية.
+                **رؤيتنا:** أن نكون الخيار الأول والمورد الأكثر موثوقية لمواد البناء في المملكة العربية السعودية، من خلال الابتكار المستمر والتزامنا بمعايير الجودة العالمية.
             </p>
-            <h3>رسالتنا</h3>
             <p>
-                تقديم حلول متكاملة وموثوقة لمشاريع البناء، بتوفير أجود المواد وأسرع وسائل التوصيل، بما يضمن رضا العملاء ويساهم في تطوير البنية التحتية للمنطقة.
+                **رسالتنا:** توفير تشكيلة واسعة من مواد البناء الأساسية بأعلى معايير الجودة، مدعومة بخدمة توصيل فعالة وسريعة، لتمكين عملائنا من إنجاز مشاريعهم بنجاح واطمئنان.
             </p>
-            <h3>قيمنا</h3>
+            <h3>قيمنا الأساسية</h3>
             <ul>
-                <li>الجودة العالية</li>
-                <li>الموثوقية والشفافية</li>
-                <li>سرعة الاستجابة</li>
-                <li>رضا العملاء</li>
-                <li>التطوير المستمر</li>
+                <li>**الجودة أولاً:** لا نساوم على جودة منتجاتنا. كل مادة يتم توريدها تخضع لرقابة صارمة لضمان مطابقتها للمواصفات القياسية.</li>
+                <li>**الموثوقية:** نلتزم بوعودنا في التسليم والمواعيد، لضمان سير عمل مشاريعكم دون تأخير.</li>
+                <li>**خدمة العملاء:** نضع عملائنا في صميم اهتمامنا، ونسعى لتقديم دعم متواصل واستجابة سريعة لاستفساراتهم واحتياجاتهم.</li>
+                <li>**الاحترافية:** فريق عملنا مؤهل ومدرب لتقديم أفضل الخدمات، من الاستشارات إلى التوصيل.</li>
             </ul>
+            <p>
+                نحن فخورون بكوننا جزءاً من نهضة مكة العمرانية، ونتطلع إلى بناء شراكات طويلة الأمد معكم.
+            </p>
         </section>
     </main>
 
@@ -851,7 +749,7 @@
 
     <script>
         window.addEventListener("DOMContentLoaded", function () {
-            const banner = document.getElementById("bannerBox");
+            const banner = document.getElementById("bannerBox"); // تأكد أن هذا الـ ID موجود في هذه الصفحة إذا كنت تريد ظهور البنر
             if (banner) {
                 banner.style.opacity = "1";
                 banner.style.transform = "translateY(0)";
