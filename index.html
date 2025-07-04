@@ -752,7 +752,7 @@
                 font-size: 13px;
                 padding: 10px 12px;
                 min-height: 40px;
-                margin: 0 10px;
+                margin: 0 15px;
             }
 
             .contact-box {
@@ -788,7 +788,7 @@
             <img alt="قائمة" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
         </button>
         <div class="hamburger-links" id="hamburger-links">
-            <a href="index.html"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
+            <a href="/"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
             <a href="about.html"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a>
             <a href="services.html"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
             <a href="products.html"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
@@ -838,32 +838,32 @@
         <section id="services">
             <h2>خدماتنا</h2>
             <div class="services-grid">
-                <a class="card" href="services.html#bat7a-riyadh">
+                <a class="card" href="services.html#bat7a-supply">
                     <img alt="بطحاء الرياض" src="https://i.imgur.com/38QmOZ2.jpeg"/>
                     <h3>بطحاء الرياض</h3>
                     <p>بطحاء عالية النقاء للتلييس والبناء، أساس متين ومستوٍ لجميع أعمال التشطيبات. نضمن نقاءها لتناسب مختلف الاستخدامات.</p>
                 </a>
-                <a class="card" href="services.html#bat7a-tayma">
+                <a class="card" href="services.html#bat7a-supply">
                     <img alt="بطحاء تيماء" src="https://i.imgur.com/kX6rmQw.jpeg"/>
                     <h3>بطحاء تيماء</h3>
                     <p>بطحاء ناعمة وحمراء اللون، الخيار الأمثل لأعمال التشطيبات النهائية، بما في ذلك التلييس والدهانات، لمظهر سلس ومميز.</p>
                 </a>
-                <a class="card" href="services.html#dafan-balat">
+                <a class="card" href="services.html#dafan-speez-supply">
                     <img alt="دفان بلاط" src="https://i.imgur.com/vC39bUd.png"/>
                     <h3>دفان بلاط</h3>
                     <p>دفان نظيف وخالٍ من الشوائب، مثالي لتسوية الأرضيات قبل تركيب البلاط، يضمن استقرار وثبات البلاط ويمنع التشققات.</p>
                 </a>
-                <a class="card" href="services.html#tarfasha-burkaniya">
+                <a class="card" href="services.html#concrete-tartasha-supply">
                     <img alt="طرطشة" src="https://i.imgur.com/lQrAAft.png"/>
                     <h3>طرطشة بركانية</h3>
                     <p>مادة عازلة ومقاومة للحرارة والرطوبة، تستخدم لحماية الأسطح والجدران، توفر عزلاً فعالاً وتزيد من عمر المبنى.</p>
                 </a>
-                <a class="card" href="services.html#spize">
+                <a class="card" href="services.html#dafan-speez-supply">
                     <img alt="سبيز" src="https://i.imgur.com/BcL95Pa.jpeg"/>
                     <h3>سبيز (الردم)</h3>
                     <p>مادة متينة وقوية تستخدم للردم وتثبيت الأساسات، توفر دعماً قوياً للمباني والطرق، وتساعد في توزيع الأحمال بفعالية.</p>
                 </a>
-                <a class="card" href="services.html#concrete">
+                <a class="card" href="services.html#concrete-tartasha-supply">
                     <img alt="خرسانة" src="https://i.imgur.com/i65KxhV.jpeg"/>
                     <h3>خرسانة بجميع المقاسات</h3>
                     <p>توريد خرسانة جاهزة عالية الجودة بجميع المقاسات المطلوبة لمختلف المشاريع الإنشائية، تضمن قوة ومتانة الهياكل الخرسانية.</p>
@@ -972,7 +972,6 @@
         document.addEventListener('click', function(event) {
             var menu = document.getElementById('hamburger-links');
             var button = document.querySelector('.hamburger-button');
-            // التأكد من وجود القائمة والزر قبل التعامل معهما
             if (menu && button) {
                 if (menu.style.display === 'flex') {
                     // إذا لم يكن النقر داخل القائمة ولم يكن على زر القائمة
