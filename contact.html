@@ -416,7 +416,7 @@
       display: inline-block;
       padding: 12px 25px;
       margin: 8px;
-      border-radius: 8px;
+      border-radius: 88px; /* تم تصحيح هذا الرقم ليكون 8px ليتناسب مع تصميمك */
       font-weight: bold;
       color: white;
       text-decoration: none;
@@ -626,55 +626,54 @@
     ---
 
     <section class="contact-form-section">
-  <h2>أرسل لنا رسالة مباشرة</h2>
-  <p style="text-align: center; font-size: 16px; color: #666; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
-    املأ النموذج أدناه وسيقوم فريقنا بالرد عليك في أقرب وقت ممكن.
-  </p>
+      <h2>أرسل لنا رسالة مباشرة</h2>
+      <p style="text-align: center; font-size: 16px; color: #666; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        املأ النموذج أدناه وسيقوم فريقنا بالرد عليك في أقرب وقت ممكن.
+      </p>
 
-  <form action="https://getform.io/f/bdrgwvmb" method="POST" class="contact-form">
-    <div class="form-group">
-      <label for="name">الاسم الكامل:</label>
-      <input type="text" id="name" name="name" required placeholder="أدخل اسمك هنا">
-    </div>
-    <div class="form-group">
-      <label for="email">البريد الإلكتروني:</label>
-      <input type="email" id="email" name="email" required placeholder="example@domain.com">
-    </div>
-    <div class="form-group">
-      <label for="phone">رقم الجوال:</label>
-      <input type="tel" id="phone" name="phone" placeholder="05XXXXXXXX" pattern="[0-9]{10}" title="يرجى إدخال رقم جوال سعودي صحيح (10 أرقام)">
-    </div>
-    <div class="form-group">
-      <label for="subject">الموضوع:</label>
-      <input type="text" id="subject" name="subject" placeholder="استفسار عن طلب، عرض سعر، إلخ.">
-    </div>
-    <div class="form-group">
-      <label for="message">رسالتك:</label>
-      <textarea id="message" name="message" rows="6" required placeholder="اكتب رسالتك هنا..."></textarea>
-    </div>
-    <button type="submit">إرسال الرسالة</button>
-  </form>
-  <div id="successMessage" style="display: none; text-align: center; margin-top: 20px; padding: 30px; background-color: #eafaf5; border: 1px solid #00765a; border-radius: 12px; color: #004d3c; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-    <i class="fas fa-check-circle" style="font-size: 60px; color: #00765a; margin-bottom: 20px;"></i>
-    <h1>شكراً لك على تواصلك!</h1>
-    <p style="font-size: 18px; line-height: 1.6; color: #555;">
-      لقد تم استلام رسالتك بنجاح. فريقنا المختص في بطحاء مكة سيقوم بمراجعة رسالتك
-      والتواصل معك في أقرب وقت ممكن.
-    </p>
-    <p style="font-size: 16px; color: #777;">
-      يمكنك العودة للصفحة الرئيسية أو استكشاف منتجاتنا.
-    </p>
-    <div style="display: flex; justify-content: center; gap: 15px; margin-top: 30px; flex-wrap: wrap;">
-      <a href="index.html" style="background-color: #d2b48c; color: white; padding: 12px 25px; border-radius: 8px; font-weight: bold; text-decoration: none; transition: background-color 0.3s ease, transform 0.2s ease; display: inline-flex; align-items: center; gap: 8px;">
-        <i class="fas fa-home"></i> العودة للصفحة الرئيسية
-      </a>
-      <a href="products.html" style="background-color: #00765a; color: white; padding: 12px 25px; border-radius: 8px; font-weight: bold; text-decoration: none; transition: background-color 0.3s ease, transform 0.2s ease; display: inline-flex; align-items: center; gap: 8px;">
-        <i class="fas fa-shopping-cart"></i> تصفح منتجاتنا
-      </a>
-    </div>
-  </div>
-  </section>
+      <form action="https://getform.io/f/bdrgwvmb" method="POST" class="contact-form">
+        <div class="form-group">
+          <label for="name">الاسم الكامل:</label>
+          <input type="text" id="name" name="name" required placeholder="أدخل اسمك هنا">
+        </div>
+        <div class="form-group">
+          <label for="email">البريد الإلكتروني:</label>
+          <input type="email" id="email" name="email" required placeholder="example@domain.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">رقم الجوال:</label>
+          <input type="tel" id="phone" name="phone" placeholder="05XXXXXXXX" pattern="[0-9]{10}" title="يرجى إدخال رقم جوال سعودي صحيح (10 أرقام)">
+        </div>
+        <div class="form-group">
+          <label for="subject">الموضوع:</label>
+          <input type="text" id="subject" name="subject" placeholder="استفسار عن طلب، عرض سعر، إلخ.">
+        </div>
+        <div class="form-group">
+          <label for="message">رسالتك:</label>
+          <textarea id="message" name="message" rows="6" required placeholder="اكتب رسالتك هنا..."></textarea>
+        </div>
+        <button type="submit">إرسال الرسالة</button>
+      </form>
 
+      <div id="successMessage" style="display: none; text-align: center; margin-top: 20px; padding: 30px; background-color: #eafaf5; border: 1px solid #00765a; border-radius: 12px; color: #004d3c; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        <i class="fas fa-check-circle" style="font-size: 60px; color: #00765a; margin-bottom: 20px;"></i>
+        <h1>شكراً لك على تواصلك!</h1>
+        <p style="font-size: 18px; line-height: 1.6; color: #555;">
+          لقد تم استلام رسالتك بنجاح. فريقنا المختص في بطحاء مكة سيقوم بمراجعة رسالتك
+          والتواصل معك في أقرب وقت ممكن.
+        </p>
+        <p style="font-size: 16px; color: #777;">
+          يمكنك العودة للصفحة الرئيسية أو استكشاف منتجاتنا.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 15px; margin-top: 30px; flex-wrap: wrap;">
+          <a href="index.html" style="background-color: #d2b48c; color: white; padding: 12px 25px; border-radius: 8px; font-weight: bold; text-decoration: none; transition: background-color 0.3s ease, transform 0.2s ease; display: inline-flex; align-items: center; gap: 8px;">
+            <i class="fas fa-home"></i> العودة للصفحة الرئيسية
+          </a>
+          <a href="products.html" style="background-color: #00765a; color: white; padding: 12px 25px; border-radius: 8px; font-weight: bold; text-decoration: none; transition: background-color 0.3s ease, transform 0.2s ease; display: inline-flex; align-items: center; gap: 8px;">
+            <i class="fas fa-shopping-cart"></i> تصفح منتجاتنا
+          </a>
+        </div>
+      </div>
       <p style="text-align: center; font-size: 13px; color: #999; margin-top: 20px;">
         *سوف يتم الرد عليك خلال 24 ساعه القادمه شكرا لثقتكم بنا 💪💪 *
       </p>
@@ -685,8 +684,10 @@
     <h2>موقعنا في قلب مكة المكرمة</h2>
     <p>يمكنكم زيارتنا في مقرنا الرئيسي أو استخدام الخريطة أدناه للحصول على الاتجاهات الدقيقة.</p>
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3713.753673602282!2d39.9737286!3d21.438924999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c201f32f3db515%3A0x5906d124d1f1188e!2z2KjYt9it2KfYoSDYr9mB2KfZhiDZiNiz2YPYqNmK2LIg2YjYrNmF2YrYuSDZhdmI2KfYryDYp9mE2KjZhtin2KE!5e0!3m2!1sar!2ssa!4v1751074862079!5m2!1sar!2ssa" width="600" height="
-      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3713.753673602282!2d39.9737286!3d21.438924999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c201f32f3db515%3A0x5906d124d1f1188e!2z2KjYt9it2KfYoSDYr9mB2KfZhiDZiNiz2YPYqNmK2LIg2YjYrNmF2YrYuSDZhdmI2KfYryDYp9mE2KjZhtin2KE!5e0!3m2!1sar!2ssa!4v1751074862079!5m2!1sar!2ssa"
+      width="100%" height="400px"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      style="border: none; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.15);">
     </iframe>
   </section>
 
@@ -698,6 +699,83 @@
   <div class="footer">
     © 2025 جميع الحقوق محفوظة – بطحاء مكة
   </div>
+
+  <script>
+      // JavaScript للقائمة الجانبية (Hamburger Menu)
+      function toggleMenu() {
+          var links = document.getElementById('hamburger-links');
+          links.style.display = (links.style.display === 'block') ? 'none' : 'block';
+      }
+
+      document.addEventListener('click', function(event) {
+          var menu = document.getElementById('hamburger-links');
+          var button = document.querySelector('.hamburger-button');
+          if (menu && button) {
+              if (menu.style.display === 'block') {
+                  if (!menu.contains(event.target) && !button.contains(event.target)) {
+                      menu.style.display = 'none';
+                  }
+              }
+          }
+      });
+
+      // الكود الجديد للتعامل مع إرسال النموذج وإظهار رسالة النجاح
+      const contactForm = document.querySelector('.contact-form');
+      const successMessage = document.getElementById('successMessage');
+      const submitButton = contactForm.querySelector('button[type="submit"]'); // الوصول لزر الإرسال
+
+      if (contactForm) {
+          contactForm.addEventListener('submit', async function(event) {
+              event.preventDefault(); // منع الإرسال الافتراضي للمتصفح
+
+              // عرض مؤشر تحميل أو تعطيل الزر لمنع الإرسالات المتعددة
+              submitButton.disabled = true;
+              submitButton.textContent = 'جاري الإرسال...';
+              submitButton.style.opacity = '0.7'; // لجعل الزر باهتاً قليلاً
+
+              const formData = new FormData(contactForm);
+
+              try {
+                  const response = await fetch(contactForm.action, {
+                      method: contactForm.method,
+                      body: formData,
+                      headers: {
+                          'Accept': 'application/json' // مهم لـ Formspree و Getform للحصول على استجابة JSON
+                      }
+                  });
+
+                  if (response.ok) {
+                      contactForm.reset(); // مسح حقول النموذج
+                      contactForm.style.display = 'none'; // إخفاء النموذج
+                      successMessage.style.display = 'block'; // إظهار رسالة النجاح
+
+                      // اختياري: إخفاء رسالة النجاح بعد فترة وإعادة إظهار النموذج
+                      setTimeout(() => {
+                          successMessage.style.display = 'none';
+                          contactForm.style.display = 'grid'; // أعد display إلى القيمة الأصلية للنموذج (كانت grid في CSS)
+                          submitButton.disabled = false; // تفعيل الزر
+                          submitButton.textContent = 'إرسال الرسالة'; // إعادة نص الزر
+                          submitButton.style.opacity = '1'; // إعادة شفافية الزر
+                      }, 30000); // إخفاء الرسالة بعد 8 ثوانٍ
+                  } else {
+                      // التعامل مع الأخطاء
+                      const errorData = await response.json();
+                      const errorMessage = errorData.error || 'حدث خطأ أثناء إرسال الرسالة. الرجاء المحاولة مرة أخرى.';
+                      alert('خطأ: ' + errorMessage);
+                      submitButton.disabled = false;
+                      submitButton.textContent = 'إرسال الرسالة';
+                      submitButton.style.opacity = '1';
+                  }
+              } catch (error) {
+                  console.error('Fetch error:', error);
+                  alert('تعذر الاتصال بالخادم. الرجاء التحقق من اتصالك بالإنترنت والمحاولة لاحقًا.');
+                  submitButton.disabled = false;
+                  submitButton.textContent = 'إرسال الرسالة';
+                  submitButton.style.opacity = '1';
+              }
+          });
+      }
+  </script>
 
 </body>
 </html>
