@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17233250314">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17233250314">
 </script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -170,10 +169,13 @@
             min-width: 200px;
             z-index: 9999;
             border: 1px solid #ddd;
+            /* التعديل الجديد هنا لإعادة القائمة للشكل الطولي */
+            flex-direction: column; /* جعل الروابط تترتب عموديًا */
+            gap: 5px; /* مسافة بسيطة بين الروابط */
         }
 
         .hamburger-links a {
-            display: flex;
+            display: flex; /* حافظ على الفليكس لكل رابط لتحاذي الأيقونة والنص */
             align-items: center;
             gap: 10px;
             font-weight: 700;
@@ -229,9 +231,43 @@
         }
 
 
+        /* تنسيقات أزرار الاتصال الجديدة في أعلى الصفحة */
+        .top-contact-buttons {
+            display: flex;
+            gap: 10px; /* مسافة بين الأزرار */
+            flex-shrink: 0; /* لمنع الأزرار من الانكماش */
+        }
+        .top-contact-buttons a {
+            background: linear-gradient(to right, #25d366, #1cbf58); /* تدرج لوني أخضر جذاب */
+            color: white;
+            padding: 8px 15px; /* بادينج أصغر ليناسب الشريط العلوي */
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 13px; /* حجم خط أصغر */
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .top-contact-buttons a:hover {
+            background: linear-gradient(to right, #1cbf58, #16a34a);
+            transform: translateY(-1px);
+        }
+        .top-contact-buttons a img {
+            width: 18px; /* أيقونات أصغر */
+            height: 18px;
+            vertical-align: middle;
+            filter: invert(100%); /* لجعل الأيقونات بيضاء إذا كانت سوداء */
+        }
+
+        /* ==================================== */
+        /* تنسيقات المحتوى الرئيسي              */
+        /* ==================================== */
         main {
             padding: 30px 20px;
-            max-width: 960px;
+            max-width: 960px; /* زيادة أقصى عرض للمحتوى */
             margin: 0 auto;
         }
 
@@ -242,7 +278,7 @@
         h2 {
             color: #004d3c;
             font-size: 32px;
-            font-weight: 700;
+            font-weight: 700; /* تعديل وزن الخط ليتناسب مع Arial */
             text-align: center;
             margin-bottom: 35px;
             padding-bottom: 12px;
@@ -708,16 +744,22 @@
             <a href="blog.html"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
             <a href="contact.html"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
         </div>
-        <a href="products.html">
-            <img src="https://i.imgur.com/1WdkXZS.png" alt="منتجاتنا"/> منتجاتنا
-        </a>
-        <a href="gallery.html">
-            <img alt="معرض الصور" src="https://img.icons8.com/?size=100&id=Ui6fSI2DlDjm&format=png&color=000000"/> معرض الصور
-        </a>
-        <a href="contact.html">
-            <img alt="اتصل بنا" src="https://img.icons8.com/?size=100&id=_6iHKaWTr5Lg&format=png&color=000000"/> اتصل بنا
-        </a>
+        <div class="horizontal-nav-links">
+            <a href="products.html">
+                <img src="https://i.imgur.com/1WdkXZS.png" alt="منتجاتنا"/> منتجاتنا
+            </a>
+            <a href="gallery.html">
+                <img alt="معرض الصور" src="https://img.icons8.com/?size=100&id=Ui6fSI2DlDjm&format=png&color=000000"/> معرض الصور
+            </a>
+            <a href="contact.html">
+                <img alt="اتصل بنا" src="https://img.icons8.com/?size=100&id=_6iHKaWTr5Lg&format=png&color=000000"/> اتصل بنا
+            </a>
         </div>
+        <div class="top-contact-buttons">
+            <a href="https://wa.me/966537216061" target="_blank">💬 واتساب</a>
+            <a href="tel:0537216061">📞 اتصل بي</a>
+        </div>
+    </div>
 
     <header>
         <h1>من نحن – مؤسسة رمال الصحراء</h1>
@@ -768,17 +810,30 @@
 
         function toggleMenu() {
             var links = document.getElementById('hamburger-links');
-            links.style.display = (links.style.display === 'block') ? 'none' : 'block';
+            // التبديل بين 'flex' و 'none'
+            links.style.display = (links.style.display === 'block') ? 'none' : 'flex';
         }
 
+        // إغلاق القائمة عند الضغط خارجها
         document.addEventListener('click', function(event) {
             var menu = document.getElementById('hamburger-links');
             var button = document.querySelector('.hamburger-button');
             if (menu && button) {
-                if (menu.style.display === 'block') {
+                if (menu.style.display === 'flex') {
+                    // إذا لم يكن النقر داخل القائمة ولم يكن على زر القائمة
                     if (!menu.contains(event.target) && !button.contains(event.target)) {
                         menu.style.display = 'none';
                     }
+                }
+            }
+        });
+
+        // إضافة هذا الجزء لضمان إخفاء القائمة عند تغيير حجم الشاشة (عند التحول من جوال إلى ديسكتوب مثلاً)
+        window.addEventListener('resize', function() {
+            var links = document.getElementById('hamburger-links');
+            if (window.innerWidth > 768) { // إذا كانت الشاشة أكبر من 768px (متوسط حجم الجوال)
+                if (links) {
+                    links.style.display = 'none'; // أخفي قائمة الهامبرغر
                 }
             }
         });
