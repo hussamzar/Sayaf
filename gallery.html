@@ -12,9 +12,18 @@
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>معرض الصور – بطحاء مكة</title>
+  <title>معرض صور مشاريع ومواد بناء مؤسسة رمال الصحراء في مكة | جودة ورمل وبطحاء</title>
   <link rel="canonical" href="https://bat7a-makkah.com/gallery.html">
 
+  <meta name="description" content="استكشف معرض صور مؤسسة رمال الصحراء: توثيق بصري لأعمالنا في توريد البطحاء (الرياض وتيماء)، الدفان، السبيز، والرمل المغسول. شاهد جودة مواد البناء ومعداتنا الحديثة في مشاريع مكة.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="معرض صور مؤسسة رمال الصحراء | مشاريع مواد البناء في مكة">
+  <meta property="og:description" content="مجموعة من الصور عالية الجودة التي تعرض أعمالنا في توريد الرمل والبطحاء ومختلف مواد البناء، بالإضافة إلى معداتنا الثقيلة وكفاءة فريقنا في المواقع.">
+  <meta property="og:url" content="https://bat7a-makkah.com/gallery.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://i.imgur.com/zmELsgo.jpeg">
+  <meta property="og:locale" content="ar_AR">
 
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -22,23 +31,23 @@
   <style>
     body {
       font-family: 'Tajawal', sans-serif;
-      background: #fdfaf8; /* لون رملي فاتح للخلفية */
+      background: #fdfaf8;
       padding: 0;
       margin: 0;
       color: #333;
       direction: rtl;
-      overflow-x: hidden; /* لمنع التمرير الأفقي */
+      overflow-x: hidden;
       padding-top: 60px; /* مسافة أعلى للـ hamburger-container الثابت */
     }
 
     /* --- */
-    /* ✅ القائمة العلوية (Hamburger) - منسوخة من صفحات سابقة */
+    /* القائمة العلوية (Hamburger) - منسوخة من صفحات سابقة */
     .hamburger-container {
-        background: #e0c9a6; /* لون رملي فاتح */
+        background: #e0c9a6;
         padding: 10px 15px;
         display: flex;
         justify-content: flex-start;
-        align-items: center; /* لمحاذاة رأسية */
+        align-items: center;
         position: fixed;
         top: 0;
         left: 0;
@@ -58,7 +67,8 @@
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
-        margin-left: 15px;
+        margin-left: 10px;
+        order: 0;
     }
 
     .hamburger-button img {
@@ -71,10 +81,10 @@
     }
 
     .hamburger-links {
-        display: none; /* مخفية بشكل افتراضي */
+        display: none;
         position: absolute;
-        top: 60px; /* تقع أسفل الشريط العلوي */
-        right: 10px; /* تظهر على اليمين الآن */
+        top: 60px;
+        right: 10px;
         left: auto;
         background: white;
         border-radius: 12px;
@@ -114,21 +124,11 @@
     .horizontal-nav-links {
         display: flex;
         gap: 20px;
-        align-items: center;
-        margin-right: 15px;
-        white-space: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 5px;
+        justify-content: flex-start;
+        margin: 0;
+        order: 1;
+        flex-grow: 1;
     }
-    .horizontal-nav-links::-webkit-scrollbar {
-        display: none;
-    }
-    .horizontal-nav-links {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-
     .horizontal-nav-links a {
         font-weight: 700;
         font-size: 14px;
@@ -147,6 +147,7 @@
         transform: translateY(-1px);
         background-color: rgba(255, 255, 255, 0.3);
     }
+    .horizontal-nav-links a img,
     .horizontal-nav-links a i {
         width: 18px;
         height: 18px;
@@ -154,8 +155,7 @@
         vertical-align: middle;
     }
 
-    /* --- */
-    /* ✅ أنماط صفحة معرض الصور الجديدة */
+    /* أنماط صفحة معرض الصور الجديدة */
     .container {
         max-width: 900px;
         margin: 30px auto;
@@ -167,11 +167,11 @@
     }
 
     .page-header {
-      background-color: #eafaf5; /* خلفية فاتحة لرأس الصفحة */
+      background-color: #eafaf5;
       text-align: center;
       padding: 30px 15px;
       margin-bottom: 30px;
-      border-radius: 12px; /* حواف مستديرة */
+      border-radius: 12px;
     }
 
     .page-header h1 {
@@ -191,7 +191,7 @@
     /* معرض الصور - شبكة مع بطاقات */
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* عمودين أو ثلاثة حسب المساحة */
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
       margin-top: 30px;
     }
@@ -204,7 +204,7 @@
       text-align: right;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       border: 1px solid #eef;
-      cursor: pointer; /* للإشارة إلى أنها قابلة للنقر */
+      cursor: pointer;
     }
 
     .gallery-item:hover {
@@ -214,7 +214,7 @@
 
     .gallery-item img {
       width: 100%;
-      height: 220px; /* ارتفاع ثابت للصور */
+      height: 220px;
       object-fit: cover;
       display: block;
     }
@@ -242,13 +242,13 @@
     .lightbox {
       display: none; /* مخفية بشكل افتراضي */
       position: fixed;
-      z-index: 10001; /* أعلى من أي عنصر آخر */
+      z-index: 10001;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
       overflow: auto;
-      background-color: rgba(0,0,0,0.8); /* خلفية شبه شفافة */
+      background-color: rgba(0,0,0,0.8);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -270,7 +270,7 @@
 
     .lightbox-content img {
       max-width: 100%;
-      max-height: 70vh; /* لتجنب الصور الكبيرة جدًا */
+      max-height: 70vh;
       height: auto;
       display: block;
       margin: 0 auto 15px auto;
@@ -290,11 +290,12 @@
       color: #aaa;
       position: absolute;
       top: 15px;
-      right: 25px;
+      left: 25px;
       font-size: 40px;
       font-weight: bold;
       transition: 0.3s;
       cursor: pointer;
+      z-index: 10002;
     }
 
     .close-button:hover,
@@ -325,11 +326,13 @@
 
     .next {
       right: 0;
+      left: auto;
       border-radius: 3px 0 0 3px;
     }
 
     .prev {
       left: 0;
+      right: auto;
       border-radius: 0 3px 3px 0;
     }
 
@@ -338,7 +341,7 @@
     }
 
 
-    /* ✅ أزرار التواصل (منسوخة من الصفحات السابقة) */
+    /* أزرار التواصل (منسوخة من الصفحات السابقة) */
     .buttons {
       text-align: center;
       margin: 50px 0 10px;
@@ -374,7 +377,7 @@
       transform: translateY(-2px);
     }
 
-    /* ✅ الفوتر (منسوخة من الصفحات السابقة) */
+    /* الفوتر (منسوخة من الصفحات السابقة) */
     .footer {
       text-align: center;
       font-size: 14px;
@@ -418,11 +421,11 @@
             font-size: 16px;
         }
         .gallery-grid {
-            grid-template-columns: 1fr; /* عمود واحد على الجوال */
+            grid-template-columns: 1fr;
             gap: 20px;
         }
         .gallery-item img {
-            height: 180px; /* ارتفاع أقل للصور على الجوال */
+            height: 180px;
         }
         .gallery-info h3 {
             font-size: 17px;
@@ -439,7 +442,7 @@
         .close-button {
             font-size: 30px;
             top: 10px;
-            right: 20px;
+            left: 20px;
         }
         .prev, .next {
             font-size: 20px;
@@ -457,93 +460,92 @@
 
   <div class="hamburger-container">
       <button class="hamburger-button" onclick="toggleMenu()">
-          <img alt="قائمة" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
+          <img alt="قائمة التنقل" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
       </button>
 
       <div class="horizontal-nav-links">
           <a href="products.html"><i class="fas fa-shopping-cart"></i> منتجاتنا</a>
           <a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a>
-          <a href="/#contact"><i class="fas fa-phone-alt"></i> اتصل بنا</a> </div>
+          <a href="contact.html"><i class="fas fa-phone-alt"></i> اتصل بنا</a> </div>
 
       <div class="hamburger-links" id="hamburger-links">
-          <a href="/"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a> <a href="about.html"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a>
-          <a href="services.html"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
-          <a href="products.html"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
-          <a href="gallery.html"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
-          <a href="projects.html"><img alt="المشاريع" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a> <a href="testimonials.html"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
-          <a href="faq.html"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a> <a href="payment.html"><img alt="طرق الدفع" src="https://img.icons8.com/fluency/20/money.png"/> طرق الدفع</a>
+          <a href="index.html"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
+          <a href="about.html"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a>
+          <a href="difference.html"><img alt="الفرق بين بطحاء الرياض وتيماء" src="https://img.icons8.com/fluency/20/compare.png"/> الفرق بين بطحاء الرياض وتيماء</a>
+          <a href="services.html"><img alt="خدمات توريد مواد البناء" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
+          <a href="products.html"><img alt="منتجات البناء المتوفرة" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
+          <a href="gallery.html"><img alt="معرض صور مشاريعنا" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
+          <a href="projects.html"><img alt="أمثلة لمشاريعنا" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
+          <a href="testimonials.html"><img alt="آراء وشهادات العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
+          <a href="faq.html"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
+          <a href="payment.html"><img alt="طرق الدفع المتاحة" src="https://img.icons8.com/fluency/20/money.png"/> طرق الدفع</a>
           <a href="certificates.html"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
-          <a href="blog.html"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
-          <a href="contact.html"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
+          <a href="blog.html"><img alt="مدونة مواد البناء" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
+          <a href="contact.html"><img alt="للتواصل معنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
         </div>
   </div>
 
   <section class="page-header">
-    <h1>معرض صور أعمالنا</h1>
-    <p>استكشف مجموعتنا من الصور التي توثق أعمالنا في توريد البطحاء، الدفان، والسبيز، بالإضافة إلى معداتنا الحديثة في المواقع المختلفة.</p>
+    <h1>معرض صور أعمالنا ومشاريعنا في توريد مواد البناء</h1>
+    <p>استكشف مجموعتنا من الصور التي توثق أعمالنا في <strong>توريد البطحاء</strong> بأنواعها (<strong>بطحاء الرياض</strong> و<strong>بطحاء تيماء</strong>)، <strong>الدفان</strong>، و<strong>السبيز</strong>. شاهد جودة <strong>مواد البناء</strong> التي نوفرها ومعداتنا الحديثة في مختلف المواقع بـ<strong>مكة المكرمة</strong>.</p>
   </section>
 
   <div class="container">
     <div class="gallery-grid" id="gallery-grid">
       <div class="gallery-item" onclick="openLightbox(0)">
-        <img src="images/12.jpg" alt="شاحنة بطحاء في موقع العمل">
+        <img src="images/12.jpg" alt="شاحنة بطحاء الرياض في موقع العمل بمكة">
         <div class="gallery-info">
-          <h3>توريد البطحاء للمشاريع</h3>
-          <p>لقطة لشاحناتنا أثناء تفريغ كميات كبيرة من البطحاء عالية الجودة في موقع إنشاء جديد.</p>
+          <h3>توريد <strong>البطحاء</strong> لمشاريع البناء</h3>
+          <p>لقطة لشاحناتنا أثناء تفريغ كميات كبيرة من <strong>البطحاء عالية الجودة</strong> في موقع إنشاء جديد بـ<strong>مكة المكرمة</strong>.</p>
         </div>
       </div>
 
       <div class="gallery-item" onclick="openLightbox(1)">
-        <img src="images/13.png" alt="معدات ثقيلة">
+        <img src="images/13.png" alt="معدات ثقيلة لتوريد مواد البناء">
         <div class="gallery-info">
-          <h3>استخدام المعدات الحديثة</h3>
-          <p>صورة تظهر جزءًا من أسطولنا من المعدات الثقيلة المستخدمة لضمان كفاءة العمل.</p>
+          <h3>استخدام المعدات الحديثة في <strong>توصيل مواد البناء</strong></h3>
+          <p>صورة تظهر جزءًا من أسطولنا من المعدات الثقيلة المستخدمة لضمان كفاءة العمل و<strong>سرعة توصيل الرمل</strong> والبطحاء.</p>
         </div>
       </div>
 
       <div class="gallery-item" onclick="openLightbox(2)">
-        <img src="images/18.jpg" alt="تفريغ دفان">
+        <img src="images/18.jpg" alt="تفريغ دفان نظيف لمشروع تسوية أرضيات">
         <div class="gallery-info">
-          <h3>عمليات الدفان الاحترافية</h3>
-          <p>فريقنا يعمل بكفاءة على تسوية الدفان في موقع مشروع كبير.</p>
+          <h3>عمليات <strong>الدفان</strong> الاحترافية في المواقع</h3>
+          <p>فريقنا يعمل بكفاءة على تسوية <strong>الدفان النظيف</strong> في موقع مشروع كبير، لضمان أساس متين تحت البلاط.</p>
         </div>
       </div>
 
       <div class="gallery-item" onclick="openLightbox(3)">
-        <img src="images/19.jpg" alt="كومة سبيز">
+        <img src="images/19.jpg" alt="كومة سبيز عالي الجودة لأعمال الردميات">
         <div class="gallery-info">
-          <h3>مواد السبيز الخام</h3>
-          <p>جودة السبيز المتوفرة لدينا، جاهزة للتسليم لأي مشروع.</p>
+          <h3>مواد <strong>السبيز</strong> الخام عالية الجودة</h3>
+          <p>جودة <strong>السبيز</strong> المتوفرة لدينا، جاهزة للتسليم لأي مشروع يتطلب <strong>ردميات</strong> قوية ومتينة.</p>
         </div>
       </div>
 
       <div class="gallery-item" onclick="openLightbox(4)">
-        <img src="images/20.jpg" alt="شاحنة تحمل مواد">
+        <img src="images/20.jpg" alt="شاحنة نقل مواد بناء ورمل في مكة">
         <div class="gallery-info">
-          <h3>شاحنات النقل</h3>
-          <p>صورة توضح إحدى شاحناتنا وهي تحمل المواد الخام لتوصيلها إلى العملاء.</p>
+          <h3><strong>شاحنات نقل مواد البناء</strong> المجهزة</h3>
+          <p>صورة توضح إحدى شاحناتنا وهي تحمل <strong>المواد الخام</strong> لتوصيلها إلى العملاء في مختلف أحياء مكة.</p>
         </div>
       </div>
 
       <div class="gallery-item" onclick="openLightbox(5)">
-        <img src="images/9.png" alt="موقع عمل واسع">
+        <img src="images/9.png" alt="مشروع بناء واسع النطاق في مكة المكرمة">
         <div class="gallery-info">
-          <h3>مشروع على نطاق واسع</h3>
-          <p>نظرة عامة على أحد مشاريعنا الكبيرة حيث قمنا بتوريد مواد متعددة.</p>
+          <h3>مشروع <strong>بناء</strong> على نطاق واسع</h3>
+          <p>نظرة عامة على أحد مشاريعنا الكبيرة حيث قمنا بـ<strong>توريد مواد بناء متعددة</strong>، مثل الرمل والبطحاء والخرسانة.</p>
         </div>
       </div>
 
     </div>
   </div>
 
-  <div id="lightbox" class="lightbox" style="display: none;">
-    <span class="close-button" onclick="closeLightbox()">&times;</span>
-    <div class="lightbox-content">
-      <img id="lightbox-img" src="" alt="صورة مكبرة">
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()"> <span class="close-button" onclick="event.stopPropagation(); closeLightbox();">&times;</span> <div class="lightbox-content" onclick="event.stopPropagation();"> <img id="lightbox-img" src="" alt="صورة مكبرة">
       <div id="lightbox-caption" class="lightbox-caption"></div>
-      <a class="prev" onclick="changeImage(-1)">&#10094;</a>
-      <a class="next" onclick="changeImage(1)">&#10095;</a>
-    </div>
+      <a class="prev" onclick="event.stopPropagation(); changeImage(-1);">&#10094;</a> <a class="next" onclick="event.stopPropagation(); changeImage(1);">&#10095;</a> </div>
   </div>
 
   <div class="buttons">
@@ -552,7 +554,7 @@
   </div>
 
   <div class="footer">
-    © 2025 جميع الحقوق محفوظة – بطحاء مكة
+    © 2024 جميع الحقوق محفوظة – مؤسسة رمال الصحراء.
   </div>
 
   <script>
@@ -574,7 +576,7 @@
           }
       });
 
-      // ✅ JavaScript لمعرض الصور (Lightbox)
+      // JavaScript لمعرض الصور (Lightbox)
       let currentImageIndex = 0;
       let galleryItems = []; // لتخزين معلومات الصور
 
@@ -584,7 +586,7 @@
           items.forEach((item, index) => {
               galleryItems.push({
                   src: item.querySelector('img').src,
-                  alt: item.querySelector('img').alt,
+                  alt: item.querySelector('img').alt, // جلب نص Alt من الصورة
                   caption: item.querySelector('.gallery-info p').textContent // الوصف من الفقرة
               });
               item.setAttribute('onclick', `openLightbox(${index})`); // تعيين وظيفة openLightbox لكل عنصر
@@ -601,10 +603,12 @@
           lightboxImg.alt = galleryItems[currentImageIndex].alt;
           lightboxCaption.textContent = galleryItems[currentImageIndex].caption;
           lightbox.style.display = 'flex'; // عرض الـ lightbox
+          document.body.style.overflow = 'hidden'; // منع التمرير في الخلفية
       }
 
       function closeLightbox() {
           document.getElementById('lightbox').style.display = 'none';
+          document.body.style.overflow = ''; // إعادة التمرير للخلفية
       }
 
       function changeImage(direction) {
