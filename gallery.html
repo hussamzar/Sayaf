@@ -240,7 +240,7 @@
 
     /* تصميم النافذة المنبثقة (Lightbox) */
     .lightbox {
-      display: none; /* مخفية بشكل افتراضي */
+      display: none; /* ✅ تم إزالة !important للسماح للـ JS بالتحكم */
       position: fixed;
       z-index: 10001;
       left: 0;
@@ -249,7 +249,6 @@
       height: 100%;
       overflow: auto;
       background-color: rgba(0,0,0,0.8);
-      display: flex;
       align-items: center;
       justify-content: center;
     }
@@ -466,7 +465,8 @@
       <div class="horizontal-nav-links">
           <a href="products.html"><i class="fas fa-shopping-cart"></i> منتجاتنا</a>
           <a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a>
-          <a href="contact.html"><i class="fas fa-phone-alt"></i> اتصل بنا</a> </div>
+          <a href="contact.html"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
+      </div>
 
       <div class="hamburger-links" id="hamburger-links">
           <a href="index.html"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
@@ -476,9 +476,9 @@
           <a href="products.html"><img alt="منتجات البناء المتوفرة" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
           <a href="gallery.html"><img alt="معرض صور مشاريعنا" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
           <a href="projects.html"><img alt="أمثلة لمشاريعنا" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
-          <a href="testimonials.html"><img alt="آراء وشهادات العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
+          <a href="testimonials.html"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
           <a href="faq.html"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
-          <a href="payment.html"><img alt="طرق الدفع المتاحة" src="https://img.icons8.com/fluency/20/money.png"/> طرق الدفع</a>
+          <a href="payment.html"><img alt="طرق الدفع" src="https://img.icons8.com/fluency/20/money.png"/> طرق الدفع</a>
           <a href="certificates.html"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
           <a href="blog.html"><img alt="مدونة مواد البناء" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
           <a href="contact.html"><img alt="للتواصل معنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
@@ -543,9 +543,14 @@
     </div>
   </div>
 
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()"> <span class="close-button" onclick="event.stopPropagation(); closeLightbox();">&times;</span> <div class="lightbox-content" onclick="event.stopPropagation();"> <img id="lightbox-img" src="" alt="صورة مكبرة">
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close-button" onclick="event.stopPropagation(); closeLightbox();">&times;</span>
+    <div class="lightbox-content" onclick="event.stopPropagation();">
+      <img id="lightbox-img" src="" alt="صورة مكبرة">
       <div id="lightbox-caption" class="lightbox-caption"></div>
-      <a class="prev" onclick="event.stopPropagation(); changeImage(-1);">&#10094;</a> <a class="next" onclick="event.stopPropagation(); changeImage(1);">&#10095;</a> </div>
+      <a class="prev" onclick="event.stopPropagation(); changeImage(-1);">&#10094;</a>
+      <a class="next" onclick="event.stopPropagation(); changeImage(1);">&#10095;</a>
+    </div>
   </div>
 
   <div class="buttons">
@@ -591,6 +596,9 @@
               });
               item.setAttribute('onclick', `openLightbox(${index})`); // تعيين وظيفة openLightbox لكل عنصر
           });
+
+          // ✅ إضافة هذا السطر لضمان إخفاء اللايت بوكس عند تحميل الصفحة
+          document.getElementById('lightbox').style.display = 'none';
       });
 
       function openLightbox(index) {
