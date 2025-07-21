@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17233250314">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17233250314">
 </script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -13,11 +12,8 @@
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>منتجاتنا – بطحاء مكة</title> <meta name="description" content="اكتشف مجموعة منتجات رمال الصحراء من بطحاء الرياض وتيماء، دفان، خرسانة، سبيز، وطرطشة – جودة عالية وخدمة موثوقة في مكة المكرمة." />
-  <meta name="keywords" content="بطحاء الرياض، بطحاء تيماء، دفان، سبيز، طرطشة، خرسانة، مواد بناء، مكة" />
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="بطحاء مكة" /> <meta property="og:title" content="منتجات بطحاء مكة – مكة" /> <meta property="og:description" content="جميع مواد البناء من بطحاء، دفان، خرسانة، وطرطشة متوفرة لدينا بجودة ممتازة في مكة." />
-  <meta property="og:type" content="website" />
+  <title>منتجات مواد البناء: رمل، بطحاء، دفان، خرسانة | مؤسسة رمال الصحراء في مكة</title> <link rel="canonical" href="https://bat7a-makkah.com/products.html">
+  <meta name="description" content="اكتشف مجموعة منتجات مؤسسة رمال الصحراء من مواد البناء عالية الجودة: بطحاء الرياض وتيماء، دفان، سبيز، طرطشة، وخرسانة جاهزة. نوفر أفضل أنواع الرمل والبطحاء في مكة المكرمة لمشاريع البناء." /> <meta name="robots" content="index, follow" /> <meta name="author" content="مؤسسة رمال الصحراء" /> <meta property="og:title" content="منتجات مؤسسة رمال الصحراء | رمل، بطحاء، دفان، خرسانة في مكة" /> <meta property="og:description" content="جميع مواد البناء من بطحاء، دفان، خرسانة، سبيز، وطرطشة متوفرة لدينا بجودة ممتازة في مكة. شاهد منتجاتنا المتنوعة لتلبية احتياجات مشروعك." /> <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bat7a-makkah.com/products.html" />
   <meta property="og:image" content="https://i.imgur.com/zmELsgo.jpeg" />
   <meta property="og:locale" content="ar_AR" />
@@ -38,7 +34,7 @@
     }
 
     /* --- */
-    /* ✅ القائمة العلوية (Hamburger) - منسوخة من صفحات سابقة */
+    /* القائمة العلوية (Hamburger) - منسوخة بالكامل من blog.html الأخيرة */
     .hamburger-container {
         background: #e0c9a6; /* لون رملي فاتح */
         padding: 10px 15px;
@@ -64,7 +60,8 @@
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
-        margin-left: 15px;
+        margin-left: 10px;
+        order: 0;
     }
 
     .hamburger-button img {
@@ -77,10 +74,10 @@
     }
 
     .hamburger-links {
-        display: none; /* مخفية بشكل افتراضي */
+        display: none;
         position: absolute;
-        top: 60px; /* تقع أسفل الشريط العلوي */
-        right: 10px; /* تظهر على اليمين الآن */
+        top: 60px;
+        right: 10px;
         left: auto;
         background: white;
         border-radius: 12px;
@@ -116,25 +113,15 @@
         height: 20px;
     }
 
-    /* الروابط الأفقية - منسوخة من صفحات سابقة */
+    /* الروابط الأفقية - منسوخة بالكامل من blog.html الأخيرة */
     .horizontal-nav-links {
         display: flex;
         gap: 20px;
-        align-items: center;
-        margin-right: 15px;
-        white-space: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 5px;
+        justify-content: flex-start;
+        margin: 0;
+        order: 1;
+        flex-grow: 1;
     }
-    .horizontal-nav-links::-webkit-scrollbar {
-        display: none;
-    }
-    .horizontal-nav-links {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-
     .horizontal-nav-links a {
         font-weight: 700;
         font-size: 14px;
@@ -153,6 +140,7 @@
         transform: translateY(-1px);
         background-color: rgba(255, 255, 255, 0.3);
     }
+    .horizontal-nav-links a img,
     .horizontal-nav-links a i {
         width: 18px;
         height: 18px;
@@ -160,8 +148,7 @@
         vertical-align: middle;
     }
 
-    /* --- */
-    /* ✅ أنماط صفحة المنتجات الجديدة (معدلة لتناسب التصميم) */
+    /* أنماط صفحة المنتجات (معدلة لتناسب التصميم) */
     .container {
         max-width: 900px;
         margin: 30px auto;
@@ -173,11 +160,11 @@
     }
 
     .page-header {
-      background-color: #eafaf5; /* خلفية فاتحة لرأس الصفحة */
+      background-color: #eafaf5;
       text-align: center;
       padding: 30px 15px;
       margin-bottom: 30px;
-      border-radius: 12px; /* حواف مستديرة */
+      border-radius: 12px;
     }
 
     .page-header h1 {
@@ -194,16 +181,16 @@
       line-height: 1.6;
     }
 
-    /* شبكة المنتجات (نفس تصميم معرض الصور) */
-    .products-grid { /* تم تغيير services إلى products-grid */
+    /* شبكة المنتجات */
+    .products-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
       margin-top: 30px;
-      justify-content: center; /* لتوسيط البطاقات إذا كان عددها فردي في الصف الأخير */
+      justify-content: center;
     }
 
-    .product-card { /* تم تغيير card إلى product-card */
+    .product-card {
       background: #fdfdfd;
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.08);
@@ -211,7 +198,6 @@
       text-align: right;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       border: 1px solid #eef;
-      cursor: pointer;
     }
 
     .product-card:hover {
@@ -221,12 +207,12 @@
 
     .product-card img {
       width: 100%;
-      height: 220px; /* ارتفاع ثابت للصور */
+      height: 220px;
       object-fit: cover;
       display: block;
     }
 
-    .product-info { /* تم تغيير gallery-info إلى product-info */
+    .product-info {
       padding: 15px;
     }
 
@@ -242,21 +228,21 @@
       color: #666;
       font-size: 14px;
       line-height: 1.5;
-      margin-bottom: 10px; /* لإعطاء مسافة قبل الزر */
+      margin-bottom: 10px;
     }
 
-    .product-card .btn-call { /* تم تغيير call-btn إلى btn-call */
+    .product-card .btn-call {
       display: inline-block;
-      background-color: #007bff; /* لون أزرق للاتصال */
+      background-color: #007bff;
       color: white;
       padding: 10px 20px;
       border-radius: 8px;
       font-weight: bold;
       text-decoration: none;
       transition: background-color 0.3s ease, transform 0.2s ease;
-      margin-top: 5px; /* لزيادة المسافة من النص */
+      margin-top: 5px;
       text-align: center;
-      width: calc(100% - 30px); /* لتغطية عرض البطاقة مع البادينغ */
+      width: calc(100% - 30px);
     }
 
     .product-card .btn-call:hover {
@@ -269,9 +255,9 @@
     .video-section {
       text-align: center;
       padding: 40px 20px;
-      background: #f8fcfb; /* لون فاتح متناسق */
+      background: #f8fcfb;
       border-top: 1px solid #e0e0e0;
-      margin-top: 30px; /* مسافة من قسم المنتجات */
+      margin-top: 30px;
       border-radius: 12px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.05);
     }
@@ -290,13 +276,13 @@
     }
     .video-section iframe {
       width: 100%;
-      max-width: 800px; /* تم تقليل العرض قليلاً */
-      height: 450px; /* تم زيادة الارتفاع ليتناسب */
+      max-width: 800px;
+      height: 450px;
       border-radius: 12px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-      border: none; /* إزالة الحدود الافتراضية للإطار */
+      border: none;
     }
-    .video-section .btn-call { /* تم تغيير call-btn إلى btn-call */
+    .video-section .btn-call {
       display: inline-block;
       background-color: #007bff;
       color: white;
@@ -313,7 +299,7 @@
     }
 
 
-    /* ✅ أزرار التواصل (منسوخة من الصفحات السابقة) */
+    /* أزرار التواصل (منسوخة من الصفحات السابقة) */
     .buttons {
       text-align: center;
       margin: 50px 0 10px;
@@ -349,7 +335,7 @@
       transform: translateY(-2px);
     }
 
-    /* ✅ الفوتر (منسوخة من الصفحات السابقة) */
+    /* الفوتر (منسوخة من الصفحات السابقة) */
     .footer {
       text-align: center;
       font-size: 14px;
@@ -392,21 +378,21 @@
         .page-header p {
             font-size: 16px;
         }
-        .products-grid { /* تم تغيير services إلى products-grid */
-            grid-template-columns: 1fr; /* عمود واحد على الجوال */
+        .products-grid {
+            grid-template-columns: 1fr;
             gap: 20px;
         }
-        .product-card img { /* تم تغيير card img إلى product-card img */
-            height: 180px; /* ارتفاع أقل للصور على الجوال */
+        .product-card img {
+            height: 180px;
         }
-        .product-info h3 { /* تم تغيير gallery-info h3 إلى product-info h3 */
+        .product-info h3 {
             font-size: 17px;
         }
-        .product-info p { /* تم تغيير gallery-info p إلى product-info p */
+        .product-info p {
             font-size: 13px;
         }
         .video-section iframe {
-            height: 250px; /* ارتفاع أقل للفيديو على الجوال */
+            height: 250px;
         }
         .btn-whatsapp, .btn-call {
             padding: 10px 20px;
@@ -419,33 +405,35 @@
 
   <div class="hamburger-container">
       <button class="hamburger-button" onclick="toggleMenu()">
-          <img alt="قائمة" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
+          <img alt="قائمة التنقل" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
       </button>
 
       <div class="horizontal-nav-links">
           <a href="products.html"><i class="fas fa-shopping-cart"></i> منتجاتنا</a>
           <a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a>
-          <a href="index.html#contact"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
+          <a href="contact.html"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
       </div>
 
       <div class="hamburger-links" id="hamburger-links">
           <a href="index.html"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
           <a href="about.html"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a>
-          <a href="services.html"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
-          <a href="products.html"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
-          <a href="gallery.html"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
-          <a href="index.html#projects"><img alt="المشاريع" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
+          <a href="difference.html"><img alt="الفرق بين بطحاء الرياض وتيماء" src="https://img.icons8.com/fluency/20/compare.png"/> الفرق بين بطحاء الرياض وتيماء</a>
+          <a href="services.html"><img alt="خدمات توريد مواد البناء" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
+          <a href="products.html"><img alt="منتجات البناء المتوفرة" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
+          <a href="gallery.html"><img alt="معرض صور مشاريعنا" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
+          <a href="projects.html"><img alt="أمثلة لمشاريعنا" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
           <a href="testimonials.html"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
-          <a href="index.html#faq"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
+          <a href="faq.html"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
+          <a href="payment.html"><img alt="طرق الدفع" src="https://img.icons8.com/fluency/20/money.png"/> طرق الدفع</a>
           <a href="certificates.html"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
-          <a href="blog.html"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
-          <a href="index.html#contact"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
+          <a href="blog.html"><img alt="مدونة مواد البناء" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
+          <a href="contact.html"><img alt="للتواصل معنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
       </div>
   </div>
 
   <section class="page-header">
-    <h1>منتجاتنا المتوفرة</h1>
-    <p>اكتشف مجموعتنا الواسعة من مواد البناء عالية الجودة: البطحاء، الدفان، والسبيز، المتوفرة لتلبية احتياجات مشاريعك.</p>
+    <h1>مجموعة منتجات مؤسسة رمال الصحراء من مواد البناء عالية الجودة</h1>
+    <p>استكشف مجموعتنا الواسعة من <strong>مواد البناء</strong> عالية الجودة: من <strong>البطحاء</strong> بأنواعها (<strong>بطحاء الرياض</strong> و<strong>بطحاء تيماء</strong>)، إلى <strong>الدفان</strong>، <strong>السبيز</strong>، <strong>الطرطشة</strong>، و<strong>الخرسانة الجاهزة</strong>. نوفر أفضل أنواع <strong>الرمل</strong> و<strong>البطحاء</strong> و<strong>الخرسانة</strong> في <strong>مكة المكرمة</strong> لتلبية احتياجات مشاريعك الإنشائية المختلفة.</p>
   </section>
 
   <div class="container">
@@ -510,7 +498,7 @@
     <h2>شاهد منتجاتنا ومعداتنا في العمل</h2>
     <p>استكشف كيف تساهم منتجاتنا ومعداتنا الحديثة في إنجاح مشاريع عملائنا.</p>
     <iframe
-      src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID" title="بعض من منتجاتنا"
+      src="https://www.youtube.com/embed/2j_OT2Br_xc" title="فيديو تعريفي بمنتجات رمال الصحراء"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen>
@@ -526,7 +514,7 @@
   </div>
 
   <div class="footer">
-    © 2025 جميع الحقوق محفوظة – بطحاء مكة
+    © 2024 جميع الحقوق محفوظة – بطحاء مكة
   </div>
 
   <script>
