@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17233250314">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17233250314"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'AW-17233250314');
-</script>
+    gtag('config', 'AW-17233250314');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>منتجات مواد البناء: رمل، بطحاء، دفان، خرسانة | مؤسسة رمال الصحراء في مكة</title> <link rel="canonical" href="https://bat7a-makkah.com/products.html">
-  <meta name="description" content="اكتشف مجموعة منتجات مؤسسة رمال الصحراء من مواد البناء عالية الجودة: بطحاء الرياض وتيماء، دفان، سبيز، طرطشة، وخرسانة جاهزة. نوفر أفضل أنواع الرمل والبطحاء في مكة المكرمة لمشاريع البناء." /> <meta name="robots" content="index, follow" /> <meta name="author" content="مؤسسة رمال الصحراء" /> <meta property="og:title" content="منتجات مؤسسة رمال الصحراء | رمل، بطحاء، دفان، خرسانة في مكة" /> <meta property="og:description" content="جميع مواد البناء من بطحاء، دفان، خرسانة، سبيز، وطرطشة متوفرة لدينا بجودة ممتازة في مكة. شاهد منتجاتنا المتنوعة لتلبية احتياجات مشروعك." /> <meta property="og:type" content="website" />
+  <title>منتجات مواد البناء: رمل، بطحاء، دفان، خرسانة | مؤسسة رمال الصحراء في مكة</title>
+  <link rel="canonical" href="https://bat7a-makkah.com/products.html">
+  <meta name="description" content="اكتشف مجموعة منتجات مؤسسة رمال الصحراء من مواد البناء عالية الجودة: بطحاء الرياض وتيماء، دفان، سبيز، طرطشة، وخرسانة جاهزة. نوفر أفضل أنواع الرمل والبطحاء في مكة المكرمة لمشاريع البناء." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="مؤسسة رمال الصحراء" />
+  <meta property="og:title" content="منتجات مؤسسة رمال الصحراء | رمل، بطحاء، دفان، خرسانة في مكة" />
+  <meta property="og:description" content="جميع مواد البناء من بطحاء، دفان، خرسانة، سبيز، وطرطشة متوفرة لدينا بجودة ممتازة في مكة. شاهد منتجاتنا المتنوعة لتلبية احتياجات مشروعك." />
+  <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bat7a-makkah.com/products.html" />
   <meta property="og:image" content="https://i.imgur.com/zmELsgo.jpeg" />
   <meta property="og:locale" content="ar_AR" />
@@ -181,6 +186,17 @@
       line-height: 1.6;
     }
 
+    /* نمط الكلمات الرئيسية في وصف الهيدر */
+    .page-header p strong {
+      color: #00765a; /* اللون الأخضر الداكن */
+      font-weight: 700; /* تجعله سميكًا */
+      font-size: 19px; /* أكبر قليلاً من النص العادي */
+      /* يمكنك إضافة خلفية إذا أردت مثل الصورة: */
+      /* background-color: rgba(0, 118, 90, 0.1); */ /* ظل خفيف من الأخضر */
+      /* padding: 2px 5px; */
+      /* border-radius: 4px; */
+    }
+
     /* شبكة المنتجات */
     .products-grid {
       display: grid;
@@ -231,9 +247,10 @@
       margin-bottom: 10px;
     }
 
-    .product-card .btn-call {
+    /* تعديل زر المنتج */
+    .product-card .btn-details { /* تغيير اسم الكلاس من btn-call */
       display: inline-block;
-      background-color: #007bff;
+      background-color: #007bff; /* نفس اللون الأزرق */
       color: white;
       padding: 10px 20px;
       border-radius: 8px;
@@ -245,7 +262,7 @@
       width: calc(100% - 30px);
     }
 
-    .product-card .btn-call:hover {
+    .product-card .btn-details:hover { /* تغيير اسم الكلاس من btn-call */
       background-color: #0056b3;
       transform: translateY(-2px);
     }
@@ -378,6 +395,10 @@
         .page-header p {
             font-size: 16px;
         }
+        /* تعديل الخط للموبايل */
+        .page-header p strong {
+            font-size: 17px;
+        }
         .products-grid {
             grid-template-columns: 1fr;
             gap: 20px;
@@ -443,7 +464,7 @@
         <div class="product-info">
           <h3>بطحاء الرياض</h3>
           <p>بطحاء عالية النقاء للتلييس والبناء.</p>
-          <a class="btn-call" href="tel:0537216061">اتصل الآن</a>
+          <a class="btn-details" href="riyadh-bat7a.html">عرض التفاصيل</a>
         </div>
       </div>
 
@@ -452,7 +473,7 @@
         <div class="product-info">
           <h3>بطحاء تيماء</h3>
           <p>بطحاء ناعمة حمراء ممتازة للتشطيب.</p>
-          <a class="btn-call" href="tel:0537216061">اتصل الآن</a>
+          <a class="btn-details" href="tayma-bat7a.html">عرض التفاصيل</a>
         </div>
       </div>
 
@@ -461,7 +482,7 @@
         <div class="product-info">
           <h3>دفان بلاط</h3>
           <p>دفان نظيف خالي من الشوائب ومناسب لأعمال التسوية والردم.</p>
-          <a class="btn-call" href="tel:0537216061">اتصل الآن</a>
+          <a class="btn-details" href="dafian-balat.html">عرض التفاصيل</a>
         </div>
       </div>
 
@@ -470,7 +491,7 @@
         <div class="product-info">
           <h3>طرطشة</h3>
           <p>مادة عازلة ومقاومة للحرارة للأسطح، أساسية في أعمال العزل.</p>
-          <a class="btn-call" href="tel:0537216061">اتصل الآن</a>
+          <a class="btn-details" href="tartasha.html">عرض التفاصيل</a>
         </div>
       </div>
 
@@ -479,7 +500,7 @@
         <div class="product-info">
           <h3>سبيز</h3>
           <p>مادة متينة للردم وتثبيت الأساسات، توفر استقرارًا فائقًا.</p>
-          <a class="btn-call" href="tel:0537216061">اتصل الآن</a>
+          <a class="btn-details" href="speez.html">عرض التفاصيل</a>
         </div>
       </div>
 
@@ -488,7 +509,7 @@
         <div class="product-info">
           <h3>خرسانة بجميع المقاسات</h3>
           <p>توريد خرسانة جاهزة بجودة عالية وبكل المقاسات المطلوبة لمشاريعك.</p>
-          <a class="btn-call" href="tel:0537216061">اتصل الآن</a>
+          <a class="btn-details" href="concrete.html">عرض التفاصيل</a>
         </div>
       </div>
     </div>
