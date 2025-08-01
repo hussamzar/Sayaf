@@ -12,20 +12,20 @@
     
     <title>{{ page.title }}</title>
     
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
     
     <meta content="{{ page.description }}" name="description"/>
     <meta content="{{ page.robots }}" name="robots"/>
     
     <meta property="og:title" content="{{ page.og_title }}"/>
     <meta property="og:description" content="{{ page.og_description }}"/>
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
+    <meta property="og:url" content="{{ page.url | absolute_url }}"/>
     <meta property="og:type" content="{{ page.og_type }}"/>
     <meta property="og:image" content="{{ page.og_image }}"/>
     <meta property="og:locale" content="ar_AR"/>
     <meta content="{{ site.author }}" name="author"/>
 
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
+    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
     
     {% if page.schema %}
     <script type="application/ld+json">{{ page.schema | jsonify }}</script>
@@ -40,9 +40,9 @@
             <img alt="قائمة" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
         </button>
         <div class="horizontal-nav-links">
-            <a href="{{ site.baseurl }}/services.html">خدماتنا</a>
-            <a href="{{ site.baseurl }}/gallery.html">معرض الصور</a>
-            <a href="{{ site.baseurl }}/#contact">اتصل بنا</a>
+            <a href="{{ '/services.html' | relative_url }}">خدماتنا</a>
+            <a href="{{ '/gallery.html' | relative_url }}">معرض الصور</a>
+            <a href="{{ '/#contact' | relative_url }}">اتصل بنا</a>
         </div>
         <div class="top-contact-buttons">
             <a href="https://wa.me/966537216061" target="_blank">💬 واتساب</a>
@@ -50,18 +50,18 @@
         </div>
     </div>
     <div class="hamburger-links" id="hamburger-links">
-        <a href="{{ site.baseurl }}/"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
-        <a href="{{ site.baseurl }}/about.html"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a>
-        <a href="{{ site.baseurl }}/difference.html"><img alt="الفرق" src="https://img.icons8.com/fluency/20/compare.png"/> الفرق بين بطحاء الرياض وتيماء</a>
-        <a href="{{ site.baseurl }}/services.html"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
-        <a href="{{ site.baseurl }}/products.html"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
-        <a href="{{ site.baseurl }}/gallery.html"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
-        <a href="{{ site.baseurl }}/projects.html"><img alt="المشاريع" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
-        <a href="{{ site.baseurl }}/testimonials.html"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
-        <a href="{{ site.baseurl }}/faq.html"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
-        <a href="{{ site.baseurl }}/payment.html"><img alt="طرق الدفع" src="https://img.icons8.com/fluency/20/money.png"/> طرق الدفع</a>
-        <a href="{{ site.baseurl }}/certificates.html"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
-        <a href="{{ site.baseurl }}/blog.html"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
-        <a href="{{ site.baseurl }}/contact.html"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
+        <a href="{{ '/' | relative_url }}"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
+        <a href="{{ '/about.html' | relative_url }}"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a>
+        <a href="{{ '/difference.html' | relative_url }}"><img alt="الفرق" src="https://img.icons8.com/fluency/20/compare.png"/> الفرق بين بطحاء الرياض وتيماء</a>
+        <a href="{{ '/services.html' | relative_url }}"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
+        <a href="{{ '/products.html' | relative_url }}"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
+        <a href="{{ '/gallery.html' | relative_url }}"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
+        <a href="{{ '/projects.html' | relative_url }}"><img alt="المشاريع" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
+        <a href="{{ '/testimonials.html' | relative_url }}"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
+        <a href="{{ '/faq.html' | relative_url }}"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
+        <a href="{{ '/payment.html' | relative_url }}"><img alt="طرق الدفع" src="https://img.icons8.com/fluency/20/money.png"/> طرق الدفع</a>
+        <a href="{{ '/certificates.html' | relative_url }}"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
+        <a href="{{ '/blog.html' | relative_url }}"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
+        <a href="{{ '/contact.html' | relative_url }}"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
     </div>
 </div>
