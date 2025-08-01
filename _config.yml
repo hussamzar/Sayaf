@@ -9,7 +9,7 @@ author: مؤسسة رمال الصحراء
 
 # إعدادات GitHub Pages
 github: [metadata]
-
+theme: jekyll-theme-minimal
 
 # تضمين المجلدات
 include:
