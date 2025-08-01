@@ -1,0 +1,36 @@
+<div class="buttons">
+    <a class="btn-whatsapp" href="https://wa.me/966537216061" target="_blank">راسلنا عبر واتساب</a>
+    <a class="btn-call" href="tel:0537216061">اتصل الآن</a>
+</div>
+
+<div class="footer">
+  <p>© 2025 جميع الحقوق محفوظة – مؤسسة رمال الصحراء.</p>
+</div>
+
+<script>
+    function toggleMenu() {
+        var links = document.getElementById('hamburger-links');
+        links.style.display = (links.style.display === 'block') ? 'none' : 'block';
+    }
+    document.addEventListener('click', function(event) {
+        var menu = document.getElementById('hamburger-links');
+        var button = document.querySelector('.hamburger-button');
+        if (menu && button) {
+            if (menu.style.display === 'block') {
+                if (!menu.contains(event.target) && !button.contains(event.target)) {
+                    menu.style.display = 'none';
+                }
+            }
+        }
+    });
+    window.addEventListener('resize', function() {
+        var links = document.getElementById('hamburger-links');
+        if (window.innerWidth > 768) {
+            if (links) {
+                links.style.display = 'none';
+            }
+        }
+    });
+</script>
+</body>
+</html>
