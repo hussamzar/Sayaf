@@ -1,0 +1,61 @@
+/* روابط القائمة */
+.menu-link {
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.menu-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(-3px);
+}
+
+/* القائمة الجانبية */
+#side-menu {
+  background: rgba(0, 64, 51, 0.93);
+  backdrop-filter: blur(6px);
+  box-shadow: -3px 0 12px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 240px;
+  height: 100vh;
+  padding-top: 60px;
+  transition: right 0.3s ease, opacity 0.3s ease;
+  z-index: 9999;
+  opacity: 0;
+  overflow-y: auto;          /* لتمرير داخل القائمة فقط */
+  pointer-events: none;
+}
+
+/* عند تفعيل القائمة */
+#side-menu.active {
+  right: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* منع تحريك الموقع عند فتح القائمة */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* الخلفية الداكنة عند فتح القائمة */
+#overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 9998;
+}
+
+#overlay.active {
+  display: block;
+}
