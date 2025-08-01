@@ -1,5 +1,46 @@
-{% include header.html %}
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TJWQWKQV');</script>
+    <link href="https://i.imgur.com/a7dzTKl.png" rel="icon" type="image/png"/> 
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    
+    <title>{{ page.title }}</title>
+    
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    
+    <meta content="{{ page.description }}" name="description"/>
+    <meta content="index, follow" name="robots"/>
+    <meta content="nOjylREn8w7aFoIZi7P2LRwO2kEd1uZOSFou5zNSu8E" name="google-site-verification"/>
 
-{{ content }}
+    <meta content="{{ site.title }} | {{ page.title }}" property="og:title"/>
+    <meta content="{{ page.description }}" property="og:description"/>
+    <meta content="{{ site.url }}{{ page.url }}" property="og:url"/>
+    <meta content="website" property="og:type"/>
+    <meta content="https://i.imgur.com/zmELsgo.jpeg" property="og:image"/>
+    <meta content="ar_AR" property="og:locale"/>
+    <meta content="{{ site.author }}" name="author"/>
 
-{% include footer.html %}
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJWQWKQV"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    {% include header.html %}
+
+    <main>
+        {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
