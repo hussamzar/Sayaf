@@ -1,63 +1,34 @@
-<!DOCTYPE html>
-<html dir="rtl" lang="ar">
-<head>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TJWQWKQV');</script>
-    <link href="https://i.imgur.com/a7dzTKl.png" rel="icon" type="image/png"/>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-
-    <title>{{ page.title }}</title>
-    <link rel="canonical" href="{{ page.url | absolute_url }}">
-    <meta content="{{ page.description }}" name="description"/>
-    <meta content="{{ page.robots }}" name="robots"/>
-    <meta property="og:title" content="{{ page.og_title }}"/>
-    <meta property="og:description" content="{{ page.og_description }}"/>
-    <meta property="og:url" content="{{ page.url | absolute_url }}"/>
-    <meta property="og:type" content="{{ page.og_type }}"/>
-    <meta property="og:image" content="{{ page.og_image }}"/>
-    <meta property="og:locale" content="ar_AR"/>
-    <meta content="{{ site.author }}" name="author"/>
-
-    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
-    {% if page.schema %}
-    <script type="application/ld+json">{{ page.schema | jsonify }}</script>
-    {% endif %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJWQWKQV"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <div class="hamburger-container">
-        <button class="hamburger-button" onclick="toggleMenu()">
-            <img alt="قائمة" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
-        </button>
-        <div class="horizontal-nav-links">
-            <a href="{{ '/services.html' | relative_url }}">خدماتنا</a>
-            <a href="{{ '/gallery.html' | relative_url }}">معرض الصور</a>
-            <a href="{{ '/contact.html' | relative_url }}">اتصل بنا</a>
-        </div>
-        <div class="top-contact-buttons">
-            <a href="https://wa.me/966537216061" target="_blank">💬 واتساب</a>
-            <a href="tel:0537216061">📞 اتصل بي</a>
-        </div>
-    </div>
+<div class="hamburger-container">
+    <button class="hamburger-button" onclick="toggleMenu()">
+        <img alt="قائمة" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
+    </button>
     <div class="hamburger-links" id="hamburger-links">
-        <a href="{{ '/' | relative_url }}"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
-        <a href="{{ '/about.html' | relative_url }}"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a>
-        <a href="{{ '/difference.html' | relative_url }}"><img alt="الفرق" src="https://img.icons8.com/fluency/20/compare.png"/> الفرق بين بطحاء الرياض وتيماء</a>
-        <a href="{{ '/services.html' | relative_url }}"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
-        <a href="{{ '/products.html' | relative_url }}"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
-        <a href="{{ '/gallery.html' | relative_url }}"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
-        <a href="{{ '/projects.html' | relative_url }}"><img alt="المشاريع" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
-        <a href="{{ '/testimonials.html' | relative_url }}"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
-        <a href="{{ '/faq.html' | relative_url }}"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
-        <a href="{{ '/payment.html' | relative_url }}"><img alt="طرق الدفع" src="https://img.icons8.com/fluency/20/money.png"/> طرق الدفع</a>
-        <a href="{{ '/certificates.html' | relative_url }}"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
-        <a href="{{ '/blog.html' | relative_url }}"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
-        <a href="{{ '/contact.html' | relative_url }}"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
+        <a href="/"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
+        <a href="/about.html"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a>
+        <a href="/difference.html"><img alt="الفرق" src="https://img.icons8.com/fluency/20/compare.png"/> الفرق بين بطحاء الرياض وتيماء</a>
+        <a href="/services.html"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
+        <a href="/products.html"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
+        <a href="/gallery.html"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
+        <a href="/projects.html"><img alt="المشاريع" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
+        <a href="/testimonials.html"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
+        <a href="/faq.html"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
+        <a href="/payment.html"><img alt="طرق الدفع" src="https://img.icons8.com/fluency/20/money.png"/> طرق الدفع</a>
+        <a href="/certificates.html"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
+        <a href="/blog.html"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
+        <a href="/contact.html"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
+    </div>
+    <div class="horizontal-nav-links">
+        <a href="/services.html">خدماتنا</a>
+        <a href="/gallery.html">معرض الصور</a>
+        <a href="/contact.html">اتصل بنا</a>
+    </div>
+    <div class="top-contact-buttons">
+        <a href="https://wa.me/966537216061" target="_blank">💬 واتساب</a>
+        <a href="tel:0537216061">📞 اتصل بي</a>
     </div>
 </div>
+
+<header>
+    <img class="header-banner-image" src="https://i.imgur.com/Q7LwJ4s.jpeg" alt="خلفية ترحيبية لمؤسسة رمال الصحراء، مورد رمل وبطحاء في مكة"/>
+    <h1>{{ page.title }}</h1>
+</header>
