@@ -1,0 +1,22 @@
+title:  توريد بطحاء الرياض ومواد البناء الاساسيه 
+email: hussamzar1@hotmail.com 
+description: >-
+  مؤسسة وصف الشمال : موردكم الأول لبطحاء الرياض وتيماء والرمل الأبيض في مكة. خدماتنا سريعة، أسعارنا تنافسية، ونلتزم بالجودة لمشاريع البناء.
+url: "https://bat7a-makkah.com"
+baseurl: ""
+timezone: Asia/Riyadh
+author: مؤسسة وصف الشمال 
+
+# إعدادات GitHub Pages
+github: [metadata]
+remote_theme: jekyll-theme-minimal
+
+# تضمين المجلدات
+include:
+  - _includes
+  - _layouts
+  - assets
+
+# استبعاد المجلدات (اختياري)
+# exclude:
+#   - README.md
