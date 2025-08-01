@@ -9,7 +9,6 @@ author: مؤسسة وصف الشمال
 
 # إعدادات GitHub Pages
 github: [metadata]
-remote_theme: jekyll-theme-minimal
 
 # تضمين المجلدات
 include:
