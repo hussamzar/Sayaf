@@ -10,6 +10,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>معرض صور مشاريع ومواد بناء مؤسسة رمال الصحراء في مكة | جودة ورمل وبطحاء</title>
   <link rel="canonical" href="https://bat7a-makkah.com/gallery.html">
+  <link rel="alternate" href="https://bat7a-makkah.com/en/gallery.html" hreflang="en">
 
   <meta name="description" content="استكشف معرض صور مؤسسة رمال الصحراء: توثيق بصري لأعمالنا في توريد البطحاء (الرياض وتيماء)، الدفان، السبيز، والرمل المغسول. شاهد جودة مواد البناء ومعداتنا الحديثة في مشاريع مكة.">
   <meta name="robots" content="index, follow">
@@ -33,11 +34,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       color: #333;
       direction: rtl;
       overflow-x: hidden;
-      padding-top: 60px; /* مسافة أعلى للـ hamburger-container الثابت */
+      padding-top: 60px;
     }
 
-    /* --- */
-    /* القائمة العلوية (Hamburger) - منسوخة من صفحات سابقة */
     .hamburger-container {
         background: #e0c9a6;
         padding: 10px 15px;
@@ -46,8 +45,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         align-items: center;
         position: fixed;
         top: 0;
-        left: 0;
         right: 0;
+        left: 0;
         z-index: 10000;
         box-shadow: 0 3px 10px rgba(0,0,0,0.18);
         width: 100%;
@@ -63,17 +62,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
-        margin-left: 10px;
+        margin-right: 10px;
         order: 0;
     }
 
-    .hamburger-button img {
-        width: 30px;
-        height: 30px;
-        transition: transform 0.2s ease;
+    .hamburger-button i {
+        font-size: 30px;
+        color: #333;
+        transition: color 0.2s ease;
     }
-    .hamburger-button:hover img {
-        transform: rotate(90deg);
+
+    .hamburger-button:hover i {
+        color: #004d3c;
     }
 
     .hamburger-links {
@@ -116,7 +116,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         height: 20px;
     }
 
-    /* الروابط الأفقية - منسوخة من صفحات سابقة */
     .horizontal-nav-links {
         display: flex;
         gap: 20px;
@@ -124,6 +123,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         margin: 0;
         order: 1;
         flex-grow: 1;
+        align-items: center;
     }
     .horizontal-nav-links a {
         font-weight: 700;
@@ -150,6 +150,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         font-size: 18px;
         vertical-align: middle;
     }
+    .language-switcher-button {
+      background-color: transparent;
+      color: #333;
+      padding: 8px 15px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      margin-right: 15px;
+      margin-left: 0;
+      border: 1px solid #d2b48c;
+      box-shadow: none;
+      transition: background-color 0.3s, transform 0.2s, color 0.3s;
+    }
+    .language-switcher-button:hover {
+      background-color: #f0f0f0;
+      color: #004d3c;
+    }
+
 
     /* أنماط صفحة معرض الصور الجديدة */
     .container {
@@ -236,7 +255,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* تصميم النافذة المنبثقة (Lightbox) */
     .lightbox {
-      display: none; /* ✅ تم إزالة !important للسماح للـ JS بالتحكم */
+      display: none;
       position: fixed;
       z-index: 10001;
       left: 0;
@@ -285,7 +304,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       color: #aaa;
       position: absolute;
       top: 15px;
-      left: 25px;
+      right: 25px;
+      left: auto;
       font-size: 40px;
       font-weight: bold;
       transition: 0.3s;
@@ -318,14 +338,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       background-color: rgba(0,0,0,0.5);
       border-radius: 5px;
     }
-
-    .next {
+    .prev {
       right: 0;
       left: auto;
       border-radius: 3px 0 0 3px;
     }
 
-    .prev {
+    .next {
       left: 0;
       right: auto;
       border-radius: 0 3px 3px 0;
@@ -336,7 +355,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
 
-    /* أزرار التواصل (منسوخة من الصفحات السابقة) */
+    /* أزرار التواصل */
     .buttons {
       text-align: center;
       margin: 50px 0 10px;
@@ -372,7 +391,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       transform: translateY(-2px);
     }
 
-    /* الفوتر (منسوخة من الصفحات السابقة) */
+    /* الفوتر */
     .footer {
       text-align: center;
       font-size: 14px;
@@ -391,20 +410,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
         .horizontal-nav-links {
             gap: 10px;
-            margin-right: 10px;
-            font-size: 13px;
+            margin-left: 10px;
         }
         .horizontal-nav-links a {
             font-size: 13px;
             padding: 5px 6px;
         }
         .hamburger-button {
-            margin-left: 15px;
+            margin-right: 15px;
         }
         .hamburger-links {
             top: 60px;
         }
-
+        
         .container {
             margin: 20px 15px;
             padding: 20px;
@@ -437,7 +455,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .close-button {
             font-size: 30px;
             top: 10px;
-            left: 20px;
+            right: 20px;
         }
         .prev, .next {
             font-size: 20px;
@@ -455,13 +473,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <div class="hamburger-container">
       <button class="hamburger-button" onclick="toggleMenu()">
-          <img alt="قائمة التنقل" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
+          <i class="fas fa-bars"></i>
       </button>
 
       <div class="horizontal-nav-links">
           <a href="products.html"><i class="fas fa-shopping-cart"></i> منتجاتنا</a>
-          <a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a>
           <a href="contact.html"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
+          <a href="/en/gallery.html" class="language-switcher-button">English</a>
       </div>
 
       <div class="hamburger-links" id="hamburger-links">
@@ -478,12 +496,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <a href="certificates.html"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
           <a href="blog.html"><img alt="مدونة مواد البناء" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
           <a href="contact.html"><img alt="للتواصل معنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
-        </div>
+          <a href="/en/gallery.html"><img alt="English" src="https://img.icons8.com/fluency/20/usa.png"/> English</a>
+      </div>
   </div>
 
   <section class="page-header">
     <h1>معرض صور أعمالنا ومشاريعنا في توريد مواد البناء</h1>
-    <p>استكشف مجموعتنا من الصور التي توثق أعمالنا في <strong>توريد البطحاء</strong> بأنواعها (<strong>بطحاء الرياض</strong> و<strong>بطحاء تيماء</strong>)، <strong>الدفان</strong>، و<strong>السبيز</strong>. شاهد جودة <strong>مواد البناء</strong> التي نوفرها ومعداتنا الحديثة في مختلف المواقع بـ<strong>مكة المكرمة</strong>.</p>
+    <p>استكشف مجموعتنا من الصور التي توثق أعمالنا في توريد <strong>البطحاء</strong> بأنواعها (<strong>بطحاء الرياض</strong> و<strong>بطحاء تيماء</strong>)، <strong>الدفان</strong>، و<strong>السبيز</strong>. شاهد جودة <strong>مواد البناء</strong> التي نوفرها ومعداتنا الحديثة في مختلف المواقع بـ<strong>مكة المكرمة</strong>.</p>
   </section>
 
   <div class="container">
@@ -559,12 +578,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 
   <script>
-      // JavaScript للقائمة الجانبية (Hamburger Menu)
       function toggleMenu() {
           var links = document.getElementById('hamburger-links');
           links.style.display = (links.style.display === 'block') ? 'none' : 'block';
       }
-
       document.addEventListener('click', function(event) {
           var menu = document.getElementById('hamburger-links');
           var button = document.querySelector('.hamburger-button');
@@ -576,45 +593,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               }
           }
       });
-
-      // JavaScript لمعرض الصور (Lightbox)
       let currentImageIndex = 0;
-      let galleryItems = []; // لتخزين معلومات الصور
-
+      let galleryItems = [];
       document.addEventListener('DOMContentLoaded', function() {
-          // جمع معلومات الصور من الـ HTML عند تحميل الصفحة
           const items = document.querySelectorAll('.gallery-item');
           items.forEach((item, index) => {
               galleryItems.push({
                   src: item.querySelector('img').src,
-                  alt: item.querySelector('img').alt, // جلب نص Alt من الصورة
-                  caption: item.querySelector('.gallery-info p').textContent // الوصف من الفقرة
+                  alt: item.querySelector('img').alt,
+                  caption: item.querySelector('.gallery-info p').textContent
               });
-              item.setAttribute('onclick', `openLightbox(${index})`); // تعيين وظيفة openLightbox لكل عنصر
+              item.setAttribute('onclick', `openLightbox(${index})`);
           });
-
-          // إضافة هذا السطر لضمان إخفاء اللايت بوكس عند تحميل الصفحة
           document.getElementById('lightbox').style.display = 'none';
       });
-
       function openLightbox(index) {
           currentImageIndex = index;
           const lightbox = document.getElementById('lightbox');
           const lightboxImg = document.getElementById('lightbox-img');
           const lightboxCaption = document.getElementById('lightbox-caption');
-
           lightboxImg.src = galleryItems[currentImageIndex].src;
           lightboxImg.alt = galleryItems[currentImageIndex].alt;
           lightboxCaption.textContent = galleryItems[currentImageIndex].caption;
-          lightbox.style.display = 'flex'; // عرض الـ lightbox
-          document.body.style.overflow = 'hidden'; // منع التمرير في الخلفية
+          lightbox.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
       }
-
       function closeLightbox() {
           document.getElementById('lightbox').style.display = 'none';
-          document.body.style.overflow = ''; // إعادة التمرير للخلفية
+          document.body.style.overflow = '';
       }
-
       function changeImage(direction) {
           currentImageIndex += direction;
           if (currentImageIndex < 0) {
@@ -622,16 +629,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           } else if (currentImageIndex >= galleryItems.length) {
               currentImageIndex = 0;
           }
-          openLightbox(currentImageIndex); // عرض الصورة الجديدة
+          openLightbox(currentImageIndex);
       }
-
-      // إغلاق Lightbox عند الضغط على مفتاح ESC
       document.addEventListener('keydown', function(e) {
           if (e.key === "Escape") {
               closeLightbox();
           }
       });
+      window.addEventListener('resize', function() {
+          var links = document.getElementById('hamburger-links');
+          if (window.innerWidth > 768) {
+              if (links) {
+                  links.style.display = 'none';
+              }
+          }
+      });
   </script>
-
 </body>
 </html>
