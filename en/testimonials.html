@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TJWQWKQV');</script>
+<meta charset="UTF-8" />
+  <title>آراء العملاء - بطحاء مكة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: #fdfaf8; /* لون رملي فاتح للخلفية */
+      padding: 0;
+      margin: 0;
+      color: #333;
+      direction: rtl;
+      overflow-x: hidden; /* لمنع التمرير الأفقي */
+      padding-top: 60px; /* مسافة أعلى للـ hamburger-container الثابت */
+    }
+
+    /* --- */
+    /* ✅ القائمة العلوية (Hamburger) - تم التعديل لجعل العناصر جنبًا إلى جنب */
+    .hamburger-container {
+        background: #e0c9a6; /* لون رملي فاتح */
+        padding: 10px 15px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center; /* لمحاذاة رأسية */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10000;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hamburger-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-left: 15px;
+    }
+
+    .hamburger-button img {
+        width: 30px;
+        height: 30px;
+        transition: transform 0.2s ease;
+    }
+    .hamburger-button:hover img {
+        transform: rotate(90deg);
+    }
+
+    .hamburger-links {
+        display: none; /* مخفية بشكل افتراضي */
+        position: absolute;
+        top: 60px; /* تقع أسفل الشريط العلوي */
+        right: 10px; /* تظهر على اليمين الآن */
+        left: auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        padding: 15px;
+        text-align: right;
+        min-width: 200px;
+        z-index: 9999;
+        border: 1px solid #ddd;
+    }
+
+    .hamburger-links a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 15px;
+        padding: 10px 12px;
+        color: #004d3c !important;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background 0.3s, transform 0.2s;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .hamburger-links a:hover {
+        background: #f0f0f0;
+        transform: translateX(-5px);
+    }
+
+    .hamburger-links a img {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* الروابط الأفقية - ظاهرة دائمًا على جميع الشاشات مع الأيقونات */
+    .horizontal-nav-links {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-right: 15px;
+        white-space: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 5px;
+    }
+    .horizontal-nav-links::-webkit-scrollbar {
+        display: none;
+    }
+    .horizontal-nav-links {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .horizontal-nav-links a {
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        color: #333 !important;
+        transition: color 0.3s, transform 0.2s, background-color 0.3s;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 8px;
+        border-radius: 5px;
+    }
+    .horizontal-nav-links a:hover {
+        color: #004d3c !important;
+        transform: translateY(-1px);
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    .horizontal-nav-links a i {
+        width: 18px;
+        height: 18px;
+        font-size: 18px;
+        vertical-align: middle;
+    }
+
+    /* --- */
+    /* ✅ محتوى الصفحة (آراء العملاء) - لم يتغير */
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      text-align: right;
+    }
+
+    .page-header {
+      background-color: #eafaf5;
+      text-align: center;
+      padding: 30px 15px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+    }
+
+    .page-header h1 {
+      color: #00765a;
+      font-size: 34px;
+      margin: 0 0 10px 0;
+      font-weight: 700;
+    }
+    .page-header p {
+      color: #555;
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* أنماط بطاقة الشهادة */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .testimonial-card {
+      background: #fdfdfd;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #eef;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+      width: 100%;
+      justify-content: flex-end;
+    }
+
+    .testimonial-header img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00765a;
+    }
+
+    .reviewer-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .reviewer-info h3 {
+      margin: 0;
+      color: #004d3c;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .reviewer-info p {
+      margin: 5px 0 0;
+      color: #777;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .stars {
+      color: #ffc107;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-quote {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 0;
+      position: relative;
+      padding: 0 10px;
+    }
+
+    .testimonial-quote::before {
+      content: "\201C";
+      font-size: 4em;
+      color: #e0e0e0;
+      position: absolute;
+      top: -10px;
+      right: 0;
+      line-height: 1;
+      opacity: 0.7;
+    }
+
+    /* قسم اترك رأيك - تم تعديل الأنماط وإضافة النموذج */
+    .leave-review-section {
+        background-color: #eafaf5;
+        padding: 30px;
+        border-radius: 12px;
+        text-align: center;
+        margin-top: 50px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    .leave-review-section h2 {
+        color: #00765a;
+        font-size: 28px;
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+
+    .leave-review-section p {
+        color: #555;
+        font-size: 17px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    /* أنماط النموذج */
+    .review-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: right;
+    }
+
+    .review-form label {
+        display: block;
+        font-weight: bold;
+        color: #004d3c;
+        margin-bottom: 5px;
+        text-align: right;
+    }
+
+    .review-form input[type="text"],
+    .review-form textarea,
+    .review-form select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-family: 'Tajawal', sans-serif;
+        font-size: 16px;
+        box-sizing: border-box; /* لضمان أن البادينغ لا يزيد من العرض */
+    }
+
+    .review-form textarea {
+        resize: vertical; /* السماح بتغيير حجم مربع النص رأسيًا */
+        min-height: 100px;
+    }
+
+    .review-form .rating-input {
+        display: flex;
+        justify-content: flex-end; /* لمحاذاة النجوم لليمين */
+        gap: 5px;
+    }
+
+    .review-form .rating-input input[type="radio"] {
+        display: none; /* إخفاء أزرار الراديو الافتراضية */
+    }
+
+    .review-form .rating-input label.star {
+        font-size: 28px;
+        color: #ccc;
+        cursor: pointer;
+        transition: color 0.2s ease;
+    }
+
+    .review-form .rating-input label.star:hover,
+    .review-form .rating-input label.star:hover ~ label.star,
+    .review-form .rating-input input[type="radio"]:checked ~ label.star {
+        color: #ffc107; /* لون النجوم عند التحديد أو التحويم */
+    }
+    
+    /* عكس ترتيب النجوم في RTL ليعمل التحديد بشكل صحيح */
+    .review-form .rating-input {
+        direction: rtl;
+    }
+    .review-form .rating-input label.star {
+        order: 1; /* جعل النجوم تظهر بالترتيب الصحيح (5 ثم 4 ثم 3...) */
+    }
+
+    .review-form button[type="submit"] {
+        background-color: #00765a;
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 4px 10px rgba(0,118,90,0.2);
+        font-family: 'Tajawal', sans-serif;
+        font-size: 17px;
+        width: auto; /* يجعل الزر بحجم المحتوى */
+        margin-top: 10px;
+        align-self: center; /* لمحاذاة الزر في المنتصف */
+    }
+
+    .review-form button[type="submit"]:hover {
+        background-color: #005a46;
+        transform: translateY(-2px);
+    }
+
+    /* رسائل التحقق */
+    .form-message {
+        margin-top: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        display: none; /* مخفية افتراضيًا */
+    }
+
+    .form-message.success {
+        background-color: #d4edda;
+        color: #155724;
+        border-color: #c3e6cb;
+    }
+
+    .form-message.error {
+        background-color: #f8d7da;
+        color: #721c24;
+        border-color: #f5c6cb;
+    }
+
+    /* ✅ أزرار التواصل (منسوخة من الصفحات السابقة) */
+    .buttons {
+      text-align: center;
+      margin: 50px 0 10px;
+    }
+
+    .btn-whatsapp,
+    .btn-call {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 8px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1DA851;
+      transform: translateY(-2px);
+    }
+
+    .btn-call {
+      background-color: #007bff;
+    }
+
+    .btn-call:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    /* ✅ الفوتر (منسوخة من الصفحات السابقة) */
+    .footer {
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      margin: 40px 0 20px;
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+        body {
+            padding-top: 60px;
+            box-sizing: border-box;
+        }
+        .hamburger-container {
+            padding: 10px 15px;
+        }
+        .horizontal-nav-links {
+            gap: 10px;
+            margin-right: 10px;
+            font-size: 13px;
+        }
+        .horizontal-nav-links a {
+            font-size: 13px;
+            padding: 5px 6px;
+        }
+        .hamburger-button {
+            margin-left: 15px;
+        }
+        .hamburger-links {
+            top: 60px;
+        }
+
+        .container {
+            margin: 20px 15px;
+            padding: 20px;
+        }
+        .page-header h1 {
+            font-size: 28px;
+        }
+        .page-header p {
+            font-size: 16px;
+        }
+        .testimonials-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .testimonial-card {
+            padding: 20px;
+        }
+        .testimonial-header img {
+            width: 50px;
+            height: 50px;
+        }
+        .reviewer-info h3 {
+            font-size: 18px;
+        }
+        .reviewer-info p {
+            font-size: 14px;
+        }
+        .stars {
+            font-size: 16px;
+        }
+        .testimonial-quote {
+            font-size: 15px;
+        }
+        .leave-review-section {
+            padding: 25px;
+        }
+        .leave-review-section h2 {
+            font-size: 24px;
+        }
+        .leave-review-section p {
+            font-size: 15px;
+        }
+        .review-form input[type="text"],
+        .review-form textarea,
+        .review-form select {
+            padding: 10px;
+            font-size: 15px;
+        }
+        .review-form .rating-input label.star {
+            font-size: 24px;
+        }
+        .review-form button[type="submit"] {
+            padding: 10px 25px;
+            font-size: 15px;
+        }
+        .btn-review {
+            padding: 10px 25px;
+            font-size: 15px;
+        }
+        .btn-whatsapp, .btn-call {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hamburger-container">
+      <button class="hamburger-button" onclick="toggleMenu()">
+          <img alt="قائمة" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
+      </button>
+
+      <div class="horizontal-nav-links">
+          <a href="products.html"><i class="fas fa-shopping-cart"></i> منتجاتنا</a>
+          <a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a>
+          <a href="index.html#contact"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
+      </div>
+
+      <div class="hamburger-links" id="hamburger-links">
+          <a href="index.html"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
+          <a href="about.html"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a>
+          <a href="services.html"><img alt="خدماتنا" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
+          <a href="products.html"><img alt="منتجاتنا" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
+          <a href="gallery.html"><img alt="معرض الصور" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
+          <a href="index.html#projects"><img alt="المشاريع" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
+          <a href="testimonials.html"><img alt="آراء العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
+          <a href="index.html#faq"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
+          <a href="certificates.html"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
+          <a href="blog.html"><img alt="المدونة" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
+          <a href="index.html#contact"><img alt="اتصل بنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
+      </div>
+  </div>
+
+  <section class="page-header">
+    <h1>ماذا يقول عملاؤنا عنا؟</h1>
+    <p>نحن فخورون بتقديم خدمات ومنتجات عالية الجودة، ورضا عملاؤنا هو شهادتنا الحقيقية على التزامنا بالتميز. استمعوا إلى ما يشاركنا به عملاؤنا الكرام حول تجربتهم معنا.</p>
+  </section>
+
+  <div class="container">
+    <div class="testimonials-grid" id="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="images/15.jpg" alt="صورة العميل أحمد الشريف">
+          <div class="reviewer-info">
+            <h3>أحمد الشريف</h3>
+            <p>صاحب منزل</p>
+          </div>
+        </div>
+        <div class="stars" data-rating="5">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-quote">"تجربة ممتازة! جودة المواد والتوصيل السريع فاق توقعاتي. فريق العمل كان متعاونًا للغاية، أوصي بهم بشدة."</p>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="images/14.jpeg" alt="صورة العميل مريم العتيبي">
+          <div class="reviewer-info">
+            <h3>مريم العتيبي</h3>
+            <p>مديرة مشروع</p>
+          </div>
+        </div>
+        <div class="stars" data-rating="4.5">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        </div>
+        <p class="testimonial-quote">"احترافية عالية في التعامل وجودة في التنفيذ. لقد ساعدونا في إنجاز مشروعنا بكفاءة، وسرعة الاستجابة كانت رائعة."</p>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="images/5.jpeg" alt="صورة العميل خالد الجهني">
+          <div class="reviewer-info">
+            <h3>خالد الجهني</h3>
+            <p>مقاول مستقل</p>
+          </div>
+        </div>
+        <div class="stars" data-rating="4">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+        </div>
+        <p class="testimonial-quote">"المنتجات متوفرة دائمًا وبأسعار تنافسية. الشحن إلى موقع العمل كان سلسًا ومنظمًا. شكرًا لكم على الخدمة المميزة!"</p>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="images/16.jpeg" alt="صورة العميل فاطمة الزهراء">
+          <div class="reviewer-info">
+            <h3>فاطمة الزهراء</h3>
+            <p>مصممة ديكور</p>
+          </div>
+        </div>
+        <div class="stars" data-rating="5">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-quote">"أعجبني اهتمامهم بالتفاصيل والدعم الفني المتميز. المنتجات التي حصلت عليها كانت بالضبط ما أحتاجه، وبجودة فائقة."</p>
+      </div>
+      </div>
+
+    <div class="leave-review-section">
+        <h2>شاركنا رأيك!</h2>
+        <p>تجربتك معنا تهمنا كثيراً. إذا كنت عميلاً سعيداً، نرجو منك تخصيص لحظات قليلة لمشاركتنا رأيك. يساعدنا ذلك في تحسين خدماتنا ويشجع عملاءنا الجدد.</p>
+        
+        <form id="review-form" class="review-form">
+            <label for="reviewer-name">اسمك:</label>
+            <input type="text" id="reviewer-name" name="reviewerName" required>
+
+            <label for="reviewer-title">صفتك (مثلاً: صاحب منزل، مقاول):</label>
+            <input type="text" id="reviewer-title" name="reviewerTitle">
+
+            <label for="review-rating">تقييمك (عدد النجوم):</label>
+            <div class="rating-input" dir="ltr"> <input type="radio" id="star5" name="reviewRating" value="5" required><label for="star5" class="star">&#9733;</label>
+                <input type="radio" id="star4" name="reviewRating" value="4"><label for="star4" class="star">&#9733;</label>
+                <input type="radio" id="star3" name="reviewRating" value="3"><label for="star3" class="star">&#9733;</label>
+                <input type="radio" id="star2" name="reviewRating" value="2"><label for="star2" class="star">&#9733;</label>
+                <input type="radio" id="star1" name="reviewRating" value="1"><label for="star1" class="star">&#9733;</label>
+            </div>
+
+            <label for="review-text">رأيك:</label>
+            <textarea id="review-text" name="reviewText" rows="5" required></textarea>
+
+            <button type="submit">إرسال الرأي</button>
+        </form>
+        <div id="form-message" class="form-message"></div>
+    </div>
+
+  </div>
+
+  <div class="buttons">
+      <a class="btn-whatsapp" href="https://wa.me/966537216061" target="_blank">راسلنا عبر واتساب</a>
+      <a class="btn-call" href="tel:0537216061">اتصل الآن</a>
+  </div>
+
+  <div class="footer">
+    © 2025 جميع الحقوق محفوظة – بطحاء مكة
+  </div>
+
+  <script>
+      function toggleMenu() {
+          var links = document.getElementById('hamburger-links');
+          links.style.display = (links.style.display === 'block') ? 'none' : 'block';
+      }
+
+      document.addEventListener('click', function(event) {
+          var menu = document.getElementById('hamburger-links');
+          var button = document.querySelector('.hamburger-button');
+          if (menu && button) {
+              if (menu.style.display === 'block') {
+                  if (!menu.contains(event.target) && !button.contains(event.target)) {
+                      menu.style.display = 'none';
+                  }
+                  
+              }
+          }
+      });
+
+      // ✅ جزء JavaScript الجديد للتعامل مع نموذج الآراء وتخزينها
+      document.addEventListener('DOMContentLoaded', function() {
+          const reviewForm = document.getElementById('review-form');
+          const testimonialsGrid = document.getElementById('testimonials-grid');
+          const formMessage = document.getElementById('form-message');
+
+          // دالة لإنشاء بطاقة رأي جديدة
+          function createTestimonialCard(name, title, rating, text) {
+              const card = document.createElement('div');
+              card.classList.add('testimonial-card');
+
+              const header = document.createElement('div');
+              header.classList.add('testimonial-header');
+
+              // صورة افتراضية للعملاء الجدد
+              const img = document.createElement('img');
+              img.src = 'images/16.jpeg'; // يجب توفير هذه الصورة
+              img.alt = 'صورة العميل';
+              header.appendChild(img);
+
+              const info = document.createElement('div');
+              info.classList.add('reviewer-info');
+              const h3 = document.createElement('h3');
+              h3.textContent = name;
+              const p = document.createElement('p');
+              p.textContent = title;
+              info.appendChild(h3);
+              info.appendChild(p);
+              header.appendChild(info);
+
+              const starsDiv = document.createElement('div');
+              starsDiv.classList.add('stars');
+              starsDiv.setAttribute('data-rating', rating);
+              for (let i = 0; i < 5; i++) {
+                  const starIcon = document.createElement('i');
+                  if (rating > i && rating <= i + 0.5) {
+                    starIcon.classList.add('fas', 'fa-star-half-alt'); // نصف نجمة
+                  } else if (rating > i) {
+                    starIcon.classList.add('fas', 'fa-star'); // نجمة كاملة
+                  } else {
+                    starIcon.classList.add('far', 'fa-star'); // نجمة فارغة
+                  }
+                  starsDiv.appendChild(starIcon);
+              }
+
+              const quote = document.createElement('p');
+              quote.classList.add('testimonial-quote');
+              quote.textContent = `"${text}"`; // إضافة علامات الاقتباس تلقائيًا
+
+              card.appendChild(header);
+              card.appendChild(starsDiv);
+              card.appendChild(quote);
+
+              return card;
+          }
+
+          // تحميل الآراء المخزنة محليًا عند تحميل الصفحة
+          function loadReviews() {
+              const storedReviews = localStorage.getItem('userReviews');
+              if (storedReviews) {
+                  const reviews = JSON.parse(storedReviews);
+                  // إزالة آراء HTML الثابتة لعدم تكرارها، أو يمكنك وضعها في ملف JSON
+                  // حاليًا، سنضيف الآراء المحلية بعد الآراء الثابتة
+                  reviews.forEach(review => {
+                      const newCard = createTestimonialCard(review.name, review.title, review.rating, review.text);
+                      testimonialsGrid.prepend(newCard); // إضافة الجديد في البداية
+                  });
+              }
+          }
+
+          // حفظ الآراء في Local Storage
+          function saveReview(review) {
+              let reviews = localStorage.getItem('userReviews');
+              reviews = reviews ? JSON.parse(reviews) : [];
+              reviews.unshift(review); // إضافة الرأي الجديد في بداية المصفوفة
+              localStorage.setItem('userReviews', JSON.stringify(reviews));
+          }
+
+          // معالج إرسال النموذج
+          reviewForm.addEventListener('submit', function(event) {
+              event.preventDefault(); // منع الإرسال الافتراضي للصفحة
+
+              const reviewerName = document.getElementById('reviewer-name').value.trim();
+              const reviewerTitle = document.getElementById('reviewer-title').value.trim();
+              const reviewText = document.getElementById('review-text').value.trim();
+              const reviewRating = document.querySelector('input[name="reviewRating"]:checked');
+
+              if (!reviewerName || !reviewText || !reviewRating) {
+                  formMessage.textContent = 'الرجاء تعبئة جميع الحقول المطلوبة (الاسم، الرأي، التقييم).';
+                  formMessage.classList.remove('success');
+                  formMessage.classList.add('error');
+                  formMessage.style.display = 'block';
+                  return;
+              }
+
+              const newReview = {
+                  name: reviewerName,
+                  title: reviewerTitle || 'عميل راضٍ', // قيمة افتراضية إذا لم يكتب صفة
+                  rating: parseFloat(reviewRating.value),
+                  text: reviewText,
+                  timestamp: new Date().toISOString() // لحفظ وقت الإرسال
+              };
+
+              // إضافة الرأي الجديد إلى DOM
+              const newCard = createTestimonialCard(newReview.name, newReview.title, newReview.rating, newReview.text);
+              testimonialsGrid.prepend(newCard); // إضافة البطاقة في بداية الشبكة
+
+              // حفظ الرأي في Local Storage
+              saveReview(newReview);
+
+              // مسح النموذج
+              reviewForm.reset();
+              formMessage.textContent = 'تم إرسال رأيك بنجاح! شكراً لك.';
+              formMessage.classList.remove('error');
+              formMessage.classList.add('success');
+              formMessage.style.display = 'block';
+
+              // إخفاء الرسالة بعد بضع ثوانٍ
+              setTimeout(() => {
+                  formMessage.style.display = 'none';
+              }, 5000);
+          });
+
+          // تحميل الآراء عند بدء تشغيل الصفحة
+          loadReviews();
+      });
+  </script>
+
+</body>
+</html>
