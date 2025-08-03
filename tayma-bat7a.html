@@ -10,6 +10,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>بطحاء تيماء الحمراء الناعمة | مؤسسة رمال الصحراء في مكة</title>
   <link rel="canonical" href="https://bat7a-makkah.com/tayma-bat7a.html">
+  <link rel="alternate" href="https://bat7a-makkah.com/en/tayma-bat7a.html" hreflang="en">
   <meta name="description" content="اكتشف بطحاء تيماء الحمراء الناعمة من مؤسسة رمال الصحراء، مثالية لأعمال التشطيبات النهائية والديكور. جودة مضمونة لمشاريعك في مكة المكرمة." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="مؤسسة رمال الصحراء" />
@@ -17,13 +18,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:description" content="بطحاء تيماء للتشطيبات النهائية والديكور، متوفرة بأعلى جودة في مكة. صور وشرح تفصيلي للمنتج." />
   <meta property="og:type" content="product" />
   <meta property="og:url" content="https://bat7a-makkah.com/tayma-bat7a.html" />
-  <meta property="og:image" content="https://i.imgur.com/kX6rmQw.jpeg" /> <meta property="og:locale" content="ar_AR" />
-
+  <meta property="og:image" content="https://i.imgur.com/kX6rmQw.jpeg" />
+  <meta property="og:locale" content="ar_AR" />
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
-    /* الأنماط العامة والقائمة العلوية والفوتر ستكون هي نفسها التي في ملف products.html */
     body {
       font-family: 'Tajawal', sans-serif;
       background: #fdfaf8;
@@ -34,13 +33,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       overflow-x: hidden;
       padding-top: 60px;
     }
-
-    /* Hamburger Menu CSS (Same as in products.html) */
     .hamburger-container {
       background: #e0c9a6;
       padding: 10px 15px;
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: center;
       position: fixed;
       top: 0;
@@ -51,7 +48,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       width: 100%;
       box-sizing: border-box;
     }
-
     .hamburger-button {
       background: none;
       border: none;
@@ -61,19 +57,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      margin-left: 10px;
       order: 0;
     }
-
-    .hamburger-button img {
-      width: 30px;
-      height: 30px;
-      transition: transform 0.2s ease;
+    .hamburger-button i {
+      font-size: 30px;
+      color: #333;
+      transition: color 0.2s ease;
     }
-    .hamburger-button:hover img {
-      transform: rotate(90deg);
+    .hamburger-button:hover i {
+      color: #004d3c;
     }
-
     .hamburger-links {
       display: none;
       position: absolute;
@@ -89,7 +82,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       z-index: 9999;
       border: 1px solid #ddd;
     }
-
     .hamburger-links a {
       display: flex;
       align-items: center;
@@ -103,21 +95,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       transition: background 0.3s, transform 0.2s;
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
-
     .hamburger-links a:hover {
       background: #f0f0f0;
       transform: translateX(-5px);
     }
-
     .hamburger-links a img {
       width: 20px;
       height: 20px;
     }
-
     .horizontal-nav-links {
       display: flex;
       gap: 20px;
       justify-content: flex-start;
+      align-items: center;
       margin: 0;
       order: 1;
       flex-grow: 1;
@@ -147,13 +137,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-size: 18px;
       vertical-align: middle;
     }
-
-    /* أزرار التواصل (Same as in products.html) */
+    .language-switcher-button {
+      background-color: transparent;
+      color: #333;
+      padding: 8px 15px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      border: 1px solid #d2b48c;
+      box-shadow: none;
+      transition: background-color 0.3s, transform 0.2s, color 0.3s;
+      order: 2;
+    }
+    .language-switcher-button:hover {
+      background-color: #f0f0f0;
+      color: #004d3c;
+    }
     .buttons {
       text-align: center;
       margin: 50px 0 10px;
     }
-
     .btn-whatsapp,
     .btn-call {
       display: inline-block;
@@ -165,34 +169,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       text-decoration: none;
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
-
     .btn-whatsapp {
       background-color: #25D366;
     }
-
     .btn-whatsapp:hover {
       background-color: #1DA851;
       transform: translateY(-2px);
     }
-
     .btn-call {
       background-color: #007bff;
     }
-
     .btn-call:hover {
       background-color: #0056b3;
       transform: translateY(-2px);
     }
-
-    /* الفوتر (Same as in products.html) */
     .footer {
       text-align: center;
       font-size: 14px;
       color: #777;
       margin: 40px 0 20px;
     }
-
-    /* أنماط خاصة بصفحة المنتج الفردي */
     .product-detail-container {
       max-width: 900px;
       margin: 30px auto;
@@ -202,7 +198,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       box-shadow: 0 5px 15px rgba(0,0,0,0.08);
       text-align: right;
     }
-
     .product-detail-container h1 {
       color: #004d3c;
       font-size: 36px;
@@ -210,7 +205,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       text-align: center;
       font-weight: 700;
     }
-
     .product-images {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -218,7 +212,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin-bottom: 30px;
       justify-content: center;
     }
-
     .product-images img {
       width: 100%;
       height: 200px;
@@ -227,24 +220,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       transition: transform 0.2s ease;
     }
-
     .product-images img:hover {
       transform: scale(1.03);
     }
-
     .product-description {
       font-size: 17px;
       line-height: 1.8;
       color: #444;
       margin-bottom: 30px;
     }
-
-    /* تم إضافة هذا النمط لتمييز النص العريض داخل الوصف */
     .product-description strong {
-      color: #00765a; /* لون مميز للخط العريض */
-      font-weight: 700; /* جعل النص عريضًا */
+      color: #00765a;
+      font-weight: 700;
     }
-
     .product-description h2 {
       color: #00765a;
       font-size: 24px;
@@ -253,13 +241,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border-bottom: 2px solid #eafaf5;
       padding-bottom: 10px;
     }
-
     .product-features ul {
       list-style: none;
       padding: 0;
       margin: 20px 0;
     }
-
     .product-features ul li {
       margin-bottom: 10px;
       padding-right: 25px;
@@ -267,9 +253,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       color: #555;
       font-size: 16px;
     }
-
     .product-features ul li:before {
-      content: '\f00c'; /* FontAwesome check icon */
+      content: '\f00c';
       font-family: 'Font Awesome 5 Free';
       font-weight: 900;
       color: #28a745;
@@ -277,8 +262,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       right: 0;
       top: 2px;
     }
-
-    /* Media Queries for responsiveness (Same as in products.html, ensure they apply here) */
     @media (max-width: 768px) {
         body {
             padding-top: 60px;
@@ -302,7 +285,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .hamburger-links {
             top: 60px;
         }
-
         .product-detail-container {
             margin: 20px 15px;
             padding: 20px;
@@ -319,9 +301,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .product-description {
             font-size: 15px;
         }
-        /* تعديل الخط للموبايل */
         .product-description strong {
-            font-size: 16px; /* أصغر قليلاً على الجوال */
+            font-size: 16px;
         }
         .product-description h2 {
             font-size: 20px;
@@ -337,18 +318,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </style>
 </head>
 <body>
-
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJWQWKQV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hamburger-container">
       <button class="hamburger-button" onclick="toggleMenu()">
-          <img alt="قائمة التنقل" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
+          <i class="fas fa-bars"></i>
       </button>
-
       <div class="horizontal-nav-links">
           <a href="products.html"><i class="fas fa-shopping-cart"></i> منتجاتنا</a>
-          <a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a>
           <a href="contact.html"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
+          <a href="en/tayma-bat7a.html" class="language-switcher-button">English</a>
       </div>
-
       <div class="hamburger-links" id="hamburger-links">
           <a href="index.html"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
           <a href="about.html"><img alt="من نحن" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a>
@@ -363,36 +343,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <a href="certificates.html"><img alt="الشهادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
           <a href="blog.html"><img alt="مدونة مواد البناء" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
           <a href="contact.html"><img alt="للتواصل معنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
+          <a href="en/tayma-bat7a.html"><img alt="English" src="https://img.icons8.com/fluency/20/usa-flag.png"/> English</a>
       </div>
   </div>
-
   <div class="product-detail-container">
-    <h1>بطحاء تيماء - الحل الأمثل للتشطيبات النهائية والديكور</h1>
-
+    <h1><strong>بطحاء تيماء</strong> - الحل الأمثل <strong>للتشطيبات النهائية</strong> و<strong>الديكور</strong></h1>
     <div class="product-images">
       <img src="https://i.imgur.com/kX6rmQw.jpeg" alt="بطحاء تيماء صورة 1 - المادة الخام">
       <img src="images/tayma-bat7a-usage.jpeg" alt="بطحاء تيماء صورة 2 - أثناء الاستخدام">
       <img src="images/tayma-bat7a-finishing.jpeg" alt="بطحاء تيماء صورة 3 - في أعمال التشطيب">
       <img src="images/tayma-bat7a-texture.jpeg" alt="بطحاء تيماء صورة 4 - ملمس ناعم">
     </div>
-
     <div class="product-description">
-      <p>تُعرف <strong>بطحاء تيماء</strong> بلونها الأحمر المميز وملمسها الناعم جدًا، مما يجعلها الخيار الأمثل للعديد من أعمال البناء والتشطيبات الدقيقة. توفرها مؤسسة رمال الصحراء بأعلى مستويات الجودة والنقاء، لتضمن لك الحصول على نتائج مثالية في مشاريعك.</p>
-
-      <p>تُستخدم بطحاء تيماء بشكل خاص في الأعمال التي تتطلب دقة عالية ومظهرًا جماليًا، مثل أعمال <strong>التشطيبات النهائية</strong>، <strong>أعمال الديكور</strong>، وفي بعض أنواع المونة التي تحتاج إلى نعومة فائقة. خلوها من الشوائب يضمن تجانسًا ممتازًا عند الخلط ويساهم في قوة ومتانة المادة النهائية.</p>
-
-      <h2>مميزات بطحاء تيماء</h2>
+      <p>تُعرف <strong>بطحاء تيماء</strong> بلونها الأحمر المميز وملمسها الناعم جدًا، مما يجعلها الخيار الأمثل للعديد من أعمال <strong>البناء</strong> و<strong>التشطيبات الدقيقة</strong>. توفرها <strong>مؤسسة رمال الصحراء</strong> بأعلى مستويات الجودة والنقاء، لتضمن لك الحصول على نتائج مثالية في مشاريعك.</p>
+      <p>تُستخدم <strong>بطحاء تيماء</strong> بشكل خاص في الأعمال التي تتطلب دقة عالية ومظهرًا جماليًا، مثل أعمال <strong>التشطيبات النهائية</strong>، <strong>أعمال الديكور</strong>، وفي بعض أنواع المونة التي تحتاج إلى نعومة فائقة. خلوها من الشوائب يضمن تجانسًا ممتازًا عند الخلط ويساهم في قوة ومتانة المادة النهائية.</p>
+      <h2>مميزات <strong>بطحاء تيماء</strong></h2>
       <ul class="product-features">
-        <li>لون أحمر طبيعي مميز يضفي جمالية خاصة.</li>
-        <li>ملمس ناعم جدًا، مثالي للتشطيبات الدقيقة وأعمال الديكور.</li>
-        <li>جودة عالية ونقاء فائق، خالية من المواد العضوية والشوائب.</li>
-        <li>تساعد على الحصول على أسطح ناعمة ومستوية وخالية من العيوب.</li>
-        <li>متوفرة بكميات تلبي احتياجات المشاريع المختلفة في مكة والمناطق المحيطة.</li>
-        <li>توصيل سريع وموثوق لضمان استمرارية عملك.</li>
-        <li>أسعار تنافسية مع الحفاظ على أعلى معايير الجودة.</li>
+        <li>لون أحمر طبيعي مميز يضفي <strong>جمالية خاصة</strong>.</li>
+        <li>ملمس ناعم جدًا، مثالي لـ<strong>التشطيبات الدقيقة</strong> و<strong>أعمال الديكور</strong>.</li>
+        <li><strong>جودة عالية</strong> و<strong>نقاء فائق</strong>، خالية من المواد العضوية والشوائب.</li>
+        <li>تساعد على الحصول على أسطح ناعمة ومستوية و<strong>خالية من العيوب</strong>.</li>
+        <li>متوفرة بكميات تلبي احتياجات المشاريع المختلفة في <strong>مكة والمناطق المحيطة</strong>.</li>
+        <li><strong>توصيل سريع وموثوق</strong> لضمان استمرارية عملك.</li>
+        <li><strong>أسعار تنافسية</strong> مع الحفاظ على أعلى معايير الجودة.</li>
       </ul>
-
-      <h2>استخدامات بطحاء تيماء الشائعة</h2>
+      <h2>استخدامات <strong>بطحاء تيماء</strong> الشائعة</h2>
       <ul class="product-features">
         <li><strong>التشطيبات النهائية:</strong> للياسة الجدران والأسقف التي تتطلب نعومة فائقة قبل الدهان.</li>
         <li><strong>أعمال الديكور:</strong> في الخلطات الديكورية الخاصة التي تستفيد من لونها وملمسها.</li>
@@ -400,26 +375,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <li><strong>تعبئة الفواصل الصغيرة:</strong> لملء الفراغات الدقيقة في أعمال البناء.</li>
         <li><strong>أعمال الترميم:</strong> لإصلاح الشقوق الصغيرة والعيوب في الأسطح.</li>
       </ul>
-
-      <p>اختر بطحاء تيماء من مؤسسة رمال الصحراء لمشاريعك التي تتطلب لمسة نهائية متقنة وجودة لا تضاهى. فريقنا مستعد لتقديم الدعم والمشورة، وتلبية طلباتك بأسرع وقت ممكن. تواصل معنا الآن للحصول على استشارة مجانية أو طلب عرض سعر.</p>
+      <p>اختر <strong>بطحاء تيماء</strong> من <strong>مؤسسة رمال الصحراء</strong> لمشاريعك التي تتطلب لمسة نهائية متقنة وجودة لا تضاهى. فريقنا مستعد لتقديم الدعم والمشورة، وتلبية طلباتك بأسرع وقت ممكن. تواصل معنا الآن للحصول على استشارة مجانية أو طلب عرض سعر.</p>
     </div>
-
     <div class="buttons">
         <a class="btn-whatsapp" href="https://wa.me/966537216061" target="_blank">راسلنا عبر واتساب بخصوص بطحاء تيماء</a>
         <a class="btn-call" href="tel:0537216061">اتصل الآن للاستفسار عن بطحاء تيماء</a>
     </div>
   </div>
-
   <div class="footer">
     © 2024 جميع الحقوق محفوظة – بطحاء مكة
   </div>
-
   <script>
       function toggleMenu() {
           var links = document.getElementById('hamburger-links');
           links.style.display = (links.style.display === 'block') ? 'none' : 'block';
       }
-
       document.addEventListener('click', function(event) {
           var menu = document.getElementById('hamburger-links');
           var button = document.querySelector('.hamburger-button');
@@ -431,7 +401,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               }
           }
       });
+      window.addEventListener('resize', function() {
+          var links = document.getElementById('hamburger-links');
+          if (window.innerWidth > 768) {
+              if (links) {
+                  links.style.display = 'none';
+              }
+          }
+      });
   </script>
-
 </body>
 </html>
