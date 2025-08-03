@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -11,23 +11,24 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     
-    <title>مؤسسة رمال الصحراء: قصتنا، رؤيتنا، وقيمنا في توريد مواد البناء</title>
+    <title>Desert Sand Est.: Our Story, Vision, and Values in Building Material Supply</title>
     
-    <link rel="canonical" href="https://bat7a-makkah.com/about.html">
+    <link rel="canonical" href="https://bat7a-makkah.com/en/about.html">
+    <link rel="alternate" href="https://bat7a-makkah.com/about.html" hreflang="ar">
 
-    <meta content="تعرف على قصة مؤسسة رمال الصحراء، مورد مواد البناء الرائد في مكة المكرمة. نلتزم بالجودة، السرعة، والأسعار التنافسية في توريد البطحاء، الرمل الأبيض، والخرسانة منذ عام 2015." name="description"/>
+    <meta content="Learn about the story of Desert Sand Est., the leading building material supplier in Makkah. We are committed to quality, speed, and competitive prices in supplying bat7a, white sand, and concrete since 2015." name="description"/>
     
     <meta content="index, follow" name="robots"/>
     
     <meta content="nOjylREn8w7aFoIZi7P2LRwO2kEd1uZOSFou5zNSu8E" name="google-site-verification"/>
 
-    <meta content="مؤسسة رمال الصحراء | من نحن | مواد بناء | بطحاء | رمل | مكة" property="og:title"/>
-    <meta content="تعرف على مؤسسة رمال الصحراء، قصتنا منذ عام 2015، التزامنا بالجودة والسرعة في توريد بطحاء الرياض وتيماء، الدفان، والخرسانة في مكة المكرمة." property="og:description"/>
-    <meta content="https://bat7a-makkah.com/about.html" property="og:url"/>
+    <meta content="Desert Sand Est. | About Us | Building Materials | Bat7a | Sand | Makkah" property="og:title"/>
+    <meta content="Learn about Desert Sand Est., our story since 2015, and our commitment to quality and speed in supplying Riyadh and Taima bat7a, dafan, and concrete in Makkah." property="og:description"/>
+    <meta content="https://bat7a-makkah.com/en/about.html" property="og:url"/>
     <meta content="website" property="og:type"/>
     <meta content="https://i.imgur.com/zmELsgo.jpeg" property="og:image"/>
-    <meta content="ar_AR" property="og:locale"/>
-    <meta content="رمال الصحراء" name="author"/>
+    <meta content="en_US" property="og:locale"/>
+    <meta content="Desert Sand" name="author"/>
 
     <style>
         /* هذا هو كود CSS الكامل الموحد مع التعديلات الجديدة على التنقل */
@@ -36,7 +37,7 @@
             margin: 0;
             background: #f4f4f4;
             color: #333;
-            direction: rtl;
+            direction: ltr;
             padding-top: 60px; /* مسافة أعلى للـ hamburger-container الثابت */
             font-weight: 400;
             line-height: 1.8;
@@ -146,12 +147,12 @@
             display: none; /* مخفية بشكل افتراضي */
             position: absolute;
             top: 60px; /* تقع أسفل الشريط العلوي */
-            right: 10px;
+            left: 10px;
             background: white;
             border-radius: 12px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.25);
             padding: 15px;
-            text-align: right;
+            text-align: left;
             min-width: 200px;
             z-index: 9999;
             border: 1px solid #ddd;
@@ -175,7 +176,7 @@
 
         .hamburger-links a:hover {
             background: #f0f0f0;
-            transform: translateX(-5px);
+            transform: translateX(5px);
         }
 
         .hamburger-links a img {
@@ -188,7 +189,7 @@
             display: flex; /* لتبقى ظاهرة دائمًا */
             gap: 20px; /* مسافة بين الروابط */
             /* لا يوجد flex-grow: 1 هنا لأننا لا نريد دفعها للطرف، بل بجانب زر الهامبرغر */
-            justify-content: flex-end; /* لضمان محاذاة الروابط لليمين في اتجاه RTL */
+            justify-content: flex-start; /* لضمان محاذاة الروابط لليسار في اتجاه LTR */
             margin: 0;
         }
         .horizontal-nav-links a {
@@ -215,9 +216,33 @@
             vertical-align: middle; /* للتأكد من المحاذاة */
         }
 
+        /* تنسيقات زر التبديل إلى العربية */
+        .language-switcher-button {
+            background: linear-gradient(to right, #004d3c, #003328);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+        }
 
-        /* تم حذف تنسيقات أزرار الاتصال الجديدة في أعلى الصفحة (.top-contact-buttons) لأن هذا الـ div تم حذفه من HTML */
+        .language-switcher-button:hover {
+            background: linear-gradient(to right, #003328, #001a14);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+        }
 
+        .language-switcher-button img {
+            width: 20px;
+            height: 20px;
+            filter: invert(100%);
+        }
 
         /* ==================================== */
         /* تنسيقات المحتوى الرئيسي              */
@@ -245,7 +270,7 @@
             margin-left: auto;
             margin-right: auto;
             position: relative;
-            padding-right: 45px;
+            padding-left: 45px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
         }
 
@@ -258,7 +283,7 @@
             background-repeat: no-repeat;
             background-position: center;
             vertical-align: middle;
-            margin-left: 15px;
+            margin-right: 15px;
         }
 
         /* أيقونة h2 لصفحة "من نحن" */
@@ -272,7 +297,7 @@
             margin-top: 40px;
             margin-bottom: 20px;
             position: relative;
-            padding-right: 40px;
+            padding-left: 40px;
             text-shadow: 0.5px 0.5px 2px rgba(0,0,0,0.08);
         }
 
@@ -286,7 +311,7 @@
             background-position: center;
             vertical-align: middle;
             position: absolute;
-            right: 0;
+            left: 0;
             top: 50%;
             transform: translateY(-50%);
             background-image: url('https://img.icons8.com/fluency/30/box.png');
@@ -313,7 +338,7 @@
             font-size: 17px;
             color: #333;
             position: relative;
-            padding-right: 40px;
+            padding-left: 40px;
             border-bottom: 1px dashed #eee;
             font-weight: 600;
             transition: background 0.2s ease;
@@ -338,7 +363,7 @@
             background-position: center;
             vertical-align: middle;
             position: absolute;
-            right: 0;
+            left: 0;
             top: 50%;
             transform: translateY(-50%);
             background-image: url('https://img.icons8.com/fluency/25/checkmark.png');
@@ -556,7 +581,7 @@
 
         .contact-item span {
             flex-grow: 1;
-            text-align: right;
+            text-align: left;
             color: #004d3c;
         }
         .contact-item:hover {
@@ -642,7 +667,7 @@
             .horizontal-nav-links {
                 display: flex; /* لتبقى ظاهرة على الجوال */
                 /* تم إزالة flex-grow: 1; */
-                justify-content: flex-end; /* محاذاة لليمين في الجوال */
+                justify-content: flex-start; /* محاذاة لليسار في الجوال */
                 gap: 10px; /* مسافة أقل بين الروابط على الجوال */
             }
             .horizontal-nav-links a {
@@ -680,66 +705,67 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hamburger-container">
         <div class="horizontal-nav-links">
-            <a href="gallery.html"><img alt="معرض الصور" src="https://img.icons8.com/?size=100&id=Ui6fSI2DlDjm&format=png&color=000000"/> معرض الصور</a>
-            <a href="products.html"><img alt="منتجات البناء المتوفرة" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
-            <a href="contact.html"><img alt="اتصل بنا" src="https://img.icons8.com/?size=100&id=_6iHKaWTr5Lg&format=png&color=000000"/> اتصل بنا</a>
+            <a href="/en/gallery.html"><img alt="Photo Gallery" src="https://img.icons8.com/?size=100&id=Ui6fSI2DlDjm&format=png&color=000000"/> Photo Gallery</a>
+            <a href="/en/products.html"><img alt="Available Building Products" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> Our Products</a>
+            <a href="/en/contact.html"><img alt="Contact Us" src="https://img.icons8.com/?size=100&id=_6iHKaWTr5Lg&format=png&color=000000"/> Contact Us</a>
         </div>
         <button class="hamburger-button" onclick="toggleMenu()">
-            <img alt="قائمة التنقل" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
+            <img alt="Navigation Menu" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
         </button>
         <div class="hamburger-links" id="hamburger-links">
-            <a href="/"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
-            <a href="about.html"><img alt="معلومات عن مؤسستنا" src="https://img.icons8.com/fluency/20/info.png"/> من نحن</a>
-            <a href="difference.html"><img alt="الفرق بين أنواع البطحاء" src="https://img.icons8.com/fluency/20/compare.png"/> الفرق بين بطحاء الرياض وتيماء</a>
-            <a href="services.html"><img alt="خدمات توريد مواد البناء" src="https://img.icons8.com/fluency/20/services.png"/> خدماتنا</a>
-            <a href="products.html"><img alt="منتجات البناء المتوفرة" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> منتجاتنا</a>
-            <a href="gallery.html"><img alt="معرض صور مشاريعنا" src="https://img.icons8.com/fluency/20/picture.png"/> معرض الصور</a>
-            <a href="projects.html"><img alt="أمثلة لمشاريعنا" src="https://img.icons8.com/fluency/20/blueprint.png"/> المشاريع</a>
-            <a href="testimonials.html"><img alt="آراء وشهادات العملاء" src="https://img.icons8.com/fluency/20/thumb-up.png"/> آراء العملاء</a>
-            <a href="faq.html"><img alt="الأسئلة الشائعة" src="https://img.icons8.com/fluency/20/help.png"/> الأسئلة الشائعة</a>
-            <a href="payment.html"><img alt="طرق الدفع المتاحة" src="https://img.icons8.com/fluency/20/money.png"/> طرق الدفع</a>
-            <a href="certificates.html"><img alt="شهادات الجودة والاعتمادات" src="https://img.icons8.com/fluency/20/certificate.png"/> الشهادات</a>
-            <a href="blog.html"><img alt="مدونة مواد البناء" src="https://img.icons8.com/fluency/20/blog.png"/> المدونة</a>
-            <a href="contact.html"><img alt="للتواصل معنا" src="https://img.icons8.com/fluency/20/phone.png"/> اتصل بنا</a>
+            <a href="/en/index.html"><img alt="Home" src="https://img.icons8.com/fluency/20/home.png"/> Home</a>
+            <a href="/en/about.html"><img alt="About Our Company" src="https://img.icons8.com/fluency/20/info.png"/> About Us</a>
+            <a href="/en/difference.html"><img alt="Difference between bat7a types" src="https://img.icons8.com/fluency/20/compare.png"/> The Difference between Riyadh and Taima Bat7a</a>
+            <a href="/en/services.html"><img alt="Building material supply services" src="https://img.icons8.com/fluency/20/services.png"/> Our Services</a>
+            <a href="/en/products.html"><img alt="Available building products" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> Our Products</a>
+            <a href="/en/gallery.html"><img alt="Our projects photo gallery" src="https://img.icons8.com/fluency/20/picture.png"/> Photo Gallery</a>
+            <a href="/en/projects.html"><img alt="Examples of our projects" src="https://img.icons8.com/fluency/20/blueprint.png"/> Projects</a>
+            <a href="/en/testimonials.html"><img alt="Customer reviews and testimonials" src="https://img.icons8.com/fluency/20/thumb-up.png"/> Testimonials</a>
+            <a href="/en/faq.html"><img alt="Frequently Asked Questions" src="https://img.icons8.com/fluency/20/help.png"/> FAQ</a>
+            <a href="/en/payment.html"><img alt="Available payment methods" src="https://img.icons8.com/fluency/20/money.png"/> Payment Methods</a>
+            <a href="/en/certificates.html"><img alt="Quality certifications and accreditations" src="https://img.icons8.com/fluency/20/certificate.png"/> Certifications</a>
+            <a href="/en/blog.html"><img alt="Building materials blog" src="https://img.icons8.com/fluency/20/blog.png"/> Blog</a>
+            <a href="/en/contact.html"><img alt="Contact us" src="https://img.icons8.com/fluency/20/phone.png"/> Contact Us</a>
         </div>
     </div>
 
     <header>
-        <h1>من نحن – مؤسسة رمال الصحراء: خبرة موثوقة في توريد مواد البناء</h1>
+        <h1>About Us – Desert Sand Est.: Trusted Expertise in Building Material Supply</h1>
         <div class="header-main-buttons">
-            <a href="https://wa.me/966537216061" target="_blank">💬 واتساب</a>
-            <a href="tel:0537216061">📞 اتصل بي</a>
+            <a href="https://wa.me/966537216061" target="_blank">💬 WhatsApp</a>
+            <a href="tel:0537216061">📞 Call Us</a>
+            <a href="/about.html" class="language-switcher-button">العربية</a>
         </div>
     </header>
 
     <main>
         <section id="about-page" class="about-section-common">
-            <h2>قصتنا: من نحن في رمال الصحراء</h2>
+            <h2>Our Story: Who We Are at Desert Sand</h2>
             <p>
-                تأسست <strong>مؤسسة رمال الصحراء</strong> في عام [أدخل سنة التأسيس هنا، مثال: 2010] بقلب <strong>مكة المكرمة</strong>، انطلاقاً من إيماننا الراسخ بأهمية توفير <strong>مواد بناء عالية الجودة</strong> لدعم المشاريع الإنشائية الكبرى والصغيرة في المنطقة. على مدار سنوات طويلة، قمنا ببناء سمعتنا كـ<strong>مورد موثوق لمواد البناء</strong> على أسس من الثقة، الجودة الثابتة، و<strong>سرعة الاستجابة</strong> لمتطلبات عملائنا الكرام. نحن ندرك أن كل مشروع، كبيراً كان أو صغيراً، يمثل استثماراً في المستقبل، ولذا فإننا نلتزم بتقديم الأفضل دائماً في كل جانب من جوانب عملنا.
+                **Desert Sand Est.** was founded in [Insert year of establishment here, e.g., 2010] in the heart of **Makkah**, driven by our firm belief in the importance of providing **high-quality building materials** to support both major and minor construction projects in the region. Over many years, we have built our reputation as a **reliable supplier of building materials** on the foundations of trust, consistent quality, and **quick responsiveness** to the needs of our valued clients. We understand that every project, big or small, represents an investment in the future, and thus we are committed to always delivering the best in every aspect of our work.
             </p>
-            <h3>رؤيتنا ورسالتنا</h3>
+            <h3>Our Vision and Mission</h3>
             <p>
-                <strong>رؤيتنا:</strong> أن نصبح <strong>الخيار الأول والمورد الأكثر موثوقية لمواد البناء في المملكة العربية السعودية</strong>، وذلك من خلال الابتكار المستمر والتزامنا الثابت بأعلى معايير الجودة العالمية في كل ما نقدمه من <strong>رمل أبيض</strong>، <strong>بطحاء</strong>، و<strong>دفان</strong>.
+                **Our Vision:** To become the **first choice and most reliable supplier of building materials in the Kingdom of Saudi Arabia**, through continuous innovation and our firm commitment to the highest international quality standards in everything we provide, from **white sand**, **bat7a**, and **dafan**.
             </p>
             <p>
-                <strong>رسالتنا:</strong> تتمثل في توفير تشكيلة واسعة من <strong>مواد البناء الأساسية</strong> بأعلى معايير الجودة، مدعومة بخدمة توصيل <strong>فعالة وسريعة</strong>، لتمكين عملائنا من إنجاز مشاريعهم بنجاح واطمئنان، مع التركيز على توفير <strong>أفضل سعر للرمل</strong> وكافة المواد.
+                **Our Mission:** To provide a wide range of **essential building materials** with the highest quality standards, supported by **efficient and fast delivery**, to enable our clients to successfully complete their projects with peace of mind, with a focus on providing the **best price for sand** and all materials.
             </p>
-            <h3>قيمنا الأساسية</h3>
+            <h3>Our Core Values</h3>
             <ul>
-                <li><strong>الجودة أولاً:</strong> لا نساوم أبداً على جودة منتجاتنا. كل مادة يتم توريدها تخضع لرقابة صارمة لضمان مطابقتها لأدق المواصفات القياسية للبناء.</li>
-                <li><strong>الموثوقية:</strong> نلتزم بوعودنا في التسليم والمواعيد المحددة، لضمان سير عمل مشاريعكم بسلاسة ودون أي تأخير غير مرغوب فيه.</li>
-                <li><strong>خدمة العملاء المتميزة:</strong> نضع عملائنا في صميم اهتمامنا، ونسعى لتقديم دعم متواصل واستجابة سريعة وفعالة لجميع استفساراتهم واحتياجاتهم.</li>
-                <li><strong>الاحترافية:</strong> فريق عملنا مؤهل تأهيلاً عالياً ومدرب لتقديم أفضل الخدمات، بدءاً من الاستشارات المتخصصة وصولاً إلى عملية التوصيل الآمنة والفعالة.</li>
+                <li>**Quality First:** We never compromise on the quality of our products. Every material we supply undergoes strict quality control to ensure it meets the most precise standard specifications for construction.</li>
+                <li>**Reliability:** We honor our commitments to delivery and specified deadlines, ensuring your projects run smoothly without any unwanted delays.</li>
+                <li>**Exceptional Customer Service:** Our clients are at the heart of our focus, and we strive to provide continuous support and quick, effective responses to all their inquiries and needs.</li>
+                <li>**Professionalism:** Our team is highly qualified and trained to provide the best services, from specialized consultations to safe and efficient delivery.</li>
             </ul>
             <p>
-                نحن فخورون بكوننا جزءاً لا يتجزأ من نهضة مكة العمرانية والتنموية، ونتطلع إلى بناء شراكات قوية وطويلة الأمد معكم، كموردكم المفضل لجميع احتياجات <strong>رمل البناء</strong> و<strong>البطحاء</strong>.
+                We are proud to be an integral part of Makkah's urban and developmental renaissance, and we look forward to building strong and long-term partnerships with you as your preferred supplier for all your **building sand** and **bat7a** needs.
             </p>
         </section>
     </main>
 
     <footer>
-        <p>© 2024 مؤسسة رمال الصحراء. جميع الحقوق محفوظة.</p>
+        <p>© 2024 Desert Sand Est. All Rights Reserved.</p>
     </footer>
 
     <script>
