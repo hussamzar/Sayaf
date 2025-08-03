@@ -14,6 +14,8 @@
     
     <link rel="canonical" href="https://bat7a-makkah.com/">
     
+    <link rel="alternate" href="https://bat7a-makkah.com/en/" hreflang="en">
+
     <meta content="مؤسسة رمال الصحراء توفر بطحاء الرياض وتيماء، الرمل الأبيض، الدفان، والخرسانة في مكة. خدماتنا سريعة، أسعارنا تنافسية، ونلتزم بالجودة لمشاريع البناء." name="description"/>
     <meta content="index, follow" name="robots"/>
     <meta content="nOjylREn8w7aFoIZi7P2LRwO2kEd1uZOSFou5zNSu8E" name="google-site-verification"/>
@@ -182,6 +184,28 @@
             gap: 10px; /* مسافة بين الأزرار */
             flex-shrink: 0; /* لمنع الأزرار من الانكماش */
         }
+
+        /* تنسيق زر اللغة */
+        .language-switcher-button {
+            background-color: #004d3c;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .language-switcher-button:hover {
+            background-color: #003328;
+            transform: translateY(-1px);
+        }
+        
         .top-contact-buttons a {
             background: linear-gradient(to right, #25d366, #1cbf58); /* تدرج لوني أخضر جذاب */
             color: white;
@@ -671,6 +695,11 @@
                 height: 16px;
             }
 
+            .language-switcher-button {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+
             main {
                 padding: 20px 15px;
             }
@@ -811,6 +840,7 @@
             <a href="contact.html">اتصل بنا</a>
         </div>
         <div class="top-contact-buttons">
+            <a href="/en/index.html" class="language-switcher-button">English</a>
             <a href="https://wa.me/966537216061" target="_blank">💬 واتساب</a>
             <a href="tel:0537216061">📞 اتصل بي</a>
         </div>
