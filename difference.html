@@ -10,6 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>الفرق بين بطحاء الرياض وتيماء: دليل شامل للاستخدامات والخصائص لمواد البناء</title>
   <link rel="canonical" href="https://bat7a-makkah.com/difference.html">
+  <link rel="alternate" href="https://bat7a-makkah.com/en/difference.html" hreflang="en">
 
   <meta name="description" content="تعرف على الفرق الجوهري بين بطحاء الرياض وبطحاء تيماء: الخصائص، الاستخدامات (التلييس، الواجهات، الديكورات)، الأسعار، وكيفية اختيار الأنسب لمشروعك من مواد البناء في مكة.">
   <meta name="robots" content="index, follow">
@@ -31,22 +32,24 @@
       background-color: #fdfaf8;
       color: #333;
       direction: rtl;
-      padding-top: 60px; /* مسافة أعلى للـ hamburger-container الثابت */
+      padding-top: 60px;
     }
 
-    /* القائمة العلوية (Hamburger) - منسوخة بالكامل من blog.html الأخيرة */
+    /* القائمة العلوية (Hamburger) - تم تعديل التنسيق هنا */
     .hamburger-container {
         background: #e0c9a6;
         padding: 10px 15px;
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: space-between; /* التعديل هنا: لتوزيع العناصر على الجانبين */
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         z-index: 10000;
         box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .hamburger-button {
@@ -85,6 +88,8 @@
         min-width: 200px;
         z-index: 9999;
         border: 1px solid #ddd;
+        flex-direction: column;
+        gap: 5px;
     }
 
     .hamburger-links a {
@@ -111,7 +116,7 @@
         height: 20px;
     }
 
-    /* الروابط الأفقية - منسوخة بالكامل من blog.html الأخيرة */
+    /* الروابط الأفقية - تم تعديل التنسيق هنا */
     .horizontal-nav-links {
         display: flex;
         gap: 20px;
@@ -119,6 +124,7 @@
         margin: 0;
         order: 1;
         flex-grow: 1;
+        align-items: center;
     }
     .horizontal-nav-links a {
         font-weight: 700;
@@ -144,6 +150,24 @@
         height: 18px;
         font-size: 18px;
         vertical-align: middle;
+    }
+    .language-switcher-button {
+      background-color: transparent;
+      color: #333;
+      padding: 8px 15px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      margin-left: 15px;
+      margin-right: 0;
+      border: 1px solid #d2b48c;
+      box-shadow: none;
+      transition: background-color 0.3s, transform 0.2s, color 0.3s;
+    }
+    .language-switcher-button:hover {
+      background-color: #f0f0f0;
+      color: #004d3c;
     }
 
 
@@ -183,7 +207,7 @@
       height: 28px;
     }
 
-    h3 { /* تنسيق لـ h3s الجديدة */
+    h3 {
         color: #005a41;
         font-size: 22px;
         margin-top: 30px;
@@ -193,35 +217,34 @@
     p {
       line-height: 1.8;
       font-size: 16px;
-      text-align: right; /* ✅ تم تغيير text-align إلى right لضمان التناسق */
+      text-align: right;
     }
 
-    /* ✅ تنسيق الجدول */
     table {
         width: 100%;
         border-collapse: collapse;
         margin-top: 20px;
         margin-bottom: 20px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* ظل خفيف للجدول */
-        border-radius: 8px; /* حواف مستديرة للجدول */
-        overflow: hidden; /* لضمان ظهور الحواف المستديرة مع الحدود */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        border-radius: 8px;
+        overflow: hidden;
     }
     table th, table td {
         padding: 12px 15px;
-        border: 1px solid #e0e0e0; /* لون حدود أفتح */
+        border: 1px solid #e0e0e0;
         text-align: right;
         font-size: 15px;
-        vertical-align: top; /* محاذاة النص للأعلى */
+        vertical-align: top;
     }
     table thead tr {
-        background-color: #00765a; /* لون أخضر داكن لرأس الجدول */
+        background-color: #00765a;
         color: white;
     }
     table tbody tr:nth-child(even) {
-        background-color: #f8f8f8; /* لون خلفية مختلف للصفوف الزوجية */
+        background-color: #f8f8f8;
     }
     table tbody tr:hover {
-        background-color: #eafaf5; /* خلفية عند التحويم */
+        background-color: #eafaf5;
     }
 
 
@@ -276,12 +299,11 @@
             padding-top: 60px;
             box-sizing: border-box;
         }
-        /* استجابة القائمة العلوية للهواتف - منسوخة بالكامل من blog.html الأخيرة */
         .hamburger-container {
             padding: 8px 12px;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: flex-start;
+            justify-content: space-between; /* التعديل هنا أيضاً */
             align-items: center;
             gap: 5px;
         }
@@ -300,6 +322,7 @@
             order: 1;
             margin: 0;
             flex-grow: 1;
+            align-items: center;
         }
         .horizontal-nav-links a {
             font-size: 13px;
@@ -331,7 +354,7 @@
             width: 24px;
             height: 24px;
         }
-        h3 { /* تنسيق لـ h3s الجديدة على الجوال */
+        h3 {
             font-size: 20px;
         }
         p {
@@ -344,19 +367,11 @@
             padding: 10px 20px;
             font-size: 14px;
         }
-
-        /* ✅ إصلاح تنسيق الجدول المتجاوب */
-        .table-responsive { /* ✅ يتم إضافة هذا الكلاس لـ div حول الجدول */
-            overflow-x: auto; /* ✅ تمكين التمرير الأفقي للجدول */
-            -webkit-overflow-scrolling: touch; /* لتحسين التمرير على iOS */
-            padding-bottom: 10px; /* مسافة لمنع قص شريط التمرير */
-        }
-        /* ✅ إزالة جميع تنسيقات display: block; و td:before التي كانت تسبب المشكلة */
-        table, table thead, table tbody, table th, table td, table tr {
-            /* لا يوجد display: block; هنا */
-        }
-        table td:before {
-            /* لا يوجد content: attr(data-label); هنا */
+        
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 10px;
         }
     }
   </style>
@@ -370,8 +385,8 @@
       
       <div class="horizontal-nav-links">
           <a href="index.html#contact"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
-          <a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a>
           <a href="services.html"><i class="fas fa-tools"></i> خدماتنا</a>
+          <a href="/en/difference.html" class="language-switcher-button">English</a>
       </div>
 
       <div class="hamburger-links" id="hamburger-links">
@@ -426,31 +441,31 @@
             <tbody>
                 <tr>
                     <td data-label="الميزة">اللون</td>
-                    <td data-label="بطحاء الرياض">فاتح، أبيض مائل للرمادي</td>
-                    <td data-label="بطحاء تيماء">أحمر ترابي مميز</td>
+                    <td data-label="بطحاء الرياض">فاتح،  اصفر مائل للرمادي</td>
+                    <td data-label="بطحاء تيماء">بيضاء اللون مميز</td>
                 </tr>
                 <tr>
-                    <td data-label="الميزة">النعومة/الخشونة</td>
-                    <td data-label="بطحاء الرياض">ناعمة جداً، مناسبة للتلييس الناعم</td>
+                    <td data-label="النعومة/الخشونة">النعومة/الخشونة</td>
+                    <td data-label="بطحاء الرياض">ناعمة  الى متوسط الخشونة مناسبة للتلييس الناعم</td>
                     <td data-label="بطحاء تيماء">أكثر خشونة وصلابة، مناسبة للديكورات</td>
                 </tr>
                 <tr>
-                    <td data-label="الميزة">الاستخدام الرئيسي</td>
+                    <td data-label="الاستخدام الرئيسي">الاستخدام الرئيسي</td>
                     <td data-label="بطحاء الرياض">التلييس الداخلي، اللياسة الناعمة، التشطيبات الدقيقة</td>
                     <td data-label="بطحاء تيماء">الواجهات الخارجية، الديكورات والنقشات، أعمال التشطيبات الخشنة</td>
                 </tr>
                 <tr>
-                    <td data-label="الميزة">التماسك مع الإسمنت</td>
+                    <td data-label="التماسك مع الإسمنت">التماسك مع الإسمنت</td>
                     <td data-label="بطحاء الرياض">جيد جداً مع المونة الناعمة</td>
                     <td data-label="بطحاء تيماء">ممتاز مع الإسمنت (خاصة الأبيض) للتثبيت القوي</td>
                 </tr>
                 <tr>
-                    <td data-label="الميزة">المقاومة والعمر الافتراضي</td>
+                    <td data-label="المقاومة والعمر الافتراضي">المقاومة والعمر الافتراضي</td>
                     <td data-label="بطحاء الرياض">جيدة جداً للاستخدامات الداخلية</td>
                     <td data-label="بطحاء تيماء">عالية جداً، مقاومة لعوامل التعرية والظروف الخارجية</td>
                 </tr>
                 <tr>
-                    <td data-label="الميزة">السعر</td>
+                    <td data-label="السعر">السعر</td>
                     <td data-label="بطحاء الرياض">أقل نسبياً</td>
                     <td data-label="بطحاء تيماء">أعلى نسبياً نظراً لخصائصها الفريدة</td>
                 </tr>
