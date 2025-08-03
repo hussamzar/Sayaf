@@ -6,13 +6,11 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-TJWQWKQV');</script>
-<meta charset="UTF-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>دفان بلاط نظيف | مؤسسة رمال الصحراء في مكة</title>
   <link rel="canonical" href="https://bat7a-makkah.com/dafian-balat.html">
-
   <link rel="alternate" href="https://bat7a-makkah.com/en/dafian-balat.html" hreflang="en">
-
   <meta name="description" content="اكتشف دفان البلاط النظيف والخالي من الشوائب من مؤسسة رمال الصحراء، مثالي لأعمال التسوية والردم تحت البلاط. جودة عالية لمشاريعك في مكة." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="مؤسسة رمال الصحراء" />
@@ -26,7 +24,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    /* الأنماط العامة والقائمة العلوية والفوتر ستكون هي نفسها التي في ملف products.html */
     body {
       font-family: 'Tajawal', sans-serif;
       background: #fdfaf8;
@@ -37,8 +34,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       overflow-x: hidden;
       padding-top: 60px;
     }
-
-    /* Hamburger Menu CSS (Same as in products.html) */
     .hamburger-container {
       background: #e0c9a6;
       padding: 10px 15px;
@@ -54,7 +49,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       width: 100%;
       box-sizing: border-box;
     }
-
     .hamburger-button {
       background: none;
       border: none;
@@ -67,7 +61,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin-left: 10px;
       order: 0;
     }
-
     .hamburger-button img {
       width: 30px;
       height: 30px;
@@ -76,7 +69,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hamburger-button:hover img {
       transform: rotate(90deg);
     }
-
     .hamburger-links {
       display: none;
       position: absolute;
@@ -91,8 +83,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       min-width: 200px;
       z-index: 9999;
       border: 1px solid #ddd;
+      flex-direction: column;
+      gap: 5px;
     }
-
     .hamburger-links a {
       display: flex;
       align-items: center;
@@ -106,17 +99,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       transition: background 0.3s, transform 0.2s;
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
-
     .hamburger-links a:hover {
       background: #f0f0f0;
       transform: translateX(-5px);
     }
-
     .hamburger-links a img {
       width: 20px;
       height: 20px;
     }
-
     .horizontal-nav-links {
       display: flex;
       gap: 20px;
@@ -124,6 +114,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin: 0;
       order: 1;
       flex-grow: 1;
+      align-items: center;
     }
     .horizontal-nav-links a {
       font-weight: 700;
@@ -150,11 +141,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-size: 18px;
       vertical-align: middle;
     }
-
-    /* تنسيق زر اللغة */
     .language-switcher-button {
-      background: #004d3c;
-      color: white;
+      background-color: transparent;
+      color: #333;
       padding: 8px 15px;
       border-radius: 6px;
       text-decoration: none;
@@ -162,17 +151,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-weight: bold;
       margin-left: 15px;
       margin-right: 0;
+      border: 1px solid #d2b48c;
+      box-shadow: none;
+      transition: background-color 0.3s, transform 0.2s, color 0.3s;
     }
     .language-switcher-button:hover {
-      background: #003328;
+      background-color: #f0f0f0;
+      color: #004d3c;
     }
-
-    /* أزرار التواصل (Same as in products.html) */
     .buttons {
       text-align: center;
       margin: 50px 0 10px;
     }
-
     .btn-whatsapp,
     .btn-call {
       display: inline-block;
@@ -184,34 +174,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       text-decoration: none;
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
-
     .btn-whatsapp {
       background-color: #25D366;
     }
-
     .btn-whatsapp:hover {
       background-color: #1DA851;
       transform: translateY(-2px);
     }
-
     .btn-call {
       background-color: #007bff;
     }
-
     .btn-call:hover {
       background-color: #0056b3;
       transform: translateY(-2px);
     }
-
-    /* الفوتر (Same as in products.html) */
     .footer {
       text-align: center;
       font-size: 14px;
       color: #777;
       margin: 40px 0 20px;
     }
-
-    /* أنماط خاصة بصفحة المنتج الفردي */
     .product-detail-container {
       max-width: 900px;
       margin: 30px auto;
@@ -221,7 +203,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       box-shadow: 0 5px 15px rgba(0,0,0,0.08);
       text-align: right;
     }
-
     .product-detail-container h1 {
       color: #004d3c;
       font-size: 36px;
@@ -229,7 +210,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       text-align: center;
       font-weight: 700;
     }
-
     .product-images {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -237,7 +217,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin-bottom: 30px;
       justify-content: center;
     }
-
     .product-images img {
       width: 100%;
       height: 200px;
@@ -246,24 +225,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       transition: transform 0.2s ease;
     }
-
     .product-images img:hover {
       transform: scale(1.03);
     }
-
     .product-description {
       font-size: 17px;
       line-height: 1.8;
       color: #444;
       margin-bottom: 30px;
     }
-
-    /* تم إضافة هذا النمط لتمييز النص العريض داخل الوصف */
     .product-description strong {
-      color: #00765a; /* لون مميز للخط العريض */
-      font-weight: 700; /* جعل النص عريضًا */
+      color: #00765a;
+      font-weight: 700;
     }
-
     .product-description h2 {
       color: #00765a;
       font-size: 24px;
@@ -272,13 +246,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border-bottom: 2px solid #eafaf5;
       padding-bottom: 10px;
     }
-
     .product-features ul {
       list-style: none;
       padding: 0;
       margin: 20px 0;
     }
-
     .product-features ul li {
       margin-bottom: 10px;
       padding-right: 25px;
@@ -286,9 +258,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       color: #555;
       font-size: 16px;
     }
-
     .product-features ul li:before {
-      content: '\f00c'; /* FontAwesome check icon */
+      content: '\f00c';
       font-family: 'Font Awesome 5 Free';
       font-weight: 900;
       color: #28a745;
@@ -296,8 +267,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       right: 0;
       top: 2px;
     }
-
-    /* Media Queries for responsiveness (Same as in products.html, ensure they apply here) */
     @media (max-width: 768px) {
         body {
             padding-top: 60px;
@@ -321,7 +290,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .hamburger-links {
             top: 60px;
         }
-
         .product-detail-container {
             margin: 20px 15px;
             padding: 20px;
@@ -338,9 +306,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .product-description {
             font-size: 15px;
         }
-        /* تعديل الخط للموبايل */
         .product-description strong {
-            font-size: 16px; /* أصغر قليلاً على الجوال */
+            font-size: 16px;
         }
         .product-description h2 {
             font-size: 20px;
@@ -364,11 +331,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       <div class="horizontal-nav-links">
           <a href="products.html"><i class="fas fa-shopping-cart"></i> منتجاتنا</a>
-          <a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a>
           <a href="contact.html"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
+          <a href="/en/dafian-balat.html" class="language-switcher-button">English</a>
       </div>
-
-      <a href="/en/dafian-balat.html" class="language-switcher-button">English</a>
 
       <div class="hamburger-links" id="hamburger-links">
           <a href="index.html"><img alt="الرئيسية" src="https://img.icons8.com/fluency/20/home.png"/> الرئيسية</a>
@@ -438,6 +403,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script>
       function toggleMenu() {
           var links = document.getElementById('hamburger-links');
+          // تم تصحيح هذا السطر لضمان التوافق مع CSS الحالي
           links.style.display = (links.style.display === 'block') ? 'none' : 'block';
       }
 
