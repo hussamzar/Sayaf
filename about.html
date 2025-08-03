@@ -15,6 +15,8 @@
     
     <link rel="canonical" href="https://bat7a-makkah.com/about.html">
 
+    <link rel="alternate" href="https://bat7a-makkah.com/en/about.html" hreflang="en">
+
     <meta content="تعرف على قصة مؤسسة رمال الصحراء، مورد مواد البناء الرائد في مكة المكرمة. نلتزم بالجودة، السرعة، والأسعار التنافسية في توريد البطحاء، الرمل الأبيض، والخرسانة منذ عام 2015." name="description"/>
     
     <meta content="index, follow" name="robots"/>
@@ -215,8 +217,33 @@
             vertical-align: middle; /* للتأكد من المحاذاة */
         }
 
+        /* تنسيقات زر التبديل إلى الانجليزية */
+        .language-switcher-button {
+            background: linear-gradient(to right, #004d3c, #003328);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+        }
 
-        /* تم حذف تنسيقات أزرار الاتصال الجديدة في أعلى الصفحة (.top-contact-buttons) لأن هذا الـ div تم حذفه من HTML */
+        .language-switcher-button:hover {
+            background: linear-gradient(to right, #003328, #001a14);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+        }
+
+        .language-switcher-button img {
+            width: 20px;
+            height: 20px;
+            filter: invert(100%);
+        }
 
 
         /* ==================================== */
@@ -709,6 +736,7 @@
         <div class="header-main-buttons">
             <a href="https://wa.me/966537216061" target="_blank">💬 واتساب</a>
             <a href="tel:0537216061">📞 اتصل بي</a>
+            <a href="/en/about.html" class="language-switcher-button">English</a>
         </div>
     </header>
 
