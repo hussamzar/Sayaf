@@ -40,7 +40,7 @@
             background: #e0c9a6; /* لون رملي فاتح */
             padding: 10px 15px;
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-start; /* تم تعديل هذه القيمة */
             align-items: center;
             position: fixed;
             top: 0;
@@ -62,7 +62,6 @@
             justify-content: center;
             flex-shrink: 0;
             margin-right: 10px; /* مسافة بين زر الهامبرغر والقوائم الأفقية */
-            order: 0;
         }
 
         .hamburger-button img {
@@ -114,16 +113,8 @@
             height: 20px;
         }
 
-        /* الروابط الأفقية - منسوخة من blog.html الأخيرة */
-        .horizontal-nav-links {
-            display: flex;
-            gap: 20px;
-            justify-content: flex-end;
-            margin: 0;
-            order: 1;
-            flex-grow: 1;
-        }
-        .horizontal-nav-links a {
+        /* الروابط الأفقية - تم تعديل التنسيق ليعمل مع الطلب الجديد */
+        .top-nav-link {
             font-weight: 700;
             font-size: 14px;
             text-decoration: none;
@@ -135,34 +126,38 @@
             gap: 5px;
             padding: 5px 8px;
             border-radius: 5px;
+            margin-right: 10px; /* مسافة بين الروابط */
         }
-        .horizontal-nav-links a:hover {
+        .top-nav-link:hover {
             color: #004d3c !important;
             transform: translateY(-1px);
             background-color: rgba(255, 255, 255, 0.3);
         }
-        .horizontal-nav-links a img,
-        .horizontal-nav-links a i { /* ✅ إضافة تنسيق لأيقونات Font Awesome */
+        .top-nav-link img,
+        .top-nav-link i {
             width: 18px;
             height: 18px;
-            font-size: 18px; /* لتحديد حجم أيقونات Font Awesome */
+            font-size: 18px;
             vertical-align: middle;
         }
 
         /* تنسيق زر اللغة */
         .language-switcher-button {
-            background: #004d3c;
-            color: white;
+            background-color: transparent;
+            color: #333;
             padding: 8px 15px;
             border-radius: 6px;
             text-decoration: none;
             font-size: 13px;
             font-weight: bold;
-            margin-right: 15px;
-            margin-left: 0;
+            margin-left: auto; /* هذا ما يدفع الزر لأقصى اليسار */
+            border: 1px solid #d2b48c;
+            box-shadow: none;
+            transition: background-color 0.3s, transform 0.2s, color 0.3s;
         }
         .language-switcher-button:hover {
-            background: #003328;
+            background-color: #f0f0f0;
+            color: #004d3c;
         }
 
         /* --- */
@@ -467,20 +462,15 @@
             .hamburger-container {
                 padding: 10px 15px;
             }
-            .horizontal-nav-links {
-                gap: 10px;
-                margin-left: 10px;
-                font-size: 13px;
-            }
-            .horizontal-nav-links a {
+            .top-nav-link {
                 font-size: 13px;
                 padding: 5px 6px;
             }
-            .horizontal-nav-links a img,
-            .horizontal-nav-links a i { /* ✅ إضافة تنسيق لأيقونات Font Awesome */
+            .top-nav-link img,
+            .top-nav-link i {
                 width: 16px;
                 height: 16px;
-                font-size: 16px; /* لتحديد حجم أيقونات Font Awesome */
+                font-size: 16px;
             }
             .hamburger-button {
                 margin-right: 15px;
@@ -557,11 +547,8 @@
             <img alt="Navigation Menu" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
         </button>
 
-        <div class="horizontal-nav-links">
-            <a href="/en/products.html"><i class="fas fa-shopping-cart"></i> Our Products</a>
-            <a href="/en/gallery.html"><i class="fas fa-images"></i> Photo Gallery</a>
-            <a href="/en/index.html"><i class="fas fa-home"></i> Home</a> </div>
-
+        <a href="/en/index.html" class="top-nav-link"><i class="fas fa-home"></i> Home</a>
+        <a href="/en/products.html" class="top-nav-link"><i class="fas fa-shopping-cart"></i> Our Products</a>
         <a href="/contact.html" class="language-switcher-button">العربية</a>
 
         <div class="hamburger-links" id="hamburger-links">
