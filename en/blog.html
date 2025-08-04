@@ -33,16 +33,16 @@
       background-color: #fdfaf8;
       color: #333;
       direction: ltr;
-      padding-top: 60px; /* مسافة أعلى للـ hamburger-container الثابت */
+      padding-top: 60px;
     }
 
-    /* القائمة العلوية (Hamburger) - لم يتم تغيير أي شيء في تنسيقها بناءً على طلبك */
+    /* === تعديل تنسيق القائمة العلوية لتلبية طلب المستخدم === */
     .hamburger-container {
         background: #e0c9a6;
         padding: 10px 15px;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: space-between; /* تعديل: توزيع العناصر على الطرفين */
         position: fixed;
         top: 0;
         left: 0;
@@ -60,8 +60,8 @@
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
-        margin-right: 10px;
-        order: 0;
+        order: -1; /* تعديل: لجعل زر الهامبرغر أول عنصر (أقصى اليسار) */
+        margin-right: 15px;
     }
 
     .hamburger-button img {
@@ -73,6 +73,56 @@
         transform: rotate(90deg);
     }
 
+    /* حاوية الروابط الأفقية في المنتصف */
+    .horizontal-nav-links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin: 0;
+        order: 0; /* تعديل: لجعلها في المنتصف */
+        flex-grow: 1; /* للسماح لها بأخذ المساحة المتاحة */
+        justify-content: center; /* توسيط الروابط في المنتصف */
+    }
+    .horizontal-nav-links a {
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        color: #333 !important;
+        transition: color 0.3s, transform 0.2s, background-color 0.3s;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 8px;
+        border-radius: 5px;
+    }
+    .horizontal-nav-links a:hover {
+        color: #004d3c !important;
+        transform: translateY(-1px);
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    .horizontal-nav-links a img {
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+    }
+
+    /* تنسيق زر اللغة */
+    .language-switcher-button {
+      background: #004d3c;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      order: 1; /* تعديل: لجعل زر اللغة في أقصى اليمين */
+    }
+    .language-switcher-button:hover {
+      background: #003328;
+    }
+
+    /* قائمة الهامبرغر المنسدلة */
     .hamburger-links {
         display: none;
         position: absolute;
@@ -112,56 +162,6 @@
         width: 20px;
         height: 20px;
     }
-
-    /* الروابط الأفقية - ظاهرة دائمًا على جميع الشاشات مع الأيقونات */
-    .horizontal-nav-links {
-        display: flex;
-        gap: 20px;
-        justify-content: flex-end;
-        margin: 0;
-        order: 1;
-        flex-grow: 1;
-    }
-    .horizontal-nav-links a {
-        font-weight: 700;
-        font-size: 14px;
-        text-decoration: none;
-        color: #333 !important;
-        transition: color 0.3s, transform 0.2s, background-color 0.3s;
-        white-space: nowrap;
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        padding: 5px 8px;
-        border-radius: 5px;
-    }
-    .horizontal-nav-links a:hover {
-        color: #004d3c !important;
-        transform: translateY(-1px);
-        background-color: rgba(255, 255, 255, 0.3);
-    }
-    .horizontal-nav-links a img {
-        width: 18px;
-        height: 18px;
-        vertical-align: middle;
-    }
-
-    /* تنسيق زر اللغة */
-    .language-switcher-button {
-      background: #004d3c;
-      color: white;
-      padding: 8px 15px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: bold;
-      margin-left: 15px;
-      margin-right: 0;
-    }
-    .language-switcher-button:hover {
-      background: #003328;
-    }
-
 
     /* عنوان الصفحة (رأس المدونة) */
     .page-header {
@@ -215,10 +215,9 @@
       gap: 10px;
     }
 
-    /* ✅ تنسيق الأيقونات (i) داخل h2 */
     .blog-post h2 i {
-        font-size: 32px; /* حجم الأيقونة */
-        color: #00765a; /* لون الأيقونة */
+        font-size: 32px;
+        color: #00765a;
     }
 
     .blog-post .post-meta {
@@ -347,11 +346,10 @@
         padding-bottom: 10px;
         padding-right: 40px;
     }
-    /* ✅ تنسيق الأيقونات (i) داخل h2 المودال */
     .modal-content h2 i {
-        font-size: 28px; /* حجم الأيقونة داخل المودال */
+        font-size: 28px;
         color: #00765a;
-        margin-right: 10px; /* مسافة بين الأيقونة والنص */
+        margin-right: 10px;
     }
 
     .modal-content p {
@@ -375,29 +373,25 @@
         body {
             padding-top: 60px;
         }
-        /* استجابة القائمة العلوية للهواتف - لم يتم تغيير أي شيء في ترتيبها بناءً على طلبك */
+        /* استجابة القائمة العلوية للهواتف - تعديل */
         .hamburger-container {
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            align-items: center;
+            flex-wrap: nowrap;
+            justify-content: space-between;
             gap: 5px;
         }
         .hamburger-button {
-            order: 0;
-            margin-right: 10px;
+            order: -1;
+            margin-right: 5px;
             margin-left: 0;
         }
         .horizontal-nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-end;
+            flex-grow: 1;
+            justify-content: flex-start; /* تعديل: الروابط على اليمين في الجوال */
             gap: 8px;
             padding: 0;
             width: auto;
-            order: 1;
-            margin: 0;
-            flex-grow: 1;
+            order: 0;
+            margin-right: 5px;
         }
         .horizontal-nav-links a {
             font-size: 13px;
@@ -408,9 +402,14 @@
             height: 16px;
         }
         .hamburger-links {
-            top: 90px;
+            top: 60px;
             left: 10px;
             right: auto;
+        }
+        .language-switcher-button {
+          font-size: 12px;
+          padding: 6px 10px;
+          order: 1;
         }
 
         .page-header h1 {
@@ -426,11 +425,10 @@
         .blog-post h2 {
             font-size: 22px;
         }
-        /* ✅ تنسيق الأيقونات (i) داخل h2 المودال على الجوال */
         .blog-post h2 i {
-            font-size: 28px; /* حجم الأيقونة داخل المودال على الجوال */
+            font-size: 28px;
         }
-        .blog-post h2 img { /* ✅ تنسيق الصور (img) داخل h2 */
+        .blog-post h2 img {
             width: 28px;
             height: 28px;
         }
@@ -459,16 +457,15 @@
 </head>
 <body>
     <div class="hamburger-container">
-      <button class="hamburger-button" onclick="toggleMenu()">
+        <button class="hamburger-button" onclick="toggleMenu()">
           <img alt="Navigation Menu" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
       </button>
 
       <div class="horizontal-nav-links">
-          <a href="/en/index.html#contact"><i class="fas fa-phone-alt"></i> Contact Us</a>
-          <a href="/en/gallery.html"><i class="fas fa-images"></i> Photo Gallery</a>
           <a href="/en/services.html"><i class="fas fa-tools"></i> Our Services</a>
-      </div>
-
+          <a href="/en/index.html#contact"><i class="fas fa-phone-alt"></i> Contact Us</a>
+          </div>
+      
       <a href="/blog.html" class="language-switcher-button">العربية</a>
 
       <div class="hamburger-links" id="hamburger-links">
@@ -559,7 +556,7 @@
         <h2><img src="https://img.icons8.com/fluency/32/road.png" alt="Road icon"> Speez (Backfill): Its Vital Role in Stabilizing Foundations and Road Backfilling</h2>
         <div class="post-meta">Published on: May 25, 2025 | By: Road Engineer</div>
         <p>
-            In modern construction and infrastructure development, backfill materials play a role no less important than primary construction materials. **Speez**, or backfill material, is the cornerstone in achieving stability and durability. This article highlights its vital uses, whether in **backfilling works** for buildings to stabilize foundations, or in **road backfilling** projects to ensure their levelness and strength to withstand loads.
+            In modern construction and infrastructure development, backfill materials play a role no less important than primary construction materials. **Speez**, or backfill material, is the cornerstone in achieving stability and durability. This article highlights its vital uses, whether in **backfilling works** for buildings to stabilize foundations, or in **road backfilling** projects to ensure their levelness and load-bearing capacity.
         </p>
         <a href="javascript:void(0)" onclick="showModal('article-sbeez')" class="read-more">Read More &raquo;</a>
     </div>
@@ -605,7 +602,7 @@
       <div id="article-layasa">
           <h3>Secrets of Professional Plastering: Expert Tips</h3>
           <p>
-              Good plastering is the foundation for professionally and durably finishing any walls or ceilings. But what are the secrets behind plastering that lasts a long time and looks flawless? In this comprehensive guide, our experts share the best tips and practices to ensure the quality of your **plastering** work. We will discuss the importance of choosing the **right bat7a**, the correct ratios for mixing materials, and how to avoid common problems like cracks and peeling. Follow these guidelines to achieve the best results in your projects.
+              Good plastering is the foundation for professionally and durably finishing any walls or ceilings. But what are the secrets behind plastering that lasts a long time and looks flawless? In this comprehensive guide, our experts share the best tips and practices to ensure the quality of your **plastering** work. We will review the importance of choosing the **right bat7a**, the correct ratios for mixing materials, and how to avoid common problems like cracks and peeling. Follow these guidelines to achieve the best results in your projects.
           </p>
           <h4>The Importance of Good Surface Preparation</h4>
           <p>
