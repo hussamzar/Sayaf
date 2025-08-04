@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  <script>(function(w,d,s,l,i){w.l]=w.l]||[];w.l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -42,7 +42,7 @@
         padding: 10px 15px;
         display: flex;
         align-items: center;
-        justify-content: space-between; /* تعديل: توزيع العناصر على الطرفين */
+        justify-content: space-between;
         position: fixed;
         top: 0;
         left: 0;
@@ -50,7 +50,7 @@
         z-index: 10000;
         box-shadow: 0 3px 10px rgba(0,0,0,0.18);
     }
-    
+
     .hamburger-button {
         background: none;
         border: none;
@@ -60,7 +60,7 @@
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
-        order: -1; /* تعديل: لجعل زر الهامبرغر أول عنصر (أقصى اليسار) */
+        order: -1;
         margin-right: 15px;
     }
 
@@ -73,15 +73,14 @@
         transform: rotate(90deg);
     }
 
-    /* حاوية الروابط الأفقية في المنتصف */
     .horizontal-nav-links {
         display: flex;
         align-items: center;
         gap: 20px;
         margin: 0;
-        order: 0; /* تعديل: لجعلها في المنتصف */
-        flex-grow: 1; /* للسماح لها بأخذ المساحة المتاحة */
-        justify-content: center; /* توسيط الروابط في المنتصف */
+        order: 0;
+        flex-grow: 1;
+        justify-content: center;
     }
     .horizontal-nav-links a {
         font-weight: 700;
@@ -107,7 +106,6 @@
         vertical-align: middle;
     }
 
-    /* تنسيق زر اللغة */
     .language-switcher-button {
       background: #004d3c;
       color: white;
@@ -116,13 +114,12 @@
       text-decoration: none;
       font-size: 13px;
       font-weight: bold;
-      order: 1; /* تعديل: لجعل زر اللغة في أقصى اليمين */
+      order: 1;
     }
     .language-switcher-button:hover {
       background: #003328;
     }
 
-    /* قائمة الهامبرغر المنسدلة */
     .hamburger-links {
         display: none;
         position: absolute;
@@ -163,7 +160,6 @@
         height: 20px;
     }
 
-    /* عنوان الصفحة (رأس المدونة) */
     .page-header {
       background-color: #eafaf5;
       text-align: center;
@@ -184,7 +180,6 @@
       margin: 0 auto;
     }
 
-    /* محتوى المدونة */
     .container {
       max-width: 900px;
       margin: 30px auto;
@@ -246,7 +241,6 @@
       text-decoration: underline;
     }
 
-    /* أزرار التواصل */
     .buttons {
       text-align: center;
       margin: 30px 0 10px;
@@ -271,7 +265,6 @@
       background-color: #007bff;
     }
 
-    /* الفوتر */
     .footer {
       text-align: center;
       font-size: 14px;
@@ -279,9 +272,6 @@
       margin: 40px 0 20px;
     }
 
-    /* ==================================== */
-    /* تنسيقات النافذة المنبثقة (المودال)     */
-    /* ==================================== */
     .modal-overlay {
         position: fixed;
         top: 0;
@@ -318,7 +308,6 @@
     .modal-overlay.visible .modal-content {
         transform: translateY(0);
     }
-    /* زر الإغلاق */
     .modal-close-button {
         position: absolute;
         top: 15px;
@@ -367,13 +356,15 @@
         padding: 5px 0;
         font-size: 16px;
     }
-
+    strong {
+        font-weight: bold;
+        color: #004d3c;
+    }
 
     @media (max-width: 768px) {
         body {
             padding-top: 60px;
         }
-        /* استجابة القائمة العلوية للهواتف - تعديل */
         .hamburger-container {
             flex-wrap: nowrap;
             justify-content: space-between;
@@ -386,7 +377,7 @@
         }
         .horizontal-nav-links {
             flex-grow: 1;
-            justify-content: flex-start; /* تعديل: الروابط على اليمين في الجوال */
+            justify-content: flex-start;
             gap: 8px;
             padding: 0;
             width: auto;
@@ -439,8 +430,6 @@
             padding: 10px 20px;
             font-size: 14px;
         }
-
-        /* تنسيقات المودال على الجوال */
         .modal-content {
             padding: 20px;
             max-height: 90vh;
@@ -464,8 +453,8 @@
       <div class="horizontal-nav-links">
           <a href="/en/services.html"><i class="fas fa-tools"></i> Our Services</a>
           <a href="/en/index.html#contact"><i class="fas fa-phone-alt"></i> Contact Us</a>
-          </div>
-      
+      </div>
+
       <a href="/blog.html" class="language-switcher-button">العربية</a>
 
       <div class="hamburger-links" id="hamburger-links">
@@ -491,12 +480,11 @@
   </section>
 
   <div class="container">
-
     <div class="blog-post">
       <h2><img src="https://img.icons8.com/fluency/32/soil.png" alt="Soil and sand icon"> Choosing the Right Bat7a for Your Project: Your Comprehensive Guide to Sand Types</h2>
       <div class="post-meta">Published on: June 27, 2025 | By: Bat7a Makkah Team</div>
       <p>
-        Bat7a is one of the most essential materials in any construction project. Did you know that there are different types of **bat7a**, and each has its specific uses? In this article, we explain the differences between the most famous types, such as **Riyadh bat7a** and **Taima bat7a**, to help you choose the most suitable one for your project.
+        Bat7a is one of the most essential materials in any construction project. Did you know that there are different types of <strong>bat7a</strong>, and each has its specific uses? In this article, we explain the differences between the most famous types, such as <strong>Riyadh bat7a</strong> and <strong>Taima bat7a</strong>, to help you choose the most suitable one for your project.
       </p>
       <a href="javascript:void(0)" onclick="showModal('article-bat7a')" class="read-more">Read More &raquo;</a>
     </div>
@@ -505,7 +493,7 @@
       <h2><img src="https://img.icons8.com/?size=100&id=77169&format=png&color=000000" alt="Plaster and cement icon"> Secrets of Professional Plastering: Expert Tips</h2>
       <div class="post-meta">Published on: June 20, 2025 | By: Engineer Khalid</div>
       <p>
-        Good plastering is the foundation for professionally finishing any walls or ceilings. What are the secrets behind long-lasting and flawless plastering? In this guide, our experts share the best tips to ensure the quality of your **plastering** work, from choosing the **right bat7a** to avoiding common problems.
+        Good plastering is the foundation for professionally finishing any walls or ceilings. What are the secrets behind long-lasting and flawless plastering? In this guide, our experts share the best tips to ensure the quality of your <strong>plastering</strong> work, from choosing the <strong>right bat7a</strong> to avoiding common problems.
       </p>
       <a href="javascript:void(0)" onclick="showModal('article-layasa')" class="read-more">Read More &raquo;</a>
     </div>
@@ -514,7 +502,7 @@
       <h2><img src="https://img.icons8.com/fluency/32/truck.png" alt="Delivery truck icon"> The Importance of Fast Building Material Delivery for Your Project</h2>
       <div class="post-meta">Published on: June 15, 2025 | By: Logistics Department</div>
       <p>
-        In the world of construction, time is money. A delay in the arrival of **building materials** leads to work stoppage and increased costs. We discuss the significant impact of fast and efficient **building material delivery** on the progress of your project, and how a **reliable supplier** can protect your schedule and budget.
+        In the world of construction, time is money. A delay in the arrival of <strong>building materials</strong> leads to work stoppage and increased costs. We discuss the significant impact of fast and efficient <strong>building material delivery</strong> on the progress of your project, and how a <strong>reliable supplier</strong> can protect your schedule and budget.
       </p>
       <a href="javascript:void(0)" onclick="showModal('article-delivery')" class="read-more">Read More &raquo;</a>
     </div>
@@ -523,7 +511,7 @@
         <h2><img src="https://img.icons8.com/fluency/32/brick.png" alt="Brick icon"> Husainiya Dafan: A Solid Foundation for Every Floor</h2>
         <div class="post-meta">Published on: June 10, 2025 | By: Editorial Team</div>
         <p>
-            When preparing to install tiles or level any floor, choosing the right dafan is a crucial factor. **Husainiya dafan** is known for being **clean and free of impurities**. Learn about its multiple uses as a base layer under tiles or a component in concrete mixes, and how we provide **dafan at affordable prices**.
+            When preparing to install tiles or level any floor, choosing the right dafan is a crucial factor. <strong>Husainiya dafan</strong> is known for being <strong>clean and free of impurities</strong>. Learn about its multiple uses as a base layer under tiles or a component in concrete mixes, and how we provide <strong>dafan at affordable prices</strong>.
         </p>
         <a href="javascript:void(0)" onclick="showModal('article-dafan')" class="read-more">Read More &raquo;</a>
     </div>
@@ -531,7 +519,7 @@
     <div class="blog-post">
         <h2><i class="fas fa-paint-roller"></i> Tartasha: The Essential Step for Wall Strength Before Plastering</h2> <div class="post-meta">Published on: June 5, 2025 | By: Construction Experts</div>
         <p>
-            Before plastering, **tartasha** is the foundation that ensures plaster adhesion and increases **wall strength**. We explain its importance and how we provide the best and highest quality tartasha in terms of **roughness and cleanliness** to ensure long-lasting results.
+            Before plastering, <strong>tartasha</strong> is the foundation that ensures plaster adhesion and increases <strong>wall strength</strong>. We explain its importance and how we provide the best and highest quality tartasha in terms of <strong>roughness and cleanliness</strong> to ensure long-lasting results.
         </p>
         <a href="javascript:void(0)" onclick="showModal('article-tartasha')" class="read-more">Read More &raquo;</a>
     </div>
@@ -539,7 +527,7 @@
     <div class="blog-post">
         <h2><i class="fas fa-shield-alt"></i> Insulating Volcanic Material: The Perfect Solution for Thermal and Water Insulation of Surfaces</h2> <div class="post-meta">Published on: June 1, 2025 | By: Insulation Specialists</div>
         <p>
-            To address heat and moisture problems in buildings, **insulating volcanic material** comes as an effective solution. We highlight its multiple uses for thermal and water insulation of surfaces under tiles, as well as **electrical insulation**, to provide a more comfortable and energy-efficient indoor environment.
+            To address heat and moisture problems in buildings, <strong>insulating volcanic material</strong> comes as an effective solution. We highlight its multiple uses for thermal and water insulation of surfaces under tiles, as well as <strong>electrical insulation</strong>, to provide a more comfortable and energy-efficient indoor environment.
         </p>
         <a href="javascript:void(0)" onclick="showModal('article-burkani')" class="read-more">Read More &raquo;</a>
     </div>
@@ -547,7 +535,7 @@
     <div class="blog-post">
         <h2><i class="fas fa-cube"></i> Concrete: The Foundation of Strong Construction Projects and Its Multiple Uses</h2> <div class="post-meta">Published on: May 28, 2025 | By: Construction Experts</div>
         <p>
-            **Concrete** is the backbone of any modern construction project due to its exceptional strength and durability. Its uses are not limited to **creating slabs** and foundations, but extend to a wide range of applications in concrete structures, from columns and walls to ceilings and bridges. In this article, we explore the pivotal importance of concrete in the world of construction and how we, at Desert Sand Est., ensure the supply of **high-quality ready-mix concrete** in all required sizes to guarantee the strength and durability of your projects.
+            <strong>Concrete</strong> is the backbone of any modern construction project due to its exceptional strength and durability. Its uses are not limited to <strong>creating slabs</strong> and foundations, but extend to a wide range of applications in concrete structures, from columns and walls to ceilings and bridges. In this article, we explore the pivotal importance of concrete in the world of construction and how we, at Desert Sand Est., ensure the supply of <strong>high-quality ready-mix concrete</strong> in all required sizes to guarantee the strength and durability of your projects.
         </p>
         <a href="javascript:void(0)" onclick="showModal('article-concrete')" class="read-more">Read More &raquo;</a>
     </div>
@@ -556,11 +544,10 @@
         <h2><img src="https://img.icons8.com/fluency/32/road.png" alt="Road icon"> Speez (Backfill): Its Vital Role in Stabilizing Foundations and Road Backfilling</h2>
         <div class="post-meta">Published on: May 25, 2025 | By: Road Engineer</div>
         <p>
-            In modern construction and infrastructure development, backfill materials play a role no less important than primary construction materials. **Speez**, or backfill material, is the cornerstone in achieving stability and durability. This article highlights its vital uses, whether in **backfilling works** for buildings to stabilize foundations, or in **road backfilling** projects to ensure their levelness and load-bearing capacity.
+            In modern construction and infrastructure development, backfill materials play a role no less important than primary construction materials. <strong>Speez</strong>, or backfill material, is the cornerstone in achieving stability and durability. This article highlights its vital uses, whether in <strong>backfilling works</strong> for buildings to stabilize foundations, or in <strong>road backfilling</strong> projects to ensure their levelness and load-bearing capacity.
         </p>
         <a href="javascript:void(0)" onclick="showModal('article-sbeez')" class="read-more">Read More &raquo;</a>
     </div>
-
   </div>
 
   <div class="buttons">
@@ -584,25 +571,25 @@
       <div id="article-bat7a">
           <h3>Choosing the Right Bat7a for Your Project: Your Comprehensive Guide to Sand Types</h3>
           <p>
-              **Bat7a** is one of the most essential materials in any construction project, and choosing the right type plays a crucial role in the quality and durability of the execution. Did you know that there are different types of **bat7a**, each with its specific uses? In this article, we will review the differences between the most famous **types of bat7a available on the market**, such as **Riyadh bat7a** and **Taima bat7a**, and highlight the characteristics of each and how to choose the most suitable one for your project, whether for plastering, backfilling, or aesthetic finishes.
+              <strong>Bat7a</strong> is one of the most essential materials in any construction project, and choosing the right type plays a crucial role in the quality and durability of the execution. Did you know that there are different types of <strong>bat7a</strong>, each with its specific uses? In this article, we will review the differences between the most famous <strong>types of bat7a available on the market</strong>, such as <strong>Riyadh bat7a</strong> and <strong>Taima bat7a</strong>, and highlight the characteristics of each and how to choose the most suitable one for your project, whether for plastering, backfilling, or aesthetic finishes.
           </p>
-          <h4>**Riyadh Bat7a: Best for Interior Plastering and Professional Finishes**</h4>
+          <h4><strong>Riyadh Bat7a: Best for Interior Plastering and Professional Finishes</strong></h4>
           <p>
-              **Riyadh bat7a** is known for its high purity and relatively fine grains, making it the perfect choice for **interior plastering**. Its fineness helps the worker achieve a professional and smooth finish on the walls, ensuring a perfectly level and smooth surface ready for paint or wallpaper. It also provides good flexibility during application, which reduces the chances of cracks appearing. **Riyadh bat7a** is essential for achieving a professional finish and high quality in interior finishing work.
+              <strong>Riyadh bat7a</strong> is known for its high purity and relatively fine grains, making it the perfect choice for <strong>interior plastering</strong>. Its fineness helps the worker achieve a professional and smooth finish on the walls, ensuring a perfectly level and smooth surface ready for paint or wallpaper. It also provides good flexibility during application, which reduces the chances of cracks appearing. <strong>Riyadh bat7a</strong> is essential for achieving a professional finish and high quality in interior finishing work.
           </p>
-          <h4>**Taima Bat7a: For Strength and Distinctive Exterior Decorations**</h4>
+          <h4><strong>Taima Bat7a: For Strength and Distinctive Exterior Decorations</strong></h4>
           <p>
-              In contrast, **Taima bat7a** is coarser and stronger than Riyadh bat7a, thanks to the nature of its grains which gives it greater load-bearing capacity. These characteristics make it ideal for use on **exterior building facades**, especially when aiming for distinctive decorations or patterns. The coarseness of **Taima bat7a** grains provides excellent cohesion with cement, giving the facade extra strength. It is usually used with **white cement** to highlight colors, and its price is relatively higher than Riyadh bat7a due to its unique properties and high quality in resisting erosion factors.
+              In contrast, <strong>Taima bat7a</strong> is coarser and stronger than Riyadh bat7a, thanks to the nature of its grains which gives it greater load-bearing capacity. These characteristics make it ideal for use on <strong>exterior building facades</strong>, especially when aiming for distinctive decorations or patterns. The coarseness of <strong>Taima bat7a</strong> grains provides excellent cohesion with cement, giving the facade extra strength. It is usually used with <strong>white cement</strong> to highlight colors, and its price is relatively higher than Riyadh bat7a due to its unique properties and high quality in resisting erosion factors.
           </p>
           <p>
-              Choosing the **right bat7a** for your project is not just a preference; it's an engineering decision that affects the quality and sustainability of the construction. Contact Desert Sand Est. for consultation and to get the finest **types of bat7a** and **sand** at competitive prices in Makkah.
+              Choosing the <strong>right bat7a</strong> for your project is not just a preference; it's an engineering decision that affects the quality and sustainability of the construction. Contact Desert Sand Est. for consultation and to get the finest <strong>types of bat7a</strong> and <strong>sand</strong> at competitive prices in Makkah.
           </p>
       </div>
 
       <div id="article-layasa">
           <h3>Secrets of Professional Plastering: Expert Tips</h3>
           <p>
-              Good plastering is the foundation for professionally and durably finishing any walls or ceilings. But what are the secrets behind plastering that lasts a long time and looks flawless? In this comprehensive guide, our experts share the best tips and practices to ensure the quality of your **plastering** work. We will review the importance of choosing the **right bat7a**, the correct ratios for mixing materials, and how to avoid common problems like cracks and peeling. Follow these guidelines to achieve the best results in your projects.
+              Good plastering is the foundation for professionally and durably finishing any walls or ceilings. But what are the secrets behind plastering that lasts a long time and looks flawless? In this comprehensive guide, our experts share the best tips and practices to ensure the quality of your <strong>plastering</strong> work. We will review the importance of choosing the <strong>right bat7a</strong>, the correct ratios for mixing materials, and how to avoid common problems like cracks and peeling. Follow these guidelines to achieve the best results in your projects.
           </p>
           <h4>The Importance of Good Surface Preparation</h4>
           <p>
@@ -610,23 +597,23 @@
           </p>
           <h4>Correct Ratios for Mixing Mortar</h4>
           <p>
-              The success of plastering largely depends on the correct ratios of sand, cement, and water. Using the wrong ratio can lead to weak plaster or cracks appearing later. It is preferable to use **fine and clean plastering sand**, mixed with cement in specific ratios recommended by experts, with the addition of a suitable amount of water to get a consistent and easy-to-apply texture.
+              The success of plastering largely depends on the correct ratios of sand, cement, and water. Using the wrong ratio can lead to weak plaster or cracks appearing later. It is preferable to use <strong>fine and clean plastering sand</strong>, mixed with cement in specific ratios recommended by experts, with the addition of a suitable amount of water to get a consistent and easy-to-apply texture.
           </p>
           <h4>Professional Application Techniques</h4>
           <ul>
-              <li>**Tartasha First:** A thin layer of tartasha must be applied before starting the plastering, to increase the surface roughness and improve mortar adhesion.</li>
-              <li>**Plastering Layers:** It is preferable to apply plaster in two or three layers instead of one thick layer, to ensure consistency and reduce the chances of cracking. Each layer should be left to dry partially before applying the next.</li>
-              <li>**Watering After Plastering:** Spraying the surface with water regularly for a few days after plastering helps with the curing process and prevents cracks caused by rapid drying.</li>
+              <li><strong>Tartasha First:</strong> A thin layer of tartasha must be applied before starting the plastering, to increase the surface roughness and improve mortar adhesion.</li>
+              <li><strong>Plastering Layers:</strong> It is preferable to apply plaster in two or three layers instead of one thick layer, to ensure consistency and reduce the chances of cracking. Each layer should be left to dry partially before applying the next.</li>
+              <li><strong>Watering After Plastering:</strong> Spraying the surface with water regularly for a few days after plastering helps with the curing process and prevents cracks caused by rapid drying.</li>
           </ul>
           <p>
-              By following these expert tips, you can guarantee **professional plastering** that lasts for a long time and gives your project a perfect final touch. For more consultations on the **best types of sand for plastering**, contact Desert Sand Est.
+              By following these expert tips, you can guarantee <strong>professional plastering</strong> that lasts for a long time and gives your project a perfect final touch. For more consultations on the <strong>best types of sand for plastering</strong>, contact Desert Sand Est.
           </p>
       </div>
 
       <div id="article-delivery">
           <h3>The Importance of Fast Building Material Delivery for Your Project</h3>
           <p>
-              In the world of construction, time is money. A delay in the arrival of **building materials** can lead to work stoppage, increased costs, and project delays. In this article, we discuss the significant impact of fast and efficient **building material delivery** on the progress of your project, and how choosing a **reliable supplier** can protect your schedule and budget. We will also review the factors that ensure **smooth and on-time delivery**, from advanced planning to effective coordination with suppliers.
+              In the world of construction, time is money. A delay in the arrival of <strong>building materials</strong> can lead to work stoppage, increased costs, and project delays. In this article, we discuss the significant impact of fast and efficient <strong>building material delivery</strong> on the progress of your project, and how choosing a <strong>reliable supplier</strong> can protect your schedule and budget. We will also review the factors that ensure <strong>smooth and on-time delivery</strong>, from advanced planning to effective coordination with suppliers.
           </p>
           <h4>The Impact of Delays on Cost and Schedule</h4>
           <p>
@@ -634,40 +621,40 @@
           </p>
           <h4>How a Reliable Supplier Ensures Fast Delivery</h4>
           <ul>
-              <li>**Modern Transport Fleet:** Experienced suppliers have a large fleet of trucks and dumpers to ensure vehicles are available upon request.</li>
-              <li>**Efficient Logistics Management:** Routes and schedules are carefully planned to avoid traffic and ensure the fastest possible arrival.</li>
-              <li>**Sufficient Inventory:** Reliable suppliers maintain adequate quantities of key **building materials** in their warehouses to ensure a quick response to large orders.</li>
-              <li>**Effective Communication:** A good supplier ensures continuous communication with the client about the status of the order and the expected delivery time.</li>
+              <li><strong>Modern Transport Fleet:</strong> Experienced suppliers have a large fleet of trucks and dumpers to ensure vehicles are available upon request.</li>
+              <li><strong>Efficient Logistics Management:</strong> Routes and schedules are carefully planned to avoid traffic and ensure the fastest possible arrival.</li>
+              <li><strong>Sufficient Inventory:</strong> Reliable suppliers maintain adequate quantities of key <strong>building materials</strong> in their warehouses to ensure a quick response to large orders.</li>
+              <li><strong>Effective Communication:</strong> A good supplier ensures continuous communication with the client about the status of the order and the expected delivery time.</li>
           </ul>
           <p>
-              Choosing a **building material supplier** who values fast and efficient delivery, like Desert Sand Est., is a wise investment that protects your project from delays and additional costs, and ensures work proceeds smoothly from start to finish.
+              Choosing a <strong>building material supplier</strong> who values fast and efficient delivery, like Desert Sand Est., is a wise investment that protects your project from delays and additional costs, and ensures work proceeds smoothly from start to finish.
           </p>
       </div>
 
       <div id="article-dafan">
           <h3>Husainiya Dafan: A Solid Foundation for Every Floor</h3>
           <p>
-              When preparing to install tiles or level any floor, choosing the right dafan becomes a crucial factor in achieving stability and durability. **Husainiya dafan** is one of the excellent options we provide, as it is known for being **clean and free of impurities**. In this article, we will learn about its multiple uses, whether as a base layer under tiles or as a key component in concrete mixes, and how Husainiya dafan can contribute to extending the life of your floors. At our company, we are committed to providing **dafan at affordable prices** for everyone, while adhering to high quality.
+              When preparing to install tiles or level any floor, choosing the right dafan becomes a crucial factor in achieving stability and durability. <strong>Husainiya dafan</strong> is one of the excellent options we provide, as it is known for being <strong>clean and free of impurities</strong>. In this article, we will learn about its multiple uses, whether as a base layer under tiles or as a key component in concrete mixes, and how Husainiya dafan can contribute to extending the life of your floors. At our company, we are committed to providing <strong>dafan at affordable prices</strong> for everyone, while adhering to high quality.
           </p>
           <h4>The Importance of High-Quality Dafan</h4>
           <p>
-              Dafan is not just a layer that fills gaps; it directly affects the stability and firmness of floors. Unclean dafan or dafan containing impurities can lead to floor settlement, cracked tiles, or even damage to buried plumbing and electrical systems. Therefore, choosing **clean dafan** is vital.
+              Dafan is not just a layer that fills gaps; it directly affects the stability and firmness of floors. Unclean dafan or dafan containing impurities can lead to floor settlement, cracked tiles, or even damage to buried plumbing and electrical systems. Therefore, choosing <strong>clean dafan</strong> is vital.
           </p>
           <h4>Uses of Husainiya Dafan</h4>
           <ul>
-              <li>**Under Tiles:** Husainiya dafan is used as a leveling layer under tiles to ensure a perfectly flat surface, which prevents tiles from breaking or becoming loose over time.</li>
-              <li>**In Construction Mixes:** Husainiya dafan can be used in some secondary concrete mixes or backfill mixes to improve their properties and increase their volume.</li>
-              <li>**For Site Leveling:** It is also used to raise the level of floors in indoor and outdoor areas.</li>
+              <li><strong>Under Tiles:</strong> Husainiya dafan is used as a leveling layer under tiles to ensure a perfectly flat surface, which prevents tiles from breaking or becoming loose over time.</li>
+              <li><strong>In Construction Mixes:</strong> Husainiya dafan can be used in some secondary concrete mixes or backfill mixes to improve their properties and increase their volume.</li>
+              <li><strong>For Site Leveling:</strong> It is also used to raise the level of floors in indoor and outdoor areas.</li>
           </ul>
           <p>
-              At Desert Sand Est., we are committed to supplying **Husainiya dafan** that meets the highest standards of cleanliness and quality, and we offer it at **competitive prices** to suit various project sizes. Contact us to find out the **price of dafan** and our delivery services.
+              At Desert Sand Est., we are committed to supplying <strong>Husainiya dafan</strong> that meets the highest standards of cleanliness and quality, and we offer it at <strong>competitive prices</strong> to suit various project sizes. Contact us to find out the <strong>price of dafan</strong> and our delivery services.
           </p>
       </div>
 
       <div id="article-tartasha">
           <h3>Tartasha: The Essential Step for Wall Strength Before Plastering</h3>
           <p>
-              Before starting the plastering and final finishing work on walls, there is a vital, indispensable step: **tartasha**. This initial layer is not just a formality; it is the foundation that ensures the plaster adheres effectively and increases **wall strength** and resistance to external factors. In this article, we explain how to use tartasha correctly, and what its importance is in protecting concrete structures. At Desert Sand Est., we provide you with the best and highest quality tartasha in terms of **roughness and cleanliness**, to ensure long-lasting results.
+              Before starting the plastering and final finishing work on walls, there is a vital, indispensable step: <strong>tartasha</strong>. This initial layer is not just a formality; it is the foundation that ensures the plaster adheres effectively and increases <strong>wall strength</strong> and resistance to external factors. In this article, we explain how to use tartasha correctly, and what its importance is in protecting concrete structures. At Desert Sand Est., we provide you with the best and highest quality tartasha in terms of <strong>roughness and cleanliness</strong>, to ensure long-lasting results.
           </p>
           <h4>What is Tartasha and Why is It Important?</h4>
           <p>
@@ -679,19 +666,19 @@
           </p>
           <h4>Specifications of High-Quality Tartasha</h4>
           <ul>
-              <li>**Sufficient Roughness:** The tartasha must be rough enough to provide a good surface for adhesion, without being excessively rough to cause problems with plastering.</li>
-              <li>**Cleanliness:** Using clean, washed sand free of salts and impurities ensures the strength of the tartasha and prevents spots or problems from appearing later.</li>
-              <li>**Correct Mix:** The ratio of cement, sand, and water must be balanced to obtain a strong and cohesive mortar.</li>
+              <li><strong>Sufficient Roughness:</strong> The tartasha must be rough enough to provide a good surface for adhesion, without being excessively rough to cause problems with plastering.</li>
+              <li><strong>Cleanliness:</strong> Using clean, washed sand free of salts and impurities ensures the strength of the tartasha and prevents spots or problems from appearing later.</li>
+              <li><strong>Correct Mix:</strong> The ratio of cement, sand, and water must be balanced to obtain a strong and cohesive mortar.</li>
           </ul>
           <p>
-              At Desert Sand Est., we are proud to offer the finest **tartasha** that ensures a strong start for your project and contributes to achieving **wall strength** that lasts for decades.
+              At Desert Sand Est., we are proud to offer the finest <strong>tartasha</strong> that ensures a strong start for your project and contributes to achieving <strong>wall strength</strong> that lasts for decades.
           </p>
       </div>
 
       <div id="article-burkani">
           <h3>Insulating Volcanic Material: The Perfect Solution for Thermal and Water Insulation of Surfaces</h3>
           <p>
-              Heat and moisture problems in buildings are major challenges, especially in hot climates. **Insulating volcanic material** comes as an effective and innovative solution to provide maximum protection for surfaces. In this article, we highlight its multiple uses, as its role is not limited to **thermal and water insulation of surfaces** under tiles, but also extends to include **electrical insulation** and providing a more comfortable and energy-efficient indoor environment. Discover how this revolutionary material can transform your home into a cooler and safer space.
+              Heat and moisture problems in buildings are major challenges, especially in hot climates. <strong>Insulating volcanic material</strong> comes as an effective and innovative solution to provide maximum protection for surfaces. In this article, we highlight its multiple uses, as its role is not limited to <strong>thermal and water insulation of surfaces</strong> under tiles, but also extends to include <strong>electrical insulation</strong> and providing a more comfortable and energy-efficient indoor environment. Discover how this revolutionary material can transform your home into a cooler and safer space.
           </p>
           <h4>What is Insulating Volcanic Material?</h4>
           <p>
@@ -699,41 +686,40 @@
           </p>
           <h4>Uses of Insulating Volcanic Material for Surfaces</h4>
           <ul>
-              <li>**Thermal Insulation of Surfaces:** Insulating volcanic material helps reduce heat transfer from the outside to the inside in the summer, and from the inside to the outside in the winter, which reduces energy consumption bills for air conditioning and heating.</li>
-              <li>**Water Insulation Under Tiles:** It is characterized by its ability to absorb moisture and prevent water leakage, which makes it an excellent insulating layer under tiles on roofs and in bathrooms.</li>
-              <li>**Sound Insulation:** Thanks to its porosity, the insulating volcanic material helps absorb noise and reduce sound transfer.</li>
-              <li>**Electrical Insulation:** It can be used as an electrical insulating layer in some applications, which increases the safety of electrical installations.</li>
+              <li><strong>Thermal Insulation of Surfaces:</strong> Insulating volcanic material helps reduce heat transfer from the outside to the inside in the summer, and from the inside to the outside in the winter, which reduces energy consumption bills for air conditioning and heating.</li>
+              <li><strong>Water Insulation Under Tiles:</strong> It is characterized by its ability to absorb moisture and prevent water leakage, which makes it an excellent insulating layer under tiles on roofs and in bathrooms.</li>
+              <li><strong>Sound Insulation:</strong> Thanks to its porosity, the insulating volcanic material helps absorb noise and reduce sound transfer.</li>
+              <li><strong>Electrical Insulation:</strong> It can be used as an electrical insulating layer in some applications, which increases the safety of electrical installations.</li>
           </ul>
           <p>
-              At Desert Sand Est., we provide you with the finest **insulating volcanic material** to ensure the highest levels of comfort and efficiency for your building. Contact us to learn more about the available insulation solutions.
+              At Desert Sand Est., we provide you with the finest <strong>insulating volcanic material</strong> to ensure the highest levels of comfort and efficiency for your building. Contact us to learn more about the available insulation solutions.
           </p>
       </div>
 
       <div id="article-concrete">
           <h3>Concrete: The Foundation of Strong Construction Projects and Its Multiple Uses</h3>
           <p>
-              **Concrete** is considered the backbone of any modern construction project, thanks to its exceptional strength and durability. Its uses are not limited to **creating slabs** and foundations, but extend to a wide range of applications in concrete structures, from columns and walls to ceilings and bridges. In this article, we explore the central importance of concrete in the world of construction, its different types, and how we at Desert Sand Est. ensure the supply of **high-quality ready-mix concrete** in all required sizes, to guarantee the strength and durability of your projects.
+              <strong>Concrete</strong> is the backbone of any modern construction project due to its exceptional strength and durability. Its uses are not limited to <strong>creating slabs</strong> and foundations, but extend to a wide range of applications in concrete structures, from columns and walls to ceilings and bridges. In this article, we explore the pivotal importance of concrete in the world of construction and how we, at Desert Sand Est., ensure the supply of <strong>high-quality ready-mix concrete</strong> in all required sizes to guarantee the strength and durability of your projects.
           </p>
           <h4>Types of Concrete and Their Uses</h4>
           <ul>
-              <li>**Ordinary Concrete:** Used in foundations, footings, and floors that are not subjected to high tensile stresses.</li>
-              <li>**Reinforced Concrete:** This is the most common type, where concrete is reinforced with steel rebar to increase its tensile strength. It is used in columns, bridges, slabs, and main foundations.</li>
-              <li>**Prestressed Concrete:** The rebar is stressed before or after the concrete is poured, which gives it extra strength and is used in structures that require wide spans or heavy loads.</li>
-              <li>**Lightweight and Heavyweight Concrete:** Its density varies depending on the added materials and is used for special applications such as insulation or radiation shielding.</li>
+              <li><strong>Ordinary Concrete:</strong> Used in foundations, footings, and floors that are not subjected to high tensile stresses.</li>
+              <li><strong>Reinforced Concrete:</strong> This is the most common type, where concrete is reinforced with steel rebar to increase its tensile strength. It is used in columns, bridges, slabs, and main foundations.</li>
+              <li><strong>Prestressed Concrete:</strong> The rebar is stressed before or after the concrete is poured, which gives it extra strength and is used in structures that require wide spans or heavy loads.</li>
+              <li><strong>Lightweight and Heavyweight Concrete:</strong> Its density varies depending on the added materials and is used for special applications such as insulation or radiation shielding.</li>
           </ul>
-          <h4>The Importance of Concrete in Slabs</h4>
           <p>
-              **Concrete slabs** are one of the most important stages of any project, whether it is a floor slab, a roof slab, or a foundation slab. The quality of these slabs depends on the quality of the concrete used, its correct mixing, pouring, and curing. At Desert Sand Est., we provide **ready-mix concrete** that is prepared according to the highest standards, which ensures you get a product that meets the strength and durability requirements of your projects.
+              <strong>Concrete slabs</strong> are one of the most important stages of any project, whether it is a floor slab, a roof slab, or a foundation slab. The quality of these slabs depends on the quality of the concrete used, its correct mixing, pouring, and curing. At Desert Sand Est., we provide <strong>ready-mix concrete</strong> that is prepared according to the highest standards, which ensures you get a product that meets the strength and durability of your projects.
           </p>
           <p>
-              To get **high-quality concrete** and reliable supply services in Makkah, contact Desert Sand Est.
+              To get <strong>high-quality concrete</strong> and reliable supply services in Makkah, contact Desert Sand Est.
           </p>
       </div>
 
       <div id="article-sbeez">
           <h3>Speez (Backfill): Its Vital Role in Stabilizing Foundations and Road Backfilling</h3>
           <p>
-              In modern construction and infrastructure development, backfill materials play a role no less important than primary construction materials. **Speez**, or backfill material, is the cornerstone in achieving stability and durability. This article highlights its vital uses, whether in **backfilling works** for buildings to stabilize foundations, or in **road backfilling** projects to ensure their levelness and load-bearing capacity. We explain how the quality of speez directly contributes to extending the life of structures and roads, and how Desert Sand Est. provides the finest types of speez for various needs.
+              In modern construction and infrastructure development, backfill materials play a role no less important than primary construction materials. <strong>Speez</strong>, or backfill material, is the cornerstone in achieving stability and durability. This article highlights its vital uses, whether in <strong>backfilling works</strong> for buildings to stabilize foundations, or in <strong>road backfilling</strong> projects to ensure their levelness and load-bearing capacity.
           </p>
           <h4>What is Speez?</h4>
           <p>
@@ -741,37 +727,19 @@
           </p>
           <h4>Uses of Speez in Construction and Roads</h4>
           <ul>
-              <li>**Foundation Stabilization:** Speez is used to create a stable base layer under building footings and foundations, which helps to distribute loads evenly and prevent building settlement.</li>
-              <li>**Site Backfilling:** It is used to raise the level of floors, fill gaps, and level sites before starting construction.</li>
-              <li>**Road Backfilling:** Speez is an essential component in the base and subgrade layers when building roads, as it provides a strong and stable layer that can withstand the pressure of traffic.</li>
-              <li>**Landscaping:** It can be used in landscaping and garden work to create different levels or to backfill specific areas.</li>
+              <li><strong>Foundation Stabilization:</strong> Speez is used to create a stable base layer under building footings and foundations, which helps to distribute loads evenly and prevent building settlement.</li>
+              <li><strong>Site Backfilling:</strong> It is used to raise the level of floors, fill gaps, and level sites before starting construction.</li>
+              <li><strong>Road Backfilling:</strong> Speez is an essential component in the base and subgrade layers when building roads, as it provides a strong and stable layer that can withstand the pressure of traffic.</li>
+              <li><strong>Landscaping:</strong> It can be used in landscaping and garden work to create different levels or to backfill specific areas.</li>
           </ul>
           <p>
-              The quality of **speez** directly affects the stability and durability of the project. At Desert Sand Est., we guarantee you the provision of **the finest types of speez** to meet your needs in **backfilling works** and **foundation stabilization** with high efficiency.
+              The quality of <strong>speez</strong> directly affects the stability and durability of the project. At Desert Sand Est., we guarantee you the provision of <strong>the finest types of speez</strong> to meet your needs in <strong>backfilling works</strong> and <strong>foundation stabilization</strong> with high efficiency.
           </p>
       </div>
 
   </div>
 
-  <div class="buttons">
-      <a class="btn-whatsapp" href="https://wa.me/966537216061" target="_blank">Chat on WhatsApp</a>
-      <a class="btn-call" href="tel:0537216061">Call Now</a>
-  </div>
-
-  <div class="footer">
-    © 2024 All Rights Reserved – Desert Sand Est.
-  </div>
-
-  <div id="blogModalOverlay" class="modal-overlay" onclick="hideModal()">
-      <div class="modal-content" onclick="event.stopPropagation()">
-          <button class="modal-close-button" onclick="hideModal()">X</button>
-          <h2 id="modal-title"></h2>
-          <div id="modal-body-content"></div>
-      </div>
-  </div>
-
   <script>
-      // دالة لفتح النافذة المنبثقة وعرض المقال
       function showModal(articleId) {
           const modalOverlay = document.getElementById('blogModalOverlay');
           const modalTitleElement = document.getElementById('modal-title');
@@ -779,9 +747,7 @@
           const articleContentSource = document.getElementById(articleId);
 
           if (articleContentSource) {
-              // نسخ عنوان المقال (من أول h3 أو h2 في المحتوى المخفي)
               let firstHeadingInSource = articleContentSource.querySelector('h2, h3');
-              // إذا لم نجد عنوان داخل المقال نفسه، نأخذه من المقال المختصر في الصفحة
               if (!firstHeadingInSource) {
                   const correspondingBlogPost = document.querySelector(`.blog-post a[onclick*="${articleId}"]`).closest('.blog-post');
                   if (correspondingBlogPost) {
@@ -790,35 +756,31 @@
               }
 
               if (firstHeadingInSource) {
-                  modalTitleElement.innerHTML = firstHeadingInSource.innerHTML; // نسخ HTML بما في ذلك الأيقونة إذا وجدت
+                  modalTitleElement.innerHTML = firstHeadingInSource.innerHTML;
               } else {
-                  modalTitleElement.textContent = "Detailed Article"; // عنوان افتراضي إذا لم يوجد عنوان
+                  modalTitleElement.textContent = "Detailed Article";
               }
 
-              // نسخ المحتوى الكامل للمقال (كل شيء بعد العنوان الأول إذا كان موجوداً داخل المقال المخفي)
               const clonedContent = articleContentSource.cloneNode(true);
               if (clonedContent.querySelector('h2, h3')) {
-                  clonedContent.removeChild(clonedContent.querySelector('h2, h3')); // إزالة العنوان الأول لتجنب تكراره
+                  clonedContent.removeChild(clonedContent.querySelector('h2, h3'));
               }
-              modalBodyContentElement.innerHTML = ''; // تفريغ المحتوى القديم
-              // نقل جميع محتويات clonedContent إلى modalBodyContentElement
+              modalBodyContentElement.innerHTML = '';
               while (clonedContent.firstChild) {
                   modalBodyContentElement.appendChild(clonedContent.firstChild);
               }
 
-              modalOverlay.classList.add('visible'); // إظهار المودال
-              document.body.style.overflow = 'hidden'; // منع التمرير في الخلفية
+              modalOverlay.classList.add('visible');
+              document.body.style.overflow = 'hidden';
           }
       }
 
-      // دالة لإخفاء النافذة المنبثقة
       function hideModal() {
           const modalOverlay = document.getElementById('blogModalOverlay');
           modalOverlay.classList.remove('visible');
-          document.body.style.overflow = ''; // إعادة التمرير للخلفية
+          document.body.style.overflow = '';
       }
 
-      // سكريبت وظيفة قائمة الهامبرغر (لم يتم تغييرها عن كودك الأصلي بناءً على طلبك)
       function toggleMenu() {
           var links = document.getElementById('hamburger-links');
           links.style.display = (links.style.display === 'block') ? 'none' : 'block';
@@ -845,7 +807,6 @@
           }
       });
 
-      // إغلاق المودال عند الضغط على مفتاح ESC
       document.addEventListener('keydown', function(event) {
           if (event.key === 'Escape') {
               hideModal();
