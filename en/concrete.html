@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  <script>(function(w,d,s,l,i){w [l]=w [l]||[];w [l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -9,24 +9,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>High-Quality Ready-Mix Concrete | Desert Sand Est. in Makkah</title>
+  
   <link rel="canonical" href="https://bat7a-makkah.com/en/concrete.html">
 
+
   <link rel="alternate" href="https://bat7a-makkah.com/concrete.html" hreflang="ar">
+
 
   <meta name="description" content="Discover high-quality ready-mix concrete from Desert Sand Est., perfect for all types of construction projects. Guaranteed quality and strength for your projects in Makkah." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Desert Sand Est." />
+  
   <meta property="og:title" content="High-Quality Ready-Mix Concrete | Desert Sand Est." />
   <meta property="og:description" content="Ready-mix concrete with international specifications, available in the highest quality in Makkah. Photos and detailed product description." />
   <meta property="og:type" content="product" />
   <meta property="og:url" content="https://bat7a-makkah.com/en/concrete.html" />
-  <meta property="og:image" content="https://i.imgur.com/example-concrete-main.jpeg" /> <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://i.imgur.com/example-concrete-main.jpeg" />
+  <meta property="og:locale" content="en_US" />
+
 
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+
   <style>
-    /* الأنماط العامة والقائمة العلوية والفوتر ستكون هي نفسها التي في ملف products.html */
     body {
       font-family: 'Tajawal', sans-serif;
       background: #fdfaf8;
@@ -37,13 +43,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       overflow-x: hidden;
       padding-top: 60px;
     }
-
-    /* Hamburger Menu CSS (Same as in products.html) */
+    
     .hamburger-container {
       background: #e0c9a6;
       padding: 10px 15px;
       display: flex;
-      justify-content: flex-end;
       align-items: center;
       position: fixed;
       top: 0;
@@ -53,36 +57,90 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       box-shadow: 0 3px 10px rgba(0,0,0,0.18);
       width: 100%;
       box-sizing: border-box;
+      justify-content: flex-start; /* Align items to the left */
     }
+
+
+    .mobile-nav-items {
+      display: none; /* Hidden by default */
+      align-items: center;
+      gap: 10px;
+    }
+
+
+    .desktop-nav-links {
+      display: flex; /* Shown by default */
+      gap: 20px;
+      justify-content: flex-end;
+      flex-grow: 1;
+      align-items: center;
+      margin-left: 15px; /* Spacing after language switcher */
+    }
+    .desktop-nav-links a, .mobile-nav-items a {
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      color: #333 !important;
+      transition: color 0.3s, transform 0.2s, background-color 0.3s;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 8px;
+      border-radius: 5px;
+    }
+    .desktop-nav-links a:hover, .mobile-nav-items a:hover {
+      color: #004d3c !important;
+      transform: translateY(-1px);
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    .desktop-nav-links a i, .mobile-nav-items a i {
+      font-size: 18px;
+    }
+    .language-switcher-button {
+      background-color: transparent;
+      color: #333;
+      padding: 8px 15px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: bold;
+      border: 1px solid #d2b48c;
+      box-shadow: none;
+      transition: background-color 0.3s, transform 0.2s, color 0.3s;
+    }
+    .language-switcher-button:hover {
+      background-color: #f0f0f0;
+      color: #004d3c;
+    }
+
 
     .hamburger-button {
       background: none;
       border: none;
       cursor: pointer;
       padding: 0;
-      display: flex;
+      display: flex; /* Show by default, will be managed by media query */
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      margin-right: 10px;
-      order: 0;
+      margin-right: 10px; /* Spacing from the right */
+    }
+    .hamburger-button i {
+      font-size: 30px;
+      color: #333;
+      transition: color 0.2s ease;
+    }
+    .hamburger-button:hover i {
+      color: #004d3c;
     }
 
-    .hamburger-button img {
-      width: 30px;
-      height: 30px;
-      transition: transform 0.2s ease;
-    }
-    .hamburger-button:hover img {
-      transform: rotate(90deg);
-    }
 
     .hamburger-links {
       display: none;
       position: absolute;
       top: 60px;
       left: 10px;
-      right: auto;
+      right: 10px;
       background: white;
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.25);
@@ -91,8 +149,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       min-width: 200px;
       z-index: 9999;
       border: 1px solid #ddd;
+      flex-direction: column;
+      gap: 5px;
     }
-
     .hamburger-links a {
       display: flex;
       align-items: center;
@@ -106,222 +165,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       transition: background 0.3s, transform 0.2s;
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
-
     .hamburger-links a:hover {
       background: #f0f0f0;
       transform: translateX(5px);
     }
-
     .hamburger-links a img {
       width: 20px;
       height: 20px;
     }
 
-    .horizontal-nav-links {
-      display: flex;
-      gap: 20px;
-      justify-content: flex-end;
-      margin: 0;
-      order: 1;
-      flex-grow: 1;
-    }
-    .horizontal-nav-links a {
-      font-weight: 700;
-      font-size: 14px;
-      text-decoration: none;
-      color: #333 !important;
-      transition: color 0.3s, transform 0.2s, background-color 0.3s;
-      white-space: nowrap;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 5px 8px;
-      border-radius: 5px;
-    }
-    .horizontal-nav-links a:hover {
-      color: #004d3c !important;
-      transform: translateY(-1px);
-      background-color: rgba(255, 255, 255, 0.3);
-    }
-    .horizontal-nav-links a img,
-    .horizontal-nav-links a i {
-      width: 18px;
-      height: 18px;
-      font-size: 18px;
-      vertical-align: middle;
-    }
 
-    /* تنسيق زر اللغة */
-    .language-switcher-button {
-      background: #004d3c;
-      color: white;
-      padding: 8px 15px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: bold;
-      margin-left: 15px;
-      margin-right: 0;
-    }
-    .language-switcher-button:hover {
-      background: #003328;
-    }
-    
-    /* أزرار التواصل (Same as in products.html) */
-    .buttons {
-      text-align: center;
-      margin: 50px 0 10px;
-    }
-
-    .btn-whatsapp,
-    .btn-call {
-      display: inline-block;
-      padding: 12px 25px;
-      margin: 8px;
-      border-radius: 8px;
-      font-weight: bold;
-      color: white;
-      text-decoration: none;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .btn-whatsapp {
-      background-color: #25D366;
-    }
-
-    .btn-whatsapp:hover {
-      background-color: #1DA851;
-      transform: translateY(-2px);
-    }
-
-    .btn-call {
-      background-color: #007bff;
-    }
-
-    .btn-call:hover {
-      background-color: #0056b3;
-      transform: translateY(-2px);
-    }
-
-    /* الفوتر (Same as in products.html) */
-    .footer {
-      text-align: center;
-      font-size: 14px;
-      color: #777;
-      margin: 40px 0 20px;
-    }
-
-    /* أنماط خاصة بصفحة المنتج الفردي */
-    .product-detail-container {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 30px;
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-      text-align: left;
-    }
-
-    .product-detail-container h1 {
-      color: #004d3c;
-      font-size: 36px;
-      margin-bottom: 20px;
-      text-align: center;
-      font-weight: 700;
-    }
-
-    .product-images {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin-bottom: 30px;
-      justify-content: center;
-    }
-
-    .product-images img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease;
-    }
-
-    .product-images img:hover {
-      transform: scale(1.03);
-    }
-
-    .product-description {
-      font-size: 17px;
-      line-height: 1.8;
-      color: #444;
-      margin-bottom: 30px;
-    }
-
-    /* تم إضافة هذا النمط لتمييز النص العريض داخل الوصف */
-    .product-description strong {
-      color: #00765a; /* لون مميز للخط العريض */
-      font-weight: 700; /* جعل النص عريضًا */
-    }
-
-    .product-description h2 {
-      color: #00765a;
-      font-size: 24px;
-      margin-top: 30px;
-      margin-bottom: 15px;
-      border-bottom: 2px solid #eafaf5;
-      padding-bottom: 10px;
-    }
-
-    .product-features ul {
-      list-style: none;
-      padding: 0;
-      margin: 20px 0;
-    }
-
-    .product-features ul li {
-      margin-bottom: 10px;
-      padding-left: 25px;
-      position: relative;
-      color: #555;
-      font-size: 16px;
-    }
-
-    .product-features ul li:before {
-      content: '\f00c'; /* FontAwesome check icon */
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
-      color: #28a745;
-      position: absolute;
-      left: 0;
-      top: 2px;
-    }
-
-    /* Media Queries for responsiveness (Same as in products.html, ensure they apply here) */
+    /* Media Queries for responsiveness */
     @media (max-width: 768px) {
         body {
             padding-top: 60px;
             box-sizing: border-box;
         }
         .hamburger-container {
-            padding: 10px 15px;
+            justify-content: space-between; /* Push items to start and end */
         }
-        .horizontal-nav-links {
-            gap: 10px;
-            margin-right: 10px;
-            font-size: 13px;
+        .desktop-nav-links {
+            display: none;
         }
-        .horizontal-nav-links a {
-            font-size: 13px;
-            padding: 5px 6px;
+        .mobile-nav-items {
+            display: flex; /* Show on mobile */
+            order: 1; /* Place after hamburger button */
+            flex-grow: 1;
+            justify-content: flex-start;
+            margin-left: 10px;
         }
         .hamburger-button {
-            margin-left: 15px;
+            display: flex; /* Show on mobile */
+            order: 0; /* Place at the start */
+            margin-right: 10px;
         }
-        .hamburger-links {
-            top: 60px;
+        .language-switcher-button {
+            order: 2; /* Place after mobile nav items */
+            margin-left: auto; /* Push to the right */
         }
-
         .product-detail-container {
             margin: 20px 15px;
             padding: 20px;
@@ -338,9 +219,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .product-description {
             font-size: 15px;
         }
-        /* تعديل الخط للموبايل */
         .product-description strong {
-            font-size: 16px; /* أصغر قليلاً على الجوال */
+            font-size: 16px;
         }
         .product-description h2 {
             font-size: 20px;
@@ -353,55 +233,169 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-size: 14px;
         }
     }
+
+
+    /* Other styles for the page content */
+    .buttons {
+      text-align: center;
+      margin: 50px 0 10px;
+    }
+    .btn-whatsapp, .btn-call {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 8px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .btn-whatsapp {
+      background-color: #25D366;
+    }
+    .btn-whatsapp:hover {
+      background-color: #1DA851;
+      transform: translateY(-2px);
+    }
+    .btn-call {
+      background-color: #007bff;
+    }
+    .btn-call:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+    .footer {
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      margin: 40px 0 20px;
+    }
+    .product-detail-container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      text-align: left;
+    }
+    .product-detail-container h1 {
+      color: #004d3c;
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 700;
+    }
+    .product-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+    .product-images img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .product-images img:hover {
+      transform: scale(1.03);
+    }
+    .product-description {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 30px;
+    }
+    .product-description strong {
+      color: #00765a;
+      font-weight: 700;
+    }
+    .product-description h2 {
+      color: #00765a;
+      font-size: 24px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #eafaf5;
+      padding-bottom: 10px;
+    }
+    .product-features ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+    .product-features ul li {
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
+      color: #555;
+      font-size: 16px;
+    }
+    .product-features ul li:before {
+      content: '\f00c';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: #28a745;
+      position: absolute;
+      left: 0;
+      top: 2px;
+    }
   </style>
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJWQWKQV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="hamburger-container">
+    <button class="hamburger-button" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
 
-  <div class="hamburger-container">
-      <button class="hamburger-button" onclick="toggleMenu()">
-          <img alt="Navigation Menu" src="https://img.icons8.com/fluency/32/menu--v1.png"/>
-      </button>
 
-      <div class="horizontal-nav-links">
-          <a href="/en/products.html"><i class="fas fa-shopping-cart"></i> Our Products</a>
-          <a href="/en/gallery.html"><i class="fas fa-images"></i> Photo Gallery</a>
-          <a href="/en/contact.html"><i class="fas fa-phone-alt"></i> Contact Us</a>
-      </div>
+    <div class="mobile-nav-items">
+        <a href="/en/index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="/concrete.html" class="language-switcher-button">العربية</a>
+    </div>
 
-      <a href="/concrete.html" class="language-switcher-button">العربية</a>
 
-      <div class="hamburger-links" id="hamburger-links">
-          <a href="/en/index.html"><img alt="Home" src="https://img.icons8.com/fluency/20/home.png"/> Home</a>
-          <a href="/en/about.html"><img alt="About Us" src="https://img.icons8.com/fluency/20/info.png"/> About Us</a>
-          <a href="/en/difference.html"><img alt="The Difference between Riyadh and Taima Bat7a" src="https://img.icons8.com/fluency/20/compare.png"/> The Difference between Riyadh and Taima Bat7a</a>
-          <a href="/en/services.html"><img alt="Building material supply services" src="https://img.icons8.com/fluency/20/services.png"/> Our Services</a>
-          <a href="/en/products.html"><img alt="Available building products" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> Our Products</a>
-          <a href="/en/gallery.html"><img alt="Our projects photo gallery" src="https://img.icons8.com/fluency/20/picture.png"/> Photo Gallery</a>
-          <a href="/en/projects.html"><img alt="Examples of our projects" src="https://img.icons8.com/fluency/20/blueprint.png"/> Projects</a>
-          <a href="/en/testimonials.html"><img alt="Customer reviews" src="https://img.icons8.com/fluency/20/thumb-up.png"/> Testimonials</a>
-          <a href="/en/faq.html"><img alt="Frequently Asked Questions" src="https://img.icons8.com/fluency/20/help.png"/> FAQ</a>
-          <a href="/en/payment.html"><img alt="Payment Methods" src="https://img.icons8.com/fluency/20/money.png"/> Payment Methods</a>
-          <a href="/en/certificates.html"><img alt="Certificates" src="https://img.icons8.com/fluency/20/certificate.png"/> Certificates</a>
-          <a href="/en/blog.html"><img alt="Building materials blog" src="https://img.icons8.com/fluency/20/blog.png"/> Blog</a>
-          <a href="/en/contact.html"><img alt="Contact us" src="https://img.icons8.com/fluency/20/phone.png"/> Contact Us</a>
-      </div>
-  </div>
+    <div class="desktop-nav-links">
+        <a href="/en/products.html"><i class="fas fa-shopping-cart"></i> Our Products</a>
+        <a href="/en/gallery.html"><i class="fas fa-images"></i> Photo Gallery</a>
+        <a href="/en/contact.html"><i class="fas fa-phone-alt"></i> Contact Us</a>
+    </div>
 
-  <div class="product-detail-container">
+
+    <div class="hamburger-links" id="hamburger-links">
+        <a href="/en/index.html"><img alt="Home" src="https://img.icons8.com/fluency/20/home.png"/> Home</a>
+        <a href="/en/about.html"><img alt="About Us" src="https://img.icons8.com/fluency/20/info.png"/> About Us</a>
+        <a href="/en/difference.html"><img alt="The Difference between Riyadh and Taima Bat7a" src="https://img.icons8.com/fluency/20/compare.png"/> The Difference between Riyadh and Taima Bat7a</a>
+        <a href="/en/services.html"><img alt="Building material supply services" src="https://img.icons8.com/fluency/20/services.png"/> Our Services</a>
+        <a href="/en/products.html"><img alt="Available building products" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> Our Products</a>
+        <a href="/en/gallery.html"><img alt="Our projects photo gallery" src="https://img.icons8.com/fluency/20/picture.png"/> Photo Gallery</a>
+        <a href="/en/projects.html"><img alt="Examples of our projects" src="https://img.icons8.com/fluency/20/blueprint.png"/> Projects</a>
+        <a href="/en/testimonials.html"><img alt="Customer reviews" src="https://img.icons8.com/fluency/20/thumb-up.png"/> Testimonials</a>
+        <a href="/en/faq.html"><img alt="Frequently Asked Questions" src="https://img.icons8.com/fluency/20/help.png"/> FAQ</a>
+        <a href="/en/payment.html"><img alt="Payment Methods" src="https://img.icons8.com/fluency/20/money.png"/> Payment Methods</a>
+        <a href="/en/certificates.html"><img alt="Certificates" src="https://img.icons8.com/fluency/20/certificate.png"/> Certificates</a>
+        <a href="/en/blog.html"><img alt="Building materials blog" src="https://img.icons8.com/fluency/20/blog.png"/> Blog</a>
+        <a href="/en/contact.html"><img alt="Contact us" src="https://img.icons8.com/fluency/20/phone.png"/> Contact Us</a>
+    </div>
+</div>
+
+
+<div class="product-detail-container">
     <h1>Ready-Mix Concrete - Strength and Durability for Your Construction Projects</h1>
-
     <div class="product-images">
       <img src="images/khrsan-abed.jpg" alt="Ready-mix concrete image 1 - concrete truck">
       <img src="images/concrete-pouring.jpg" alt="Ready-mix concrete image 2 - during pouring">
       <img src="images/concrete-pump.jpg" alt="Ready-mix concrete image 3 - concrete pump">
       <img src="images/concrete-quality.jpg" alt="Ready-mix concrete image 4 - quality test">
     </div>
-
     <div class="product-description">
-      <p>Desert Sand Est. provides **ready-mix concrete** with the highest technical specifications, making it the ideal solution for projects that require speed and precision in execution and high load-bearing capacity. We guarantee you concrete of superior quality, produced according to the latest engineering standards, to meet all the requirements of your construction projects in Makkah.</p>
-
+      <p>Desert Sand Est. provides <strong>ready-mix concrete</strong> with the highest technical specifications, making it the ideal solution for projects that require speed and precision in execution and high load-bearing capacity. We guarantee you concrete of superior quality, produced according to the latest engineering standards, to meet all the requirements of your construction projects in Makkah.</p>
       <p>Whether you are building foundations, columns, ceilings, or any other structural elements, our ready-mix concrete provides you with the perfect mix of components to ensure maximum durability and stability. We are committed to providing concrete on time and according to the required specifications, with professional delivery service.</p>
-
       <h2>Advantages of Ready-Mix Concrete from Desert Sand Est.</h2>
       <ul class="product-features">
         <li>High quality and compliance with Saudi and international standard specifications.</li>
@@ -412,48 +406,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <li>Fast and efficient delivery service using a modern fleet of mixers.</li>
         <li>Technical support and consultations to ensure the right type is chosen for your project.</li>
       </ul>
-
       <h2>Common Uses of Ready-Mix Concrete</h2>
       <ul class="product-features">
-        <li>**Foundations and Footings:** To provide a solid and stable base for buildings.</li>
-        <li>**Columns and Concrete Walls:** For building the structural framework of buildings.</li>
-        <li>**Roofs and Slabs:** For pouring reinforced concrete roofs.</li>
-        <li>**Bridges and Tunnels:** In major infrastructure projects.</li>
-        <li>**Industrial Floors:** To create strong and wear-resistant floors in factories and warehouses.</li>
-        <li>**Road and Pavement Works:** In road infrastructure projects.</li>
+        <li><strong>Foundations and Footings:</strong> To provide a solid and stable base for buildings.</li>
+        <li><strong>Columns and Concrete Walls:</strong> For building the structural framework of buildings.</li>
+        <li><strong>Roofs and Slabs:</strong> For pouring reinforced concrete roofs.</li>
+        <li><strong>Bridges and Tunnels:</strong> In major infrastructure projects.</li>
+        <li><strong>Industrial Floors:</strong> To create strong and wear-resistant floors in factories and warehouses.</li>
+        <li><strong>Road and Pavement Works:</strong> In road infrastructure projects.</li>
       </ul>
-
       <p>Make Desert Sand Est. your trusted partner in providing ready-mix concrete for your projects. We guarantee you a product that meets the highest standards of quality and performance. Contact us today for a free consultation or to request a quote.</p>
     </div>
-
     <div class="buttons">
         <a class="btn-whatsapp" href="https://wa.me/966537216061" target="_blank">Chat with us on WhatsApp about Concrete</a>
         <a class="btn-call" href="tel:0537216061">Call Now to Inquire about Concrete</a>
     </div>
-  </div>
+</div>
 
-  <div class="footer">
+
+<div class="footer">
     © 2024 All Rights Reserved – Bat7a Makkah
-  </div>
+</div>
 
-  <script>
-      function toggleMenu() {
-          var links = document.getElementById('hamburger-links');
-          links.style.display = (links.style.display === 'block') ? 'none' : 'block';
-      }
 
-      document.addEventListener('click', function(event) {
-          var menu = document.getElementById('hamburger-links');
-          var button = document.querySelector('.hamburger-button');
-          if (menu && button) {
-              if (menu.style.display === 'block') {
-                  if (!menu.contains(event.target) && !button.contains(event.target)) {
-                      menu.style.display = 'none';
-                  }
-              }
-          }
-      });
-  </script>
+<script>
+    function toggleMenu() {
+        var links = document.getElementById('hamburger-links');
+        links.style.display = (links.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+
+    document.addEventListener('click', function(event) {
+        var menu = document.getElementById('hamburger-links');
+        var button = document.querySelector('.hamburger-button');
+        if (menu && button) {
+            if (menu.style.display === 'flex') {
+                if (!menu.contains(event.target) && !button.contains(event.target)) {
+                    menu.style.display = 'none';
+                }
+            }
+        }
+    });
+</script>
+
 
 </body>
 </html>
