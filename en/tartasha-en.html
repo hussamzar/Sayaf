@@ -39,12 +39,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       overflow-x: hidden;
       padding-top: 60px;
     }
-
     .hamburger-container {
       background: #e0c9a6;
       padding: 10px 15px;
       display: flex;
-      justify-content: flex-end;
+      justify-content: flex-end; /* Changed to flex-end to push everything to the right */
       align-items: center;
       position: fixed;
       top: 0;
@@ -55,20 +54,65 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       width: 100%;
       box-sizing: border-box;
     }
-
+    .mobile-nav-items {
+      display: none; /* Hidden by default */
+      align-items: center;
+      gap: 10px;
+    }
+    .desktop-nav-links {
+      display: flex; /* Shown by default */
+      gap: 20px;
+      justify-content: flex-end;
+      flex-grow: 1;
+      align-items: center;
+    }
+    .desktop-nav-links a, .mobile-nav-items a {
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      color: #333 !important;
+      transition: color 0.3s, transform 0.2s, background-color 0.3s;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 8px;
+      border-radius: 5px;
+    }
+    .desktop-nav-links a:hover, .mobile-nav-items a:hover {
+      color: #004d3c !important;
+      transform: translateY(-1px);
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    .desktop-nav-links a i, .mobile-nav-items a i {
+      font-size: 18px;
+    }
+    .language-switcher-button {
+      background-color: transparent;
+      color: #333;
+      padding: 8px 15px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: bold;
+      border: 1px solid #d2b48c;
+      box-shadow: none;
+      transition: background-color 0.3s, transform 0.2s, color 0.3s;
+    }
+    .language-switcher-button:hover {
+      background-color: #f0f0f0;
+      color: #004d3c;
+    }
     .hamburger-button {
       background: none;
       border: none;
       cursor: pointer;
       padding: 0;
-      display: flex;
+      display: none; /* Hidden by default */
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      margin-right: 10px;
-      order: 0;
+      order: 1; /* Pushes the button to the end on mobile */
     }
-    
     .hamburger-button i {
       font-size: 30px;
       color: #333;
@@ -77,13 +121,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hamburger-button:hover i {
       color: #004d3c;
     }
-
     .hamburger-links {
       display: none;
       position: absolute;
       top: 60px;
       left: 10px;
-      right: auto;
+      right: 10px;
       background: white;
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.25);
@@ -95,7 +138,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       flex-direction: column;
       gap: 5px;
     }
-
     .hamburger-links a {
       display: flex;
       align-items: center;
@@ -109,218 +151,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       transition: background 0.3s, transform 0.2s;
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
-
     .hamburger-links a:hover {
       background: #f0f0f0;
       transform: translateX(5px);
     }
-
     .hamburger-links a img {
       width: 20px;
       height: 20px;
     }
-
-    .horizontal-nav-links {
-      display: flex;
-      gap: 20px;
-      justify-content: flex-end;
-      margin: 0;
-      order: 1;
-      flex-grow: 1;
-      align-items: center;
-    }
-    .horizontal-nav-links a {
-      font-weight: 700;
-      font-size: 14px;
-      text-decoration: none;
-      color: #333 !important;
-      transition: color 0.3s, transform 0.2s, background-color 0.3s;
-      white-space: nowrap;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 5px 8px;
-      border-radius: 5px;
-    }
-    .horizontal-nav-links a:hover {
-      color: #004d3c !important;
-      transform: translateY(-1px);
-      background-color: rgba(255, 255, 255, 0.3);
-    }
-    .horizontal-nav-links a img,
-    .horizontal-nav-links a i {
-      width: 18px;
-      height: 18px;
-      font-size: 18px;
-      vertical-align: middle;
-    }
-    .language-switcher-button {
-      background-color: transparent;
-      color: #333;
-      padding: 8px 15px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: bold;
-      margin-right: 15px;
-      margin-left: 0;
-      border: 1px solid #d2b48c;
-      box-shadow: none;
-      transition: background-color 0.3s, transform 0.2s, color 0.3s;
-    }
-    .language-switcher-button:hover {
-      background-color: #f0f0f0;
-      color: #004d3c;
-    }
-
-    .buttons {
-      text-align: center;
-      margin: 50px 0 10px;
-    }
-
-    .btn-whatsapp,
-    .btn-call {
-      display: inline-block;
-      padding: 12px 25px;
-      margin: 8px;
-      border-radius: 8px;
-      font-weight: bold;
-      color: white;
-      text-decoration: none;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .btn-whatsapp {
-      background-color: #25D366;
-    }
-
-    .btn-whatsapp:hover {
-      background-color: #1DA851;
-      transform: translateY(-2px);
-    }
-
-    .btn-call {
-      background-color: #007bff;
-    }
-
-    .btn-call:hover {
-      background-color: #0056b3;
-      transform: translateY(-2px);
-    }
-
-    .footer {
-      text-align: center;
-      font-size: 14px;
-      color: #777;
-      margin: 40px 0 20px;
-    }
-
-    .product-detail-container {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 30px;
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-      text-align: left;
-    }
-
-    .product-detail-container h1 {
-      color: #004d3c;
-      font-size: 36px;
-      margin-bottom: 20px;
-      text-align: center;
-      font-weight: 700;
-    }
-
-    .product-images {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin-bottom: 30px;
-      justify-content: center;
-    }
-
-    .product-images img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease;
-    }
-
-    .product-images img:hover {
-      transform: scale(1.03);
-    }
-
-    .product-description {
-      font-size: 17px;
-      line-height: 1.8;
-      color: #444;
-      margin-bottom: 30px;
-    }
-
-    .product-description strong {
-      color: #00765a;
-      font-weight: 700;
-    }
-
-    .product-description h2 {
-      color: #00765a;
-      font-size: 24px;
-      margin-top: 30px;
-      margin-bottom: 15px;
-      border-bottom: 2px solid #eafaf5;
-      padding-bottom: 10px;
-    }
-
-    .product-features ul {
-      list-style: none;
-      padding: 0;
-      margin: 20px 0;
-    }
-
-    .product-features ul li {
-      margin-bottom: 10px;
-      padding-left: 25px;
-      position: relative;
-      color: #555;
-      font-size: 16px;
-    }
-
-    .product-features ul li:before {
-      content: '\f00c';
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
-      color: #28a745;
-      position: absolute;
-      left: 0;
-      top: 2px;
-    }
-
     @media (max-width: 768px) {
         body {
             padding-top: 60px;
             box-sizing: border-box;
         }
+        .desktop-nav-links {
+            display: none;
+        }
+        .mobile-nav-items {
+            display: flex;
+            order: 0; /* Ensures mobile items are on the left */
+            flex-grow: 1;
+            justify-content: flex-start;
+        }
         .hamburger-container {
-            padding: 10px 15px;
-        }
-        .horizontal-nav-links {
-            gap: 10px;
-            margin-right: 10px;
-            font-size: 13px;
-        }
-        .horizontal-nav-links a {
-            font-size: 13px;
-            padding: 5px 6px;
+            justify-content: space-between; /* To push the mobile items to the left and hamburger to the right */
         }
         .hamburger-button {
-            margin-left: 15px;
+            display: flex; /* Show on mobile */
         }
-        .hamburger-links {
-            top: 60px;
+        .language-switcher-button {
+            order: 2;
+        }
+        .mobile-nav-items a:first-of-type { /* Home button */
+            display: flex;
+            order: 1;
         }
         .product-detail-container {
             margin: 20px 15px;
@@ -352,39 +216,150 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-size: 14px;
         }
     }
+    .buttons {
+      text-align: center;
+      margin: 50px 0 10px;
+    }
+    .btn-whatsapp, .btn-call {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 8px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .btn-whatsapp {
+      background-color: #25D366;
+    }
+    .btn-whatsapp:hover {
+      background-color: #1DA851;
+      transform: translateY(-2px);
+    }
+    .btn-call {
+      background-color: #007bff;
+    }
+    .btn-call:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+    .footer {
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      margin: 40px 0 20px;
+    }
+    .product-detail-container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      text-align: left;
+    }
+    .product-detail-container h1 {
+      color: #004d3c;
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 700;
+    }
+    .product-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+    .product-images img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .product-images img:hover {
+      transform: scale(1.03);
+    }
+    .product-description {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 30px;
+    }
+    .product-description strong {
+      color: #00765a;
+      font-weight: 700;
+    }
+    .product-description h2 {
+      color: #00765a;
+      font-size: 24px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #eafaf5;
+      padding-bottom: 10px;
+    }
+    .product-features ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+    .product-features ul li {
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
+      color: #555;
+      font-size: 16px;
+    }
+    .product-features ul li:before {
+      content: '\f00c';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: #28a745;
+      position: absolute;
+      left: 0;
+      top: 2px;
+    }
   </style>
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJWQWKQV"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="hamburger-container">
-      <button class="hamburger-button" onclick="toggleMenu()">
-          <i class="fas fa-bars"></i>
-      </button>
+    <div class="mobile-nav-items">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="../tartasha.html" class="language-switcher-button">العربية</a>
+    </div>
 
-      <div class="horizontal-nav-links">
-          <a href="products.html"><i class="fas fa-shopping-cart"></i> Our Products</a>
-          <a href="gallery.html"><i class="fas fa-images"></i> Photo Gallery</a>
-          <a href="contact.html"><i class="fas fa-phone-alt"></i> Contact Us</a>
-          <a href="../tartasha.html" class="language-switcher-button">العربية</a>
-      </div>
+    <div class="desktop-nav-links">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="products.html"><i class="fas fa-shopping-cart"></i> Our Products</a>
+        <a href="contact.html"><i class="fas fa-phone-alt"></i> Contact Us</a>
+        <a href="../tartasha.html" class="language-switcher-button">العربية</a>
+    </div>
 
-      <div class="hamburger-links" id="hamburger-links">
-          <a href="index.html"><img alt="Home" src="https://img.icons8.com/fluency/20/home.png"/> Home</a>
-          <a href="about.html"><img alt="About Us" src="https://img.icons8.com/fluency/20/info.png"/> About Us</a>
-          <a href="difference.html"><img alt="The Difference between Riyadh and Taima Bat7a" src="https://img.icons8.com/fluency/20/compare.png"/> The Difference between Riyadh and Taima Bat7a</a>
-          <a href="services.html"><img alt="Building material supply services" src="https://img.icons8.com/fluency/20/services.png"/> Our Services</a>
-          <a href="products.html"><img alt="Available building products" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> Our Products</a>
-          <a href="gallery.html"><img alt="Our projects photo gallery" src="https://img.icons8.com/fluency/20/picture.png"/> Photo Gallery</a>
-          <a href="projects.html"><img alt="Examples of our projects" src="https://img.icons8.com/fluency/20/blueprint.png"/> Projects</a>
-          <a href="testimonials.html"><img alt="Customer reviews" src="https://img.icons8.com/fluency/20/thumb-up.png"/> Testimonials</a>
-          <a href="faq.html"><img alt="Frequently Asked Questions" src="https://img.icons8.com/fluency/20/help.png"/> FAQ</a>
-          <a href="payment.html"><img alt="Payment Methods" src="https://img.icons8.com/fluency/20/money.png"/> Payment Methods</a>
-          <a href="certificates.html"><img alt="Certificates" src="https://img.icons8.com/fluency/20/certificate.png"/> Certificates</a>
-          <a href="blog.html"><img alt="Building materials blog" src="https://img.icons8.com/fluency/20/blog.png"/> Blog</a>
-          <a href="contact.html"><img alt="Contact us" src="https://img.icons8.com/fluency/20/phone.png"/> Contact Us</a>
-      </div>
-  </div>
+    <button class="hamburger-button" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="hamburger-links" id="hamburger-links">
+        <a href="index.html"><img alt="Home" src="https://img.icons8.com/fluency/20/home.png"/> Home</a>
+        <a href="about.html"><img alt="About Us" src="https://img.icons8.com/fluency/20/info.png"/> About Us</a>
+        <a href="difference.html"><img alt="The Difference between Riyadh and Taima Bat7a" src="https://img.icons8.com/fluency/20/compare.png"/> The Difference between Riyadh and Taima Bat7a</a>
+        <a href="services.html"><img alt="Building material supply services" src="https://img.icons8.com/fluency/20/services.png"/> Our Services</a>
+        <a href="products.html"><img alt="Available building products" src="https://img.icons8.com/fluency/20/shopping-cart.png"/> Our Products</a>
+        <a href="projects.html"><img alt="Examples of our projects" src="https://img.icons8.com/fluency/20/blueprint.png"/> Projects</a>
+        <a href="testimonials.html"><img alt="Customer reviews" src="https://img.icons8.com/fluency/20/thumb-up.png"/> Testimonials</a>
+        <a href="faq.html"><img alt="Frequently Asked Questions" src="https://img.icons8.com/fluency/20/help.png"/> FAQ</a>
+        <a href="payment.html"><img alt="Payment Methods" src="https://img.icons8.com/fluency/20/money.png"/> Payment Methods</a>
+        <a href="certificates.html"><img alt="Certificates" src="https://img.icons8.com/fluency/20/certificate.png"/> Certificates</a>
+        <a href="blog.html"><img alt="Building materials blog" src="https://img.icons8.com/fluency/20/blog.png"/> Blog</a>
+        <a href="contact.html"><img alt="Contact us" src="https://img.icons8.com/fluency/20/phone.png"/> Contact Us</a>
+    </div>
+</div>
 
   <div class="product-detail-container">
     <h1>Tartasha - Superior Protection and Thermal Insulation for Surfaces and Walls</h1>
@@ -421,7 +396,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><strong>Industrial and Commercial Buildings:</strong> To provide extra protection and effective insulation.</li>
       </ul>
 
-      <p>Choose <strong>Tartasha</strong> from Desert Sand Est. to ensure superior protection for your buildings and high efficiency in insulation. We are committed to providing the finest building materials that meet your construction project needs. Contact us today for inquiries or to request a quote.</p>
+      <p>Choose <strong>Tartasha</strong> from Desert Sand Est. to ensure superior protection for your buildings and high efficiency in insulation. We are committed to providing the best building materials to guarantee the success and longevity of your construction work. Contact us today for inquiries or to request a quote.</p>
     </div>
 
     <div class="buttons">
