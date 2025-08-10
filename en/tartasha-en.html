@@ -43,7 +43,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       background: #e0c9a6;
       padding: 10px 15px;
       display: flex;
-      justify-content: flex-end; /* Changed to flex-end to push everything to the right */
       align-items: center;
       position: fixed;
       top: 0;
@@ -53,6 +52,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       box-shadow: 0 3px 10px rgba(0,0,0,0.18);
       width: 100%;
       box-sizing: border-box;
+      justify-content: flex-start; /* Align items to the left */
     }
     .mobile-nav-items {
       display: none; /* Hidden by default */
@@ -65,6 +65,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       justify-content: flex-end;
       flex-grow: 1;
       align-items: center;
+      margin-left: 15px; /* Spacing after language switcher */
     }
     .desktop-nav-links a, .mobile-nav-items a {
       font-weight: 700;
@@ -107,11 +108,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border: none;
       cursor: pointer;
       padding: 0;
-      display: none; /* Hidden by default */
+      display: flex; /* Show by default, will be managed by media query */
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      order: 1; /* Pushes the button to the end on mobile */
+      margin-right: 10px; /* Spacing from the right */
     }
     .hamburger-button i {
       font-size: 30px;
@@ -164,27 +165,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             padding-top: 60px;
             box-sizing: border-box;
         }
+        .hamburger-container {
+            justify-content: flex-start; /* Ensure items align left */
+        }
         .desktop-nav-links {
             display: none;
         }
         .mobile-nav-items {
             display: flex;
-            order: 0; /* Ensures mobile items are on the left */
+            order: 1; /* Place after hamburger button */
             flex-grow: 1;
             justify-content: flex-start;
-        }
-        .hamburger-container {
-            justify-content: space-between; /* To push the mobile items to the left and hamburger to the right */
+            margin-left: 10px;
         }
         .hamburger-button {
             display: flex; /* Show on mobile */
+            order: 0; /* Place at the start */
+            margin-right: 10px;
         }
         .language-switcher-button {
-            order: 2;
-        }
-        .mobile-nav-items a:first-of-type { /* Home button */
-            display: flex;
-            order: 1;
+            order: 2; /* Place after mobile nav items */
+            margin-left: auto; /* Push to the right */
         }
         .product-detail-container {
             margin: 20px 15px;
@@ -329,6 +330,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJWQWKQV"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="hamburger-container">
+    <button class="hamburger-button" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
     <div class="mobile-nav-items">
         <a href="index.html"><i class="fas fa-home"></i> Home</a>
         <a href="../tartasha.html" class="language-switcher-button">العربية</a>
@@ -340,10 +344,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="contact.html"><i class="fas fa-phone-alt"></i> Contact Us</a>
         <a href="../tartasha.html" class="language-switcher-button">العربية</a>
     </div>
-
-    <button class="hamburger-button" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-    </button>
 
     <div class="hamburger-links" id="hamburger-links">
         <a href="index.html"><img alt="Home" src="https://img.icons8.com/fluency/20/home.png"/> Home</a>
@@ -361,7 +361,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </div>
 
-  <div class="product-detail-container">
+<div class="product-detail-container">
     <h1>Tartasha - Superior Protection and Thermal Insulation for Surfaces and Walls</h1>
 
     <div class="product-images">
