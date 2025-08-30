@@ -16,6 +16,21 @@
 
       gtag('config', 'AW-17233250314');
     </script>
+
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17233250314/9VjHCL6ShYAbEIqQuplA',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
     
     <link href="https://i.imgur.com/a7dzTKl.png" rel="icon" type="image/png"/> 
     <meta charset="utf-8"/>
@@ -913,7 +928,7 @@
                  سارع بالطلب!
             </p>
             <div class="popup-buttons">
-                <a href="https://wa.me/966537216061" class="whatsapp-button" target="_blank">💬 واتساب</a>
+                <a href="https://wa.me/966537216061" onclick="return gtag_report_conversion('https://wa.me/966537216061');" class="whatsapp-button" target="_blank">💬 واتساب</a>
                 <a href="products.html" class="products-button">تصفح المنتجات</a>
             </div>
         </div>
@@ -946,8 +961,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="top-contact-buttons">
             <a href="/en/index.html" class="language-switcher-button">English</a>
-            <a href="https://wa.me/966537216061" target="_blank">💬 واتساب</a>
-            <a href="tel:0537216061">📞 اتصل بي</a>
+            <a href="https://wa.me/966537216061" onclick="return gtag_report_conversion('https://wa.me/966537216061');" target="_blank">💬 واتساب</a>
+            <a href="tel:0537216061" onclick="return gtag_report_conversion('tel:0537216061');">📞 اتصل بي</a>
         </div>
     </div>
 
@@ -1010,7 +1025,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
 
             <div id="bannerBox">
-                <a href="https://wa.me/966537216061" target="_blank" rel="noopener">
+                <a href="https://wa.me/966537216061" onclick="return gtag_report_conversion('https://wa.me/966537216061');" target="_blank" rel="noopener">
                     <img alt="بنر ترويجي لخدمات توريد بطحاء الرياض وتيماء، دفان، سبيز، طرطشة عازلة، خرسانة في مكة" src="https://i.ibb.co/qYLvBjxD/banner-makkah.jpg"/>
                 </a>
             </div>
@@ -1046,13 +1061,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="contact-box">
                 <ul class="contact-list">
                     <li>
-                        <a class="contact-item" href="tel:0537216061" rel="noopener" target="_blank">
+                        <a class="contact-item" href="tel:0537216061" onclick="return gtag_report_conversion('tel:0537216061');" rel="noopener" target="_blank">
                             <img alt="جوال" src="https://img.icons8.com/color/48/000000/phone.png"/>
                             <span>0537216061</span>
                         </a>
                     </li>
                     <li>
-                        <a class="contact-item" href="https://wa.me/966537216061" rel="noopener" target="_blank">
+                        <a class="contact-item" href="https://wa.me/966537216061" onclick="return gtag_report_conversion('https://wa.me/966537216061');" rel="noopener" target="_blank">
                             <img alt="واتساب" src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"/>
                             <span>محادثة مباشرة عبر واتساب</span>
                         </a>
