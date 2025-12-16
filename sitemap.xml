@@ -1,117 +1,124 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Home -->
   <url>
     <loc>https://bat7a-makkah.com/</loc>
-    <lastmod>2025-07-28</lastmod> 
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bat7a-makkah.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bat7a-makkah.com/en/"/>
   </url>
-  <url>
-    <loc>https://bat7a-makkah.com/gallery.html</loc>
-    <lastmod>2025-07-28</lastmod> 
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
+  <!-- Core pages (AR + EN) -->
   <url>
     <loc>https://bat7a-makkah.com/about.html</loc>
-    <lastmod>2025-07-28</lastmod> 
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bat7a-makkah.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bat7a-makkah.com/en/about.html"/>
   </url>
-  <url>
-    <loc>https://bat7a-makkah.com/testimonials.html</loc>
-    <lastmod>2025-07-28</lastmod> 
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bat7a-makkah.com/contact.html</loc>
-    <lastmod>2025-07-28</lastmod> 
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bat7a-makkah.com/blog.html</loc>
-    <lastmod>2025-07-28</lastmod> 
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bat7a-makkah.com/certificates.html</loc>
-    <lastmod>2025-07-28</lastmod> 
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
   <url>
     <loc>https://bat7a-makkah.com/difference.html</loc>
-    <lastmod>2025-07-28</lastmod> 
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bat7a-makkah.com/difference.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bat7a-makkah.com/en/difference.html"/>
   </url>
-  <url>
-    <loc>https://bat7a-makkah.com/faq.html</loc>
-    <lastmod>2025-07-28</lastmod> 
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bat7a-makkah.com/payment.html</loc>
-    <lastmod>2025-07-28</lastmod> 
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://bat7a-makkah.com/products.html</loc>
-    <lastmod>2025-07-28</lastmod> 
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://bat7a-makkah.com/projects.html</loc>
-    <lastmod>2025-07-28</lastmod> 
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://bat7a-makkah.com/services.html</loc>
-    <lastmod>2025-07-28</lastmod> 
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bat7a-makkah.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bat7a-makkah.com/en/services.html"/>
   </url>
+
+  <url>
+    <loc>https://bat7a-makkah.com/products.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bat7a-makkah.com/products.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bat7a-makkah.com/en/products.html"/>
+  </url>
+
+  <url>
+    <loc>https://bat7a-makkah.com/gallery.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bat7a-makkah.com/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bat7a-makkah.com/en/gallery.html"/>
+  </url>
+
+  <url>
+    <loc>https://bat7a-makkah.com/projects.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bat7a-makkah.com/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bat7a-makkah.com/en/projects.html"/>
+  </url>
+
+  <url>
+    <loc>https://bat7a-makkah.com/testimonials.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bat7a-makkah.com/testimonials.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bat7a-makkah.com/en/testimonials.html"/>
+  </url>
+
+  <url>
+    <loc>https://bat7a-makkah.com/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bat7a-makkah.com/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bat7a-makkah.com/en/faq.html"/>
+  </url>
+
+  <url>
+    <loc>https://bat7a-makkah.com/payment.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bat7a-makkah.com/payment.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bat7a-makkah.com/en/payment.html"/>
+  </url>
+
+  <url>
+    <loc>https://bat7a-makkah.com/certificates.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bat7a-makkah.com/certificates.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bat7a-makkah.com/en/certificates.html"/>
+  </url>
+
+  <url>
+    <loc>https://bat7a-makkah.com/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bat7a-makkah.com/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bat7a-makkah.com/en/blog.html"/>
+  </url>
+
+  <url>
+    <loc>https://bat7a-makkah.com/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bat7a-makkah.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bat7a-makkah.com/en/contact.html"/>
+  </url>
+
+  <!-- Product detail pages (AR + EN) -->
   <url>
     <loc>https://bat7a-makkah.com/riyadh-bat7a.html</loc>
-    <lastmod>2025-07-28</lastmod> 
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bat7a-makkah.com/riyadh-bat7a.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bat7a-makkah.com/en/riyadh-bat7a-en.html"/>
   </url>
+
   <url>
     <loc>https://bat7a-makkah.com/tayma-bat7a.html</loc>
-    <lastmod>2025-07-28</lastmod> 
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bat7a-makkah.com/tayma-bat7a.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bat7a-makkah.com/en/tayma-bat7a-en.html"/>
   </url>
+
   <url>
     <loc>https://bat7a-makkah.com/dafian-balat.html</loc>
-    <lastmod>2025-07-28</lastmod> 
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bat7a-makkah.com/dafian-balat.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bat7a-makkah.com/en/dafian-balat-en.html"/>
   </url>
-  <url>
-    <loc>https://bat7a-makkah.com/concrete.html</loc>
-    <lastmod>2025-07-28</lastmod> 
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
   <url>
     <loc>https://bat7a-makkah.com/tartasha.html</loc>
-    <lastmod>2025-07-28</lastmod> 
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bat7a-makkah.com/tartasha.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bat7a-makkah.com/en/tartasha-en.html"/>
   </url>
+
   <url>
     <loc>https://bat7a-makkah.com/speez.html</loc>
-    <lastmod>2025-07-28</lastmod> 
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bat7a-makkah.com/speez.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bat7a-makkah.com/en/speez-en.html"/>
   </url>
+
+  <url>
+    <loc>https://bat7a-makkah.com/concrete.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bat7a-makkah.com/concrete.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bat7a-makkah.com/en/concrete-en.html"/>
+  </url>
+
 </urlset>
