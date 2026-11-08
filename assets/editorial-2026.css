@@ -22,3 +22,19 @@
 .content-stage .container>.blog-cards{margin-bottom:20px}
 .contact-form-section,.contact-info-section{max-width:100%}
 .legacy-hidden,.archive{display:none!important}
+
+/* Editorial magazine covers, sourced only from relevant original site photos. */
+.blog-post{padding:0 0 26px;overflow:hidden}
+.blog-post .article-cover{height:205px;position:relative;overflow:hidden;background:#153b33;margin-bottom:23px}
+.blog-post:first-child .article-cover{height:295px}
+.blog-post .article-cover img{height:100%;width:100%;object-fit:cover;filter:saturate(.82) contrast(1.04);transition:transform .3s}
+.blog-post:hover .article-cover img{transform:scale(1.045)}
+.blog-post .article-cover:after{content:'';position:absolute;inset:35% 0 0;background:linear-gradient(transparent,#0d302ca8)}
+.blog-post .article-cover small{position:absolute;bottom:14px;inset-inline-start:19px;z-index:2;color:#fff;font-weight:700;font-size:12px}
+.blog-post .article-cover.art{background:linear-gradient(135deg,#153b33,#537064);display:grid;place-items:center}
+.blog-post .article-cover.art span{font:800 86px 'Manrope',sans-serif;color:#e8c7a06b;transform:rotate(20deg)}
+.blog-post:nth-child(2n) .article-cover.art{background:linear-gradient(125deg,#a56941,#e0ba8d)}
+.blog-post h2,.blog-post>.post-meta,.blog-post>p{margin-inline:24px}
+.blog-post .read-more{margin-inline:24px;align-self:flex-start}
+.blog-post:first-child{background:#15362f;color:#fff}
+@media(max-width:750px){.blog-post .article-cover,.blog-post:first-child .article-cover{height:205px}}
