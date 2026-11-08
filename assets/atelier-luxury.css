@@ -248,3 +248,21 @@ body[data-page="about"] #about-page li{background:#f8f4eb;border:1px solid #ebe0
 @media(max-width:650px){body[data-page="about"] #about-page ul{grid-template-columns:1fr}body[data-page="about"] main{width:calc(100% - 25px)!important;margin:20px auto!important}.lux-about-shell .header-main-buttons a{font-size:12px!important;padding:10px!important}.lux-about-shell>p{font-size:13px}}
 /* About glossary and material photo notes */
 .lux-photo-disclaimer{grid-column:1/-1;font-size:13px!important;color:#615a4d!important;background:#faf4e9;padding:13px 16px;border-inline-start:3px solid #c79a59;border-radius:8px;margin:0 0 4px!important}
+
+/* Keep concrete gallery's fact-check note visible before the photographic examples. */
+body[data-page="concrete"] .product-detail-container:has(.lux-photo-disclaimer) .lux-photo-disclaimer{grid-row:2!important;grid-column:1/-1!important}
+body[data-page="concrete"] .product-detail-container:has(.lux-photo-disclaimer) .product-images{grid-row:3!important}
+body[data-page="concrete"] .product-detail-container:has(.lux-photo-disclaimer) .product-description{grid-row:3!important}
+body[data-page="concrete"] .product-detail-container:has(.lux-photo-disclaimer)>.buttons{grid-row:4!important}
+/* Small screens: favour the headline and conversion actions over decorative overlap. */
+@media(max-width:480px){
+.lux-hero-side{display:none!important}
+.lux-hero-ctas .lux-btn:last-child{width:100%!important}
+.lux-hero-features{padding-bottom:20px}
+body[data-page=index] .lux-hero-watermark{opacity:.4}
+.lux-ribbon-inner span{font-size:10px}
+body[data-page="concrete"] .product-detail-container .lux-photo-disclaimer{grid-row:2!important}
+body[data-page="concrete"] .product-detail-container .product-images{grid-row:3!important}
+body[data-page="concrete"] .product-detail-container .product-description{grid-row:4!important}
+body[data-page="concrete"] .product-detail-container>.buttons{grid-row:5!important}
+}
